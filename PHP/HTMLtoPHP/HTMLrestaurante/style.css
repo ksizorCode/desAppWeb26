@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+  max-width: 560px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+ul,
+header {
+  list-style: none;
+  padding-left: 0;
+
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+
+
+  align-items:  center;
+}
+
+
+header{
+      justify-content: space-between;
+}
+
+header .logo{
+    color:grey;
+    font-weight: bold;
+    font-size: 23px;;
+}
+
+nav ul li a{
+    color:lightskyblue;
+}
+
+footer{
+    background: lightseagreen;
+    text-align: center;
+    padding: 20px;
+}
+
+
+footer a{
+    color:white;
+}
+
+
+footer ul{
+    justify-content: center;
+}
+
+
+
+
+/** menu.html **/
+
+body#carta main ul{
+    flex-direction: column;
+}
+body#carta h2{
+    border-bottom: solid lightseagreen 3px;
+}
+
+
+
+/** galeria.html **/
+
+ul.galeria li{
+    flex: 1 1 0;
+    max-width: 120px;
+    border: solid 1px grey;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+
+ul.galeria li img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
