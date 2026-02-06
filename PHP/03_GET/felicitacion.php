@@ -9,7 +9,7 @@
 ?>
 
 <title>Feliz <?=$edad?> cumpleaños <?= $nombre?></title>
-<link rel="stylesheet" href="style<?= $estilo?>.css">
+<link rel="stylesheet" href="css/style<?= $estilo?>.css">
 
 <h1>Feliz Cumpleaños <?= $nombre?></h1>
 <h2>No todos los días se cumplen <?= $edad?></h2>
