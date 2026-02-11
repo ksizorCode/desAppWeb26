@@ -25,11 +25,11 @@ include 'datos.php';
     <h1 style='view-transition-name:title-<?=$elemento?>'><? echo $datos[$elemento]['nombre']; ?><span> de <?=$datos[$elemento]['casa']?></span></h1>
     <img src='<?=$datos[$elemento]['imagen']; ?>' alt='<?=$datos[$elemento]['nombre']; ?>' style='view-transition-name:image-<?=$elemento?>'>
 
-    <p><?=$datos[$elemento]['descripcion']; ?></p>
-    <p>Casa: <?=$datos[$elemento]['casa']; ?></p>
-    <p>Sangre: <?=$datos[$elemento]['sangre']; ?></p>
-    <p>Patronus: <?=$datos[$elemento]['patronus']; ?></p>
-    <p>Varita: <?=$datos[$elemento]['varita']; ?></p>
+    <p>📖 <?=$datos[$elemento]['descripcion']; ?></p>
+    <p>🏰 Casa: <?=$datos[$elemento]['casa']; ?></p>
+    <p>🩸 Sangre: <?=$datos[$elemento]['sangre']; ?></p>
+    <p>✨ Patronus: <?=$datos[$elemento]['patronus']; ?></p>
+    <p>⚡ Varita: <?=$datos[$elemento]['varita']; ?></p>
 </div>
 
 <section>
