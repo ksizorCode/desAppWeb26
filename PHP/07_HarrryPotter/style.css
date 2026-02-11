@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+@view-transition{
+    navigation: auto;
+}
+::view-transition-old(root){
+    animation:slide-out-to-left .5s forwards;
+}
+
+::view-transition-new(root){
+    animation:slide-in-from-right .5s forwards;
+}
+
+@keyframes slide-out-to-left{
+    from{opacity: 1;}
+    to{opacity:0}
+}
+
+@keyframes slide-in-from-right{
+    from{opacity:0}
+    to{opacity:1;}
+}
+
+::view-transition-group(*){
+    animation-duration: .4s;
+}
+
+html{
+    font-family: sans-serif;
+    background: coral;
+    padding: 10px;
+}
+
+body{
+    max-width: 960px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1, h2, h3{
+    font-family: "Poppins", sans-serif;
+
+}
+
+ul.galeria{
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+grid-template-columns: repeat( auto-fit, minmax(210px, 1fr) );
+gap:10px;
+}
+.galeria li{flex: 1 1 0;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: stretch;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+border-radius:10px;
+            overflow:hidden;
+
+}
+
+a{text-decoration:none;}
+
+
+li a{
+        padding:10px;
+}
+li a h2{
+    font-size: clamp(15px, 0.5em, 16px);
+  
+}
+
+li img{
+    transition:.3s;
+}
+
+
+li a:hover h2{
+    color:black
+}
+li:hover{
+    background:coral !important;
+}
+
+li:hover a{
+    color:white !important;
+}
+
+li:hover img{
+    scale:1.05;
+}
+
+
+ul.galeria:hover li:not(:hover) {
+    filter: grayscale(100%);
+    scale:0.95;
+    transition:.5s;
+}
+
+
+
+
+
+h1{
+    font-size:32px;
+}
+
+h1 span{
+    font-weight: normal;
+    opacity: 0.6;
+}
+
+.galeria li img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.galeria li:hover{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(255, 100, 48, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;  
+}
+
+a{ text-decoration: none; color:coral}
+
+img{max-width: 100%; border-radius: 10px;}
+
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.galeria li {
+    transition: transform 0.3s ease;
+    background: #f9f9f9;
+}
+
+.galeria li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+footer{
+    text-align: center;
+    margin:20px;
+}
+
+
+/* info */
+
+#ficha img{
+    outline: solid 3px coral;
+}
+
+
+#ficha section{
+    border-radius: 20px;
+    padding: 10px;
+    border-top:coral solid 3px;
+    margin-top:30px;
+    border-radius: 0    ;
+} 
