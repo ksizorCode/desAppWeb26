@@ -1,0 +1,1 @@
+<a href="carta.php">Ver Carta</a>

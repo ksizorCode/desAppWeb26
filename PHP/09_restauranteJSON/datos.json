@@ -1,0 +1,107 @@
+{
+  "restaurante": {
+    "nombre": "Le Menhir",
+    "direccion": "Marqués de Urquijo, 27, local 1, 33203 Gijón, Asturias, España",
+    "telefono": "+34 606 67 90 69",
+    "email":"info@lemenhir.com",
+    "categoria": "Crepería / Cocina Bretona"
+  },
+  "carta": {
+    "primero": [
+      {
+        "nombre": "Fondue de Quesos",
+        "ingredientes": ["queso emmental", "queso raclette", "crema", "pan tostado"],
+        "alergenos": ["lácteos", "gluten"],
+        "precio": 11.0,
+        "foto": "https://picsum.photos/seed/fondue/400/300",
+        "descripcion": "Mezcla fundida de quesos tradicionales servida con pan tostado.",
+        "recomendacion": "Perfecto para compartir con amigos al inicio de la comida."
+      },
+      {
+        "nombre": "Galette Le Basque",
+        "ingredientes": ["harina de trigo sarraceno", "jamón", "queso", "pimientos"],
+        "alergenos": ["gluten", "lácteos"],
+        "precio": 14.0,
+        "foto": "https://picsum.photos/seed/basque/400/300",
+        "descripcion": "Galette crujiente rellena de jamón, queso y pimientos.",
+        "recomendacion": "Ideal para los amantes de la cocina tradicional francesa."
+      }
+    ],
+    "segundo": [
+      {
+        "nombre": "Galette Cocotte",
+        "ingredientes": ["pollo", "bacon", "champiñones", "crema fresca", "queso"],
+        "alergenos": ["gluten", "lácteos"],
+        "precio": 15.9,
+        "foto": "https://picsum.photos/seed/cocotte/400/300",
+        "descripcion": "Galette sabrosa con pollo, bacon y champiñones cremosos.",
+        "recomendacion": "Muy recomendada para quienes buscan un plato contundente."
+      },
+      {
+        "nombre": "Galette Supercomplette",
+        "ingredientes": ["jamón", "queso", "huevo", "patata salteada"],
+        "alergenos": ["gluten", "lácteos", "huevo"],
+        "precio": 16.2,
+        "foto": "https://picsum.photos/seed/supercomplette/400/300",
+        "descripcion": "Relleno completo con jamón, queso, huevo y patata.",
+        "recomendacion": "Perfecta para los que quieren probar la galette más clásica."
+      },
+      {
+        "nombre": "Galette Ratatouille",
+        "ingredientes": ["berenjena", "calabacín", "pimiento", "cebolla", "tomate"],
+        "alergenos": ["gluten"],
+        "precio": 15.5,
+        "foto": "https://picsum.photos/seed/ratatouille/400/300",
+        "descripcion": "Galette vegetal con sabor intenso de la Provenza.",
+        "recomendacion": "Recomendable para vegetarianos y amantes de lo fresco."
+      }
+    ],
+    "postre": [
+      {
+        "nombre": "Crêpe La Bretonne",
+        "ingredientes": ["masa de trigo", "caramelo de mantequilla salada", "chantilly"],
+        "alergenos": ["gluten", "lácteos"],
+        "precio": 7.0,
+        "foto": "https://picsum.photos/seed/bretonne/400/300",
+        "descripcion": "Deliciosa crêpe con caramelo de mantequilla salada y chantilly.",
+        "recomendacion": "Perfecta para cerrar la comida con un toque dulce y cremoso."
+      },
+      {
+        "nombre": "Crêpe La Gourmande",
+        "ingredientes": ["masa de trigo", "Nutella", "plátano"],
+        "alergenos": ["gluten", "lácteos", "frutos secos (chocolate)"],
+        "precio": 7.5,
+        "foto": "https://picsum.photos/seed/gourmande/400/300",
+        "descripcion": "Crêpe rellena de Nutella y plátano fresco.",
+        "recomendacion": "Ideal para los golosos y amantes del chocolate."
+      }
+    ],
+    "bebida": [
+      {
+        "nombre": "Sidra Bretona 20cl",
+        "ingredientes": ["sidra de manzana artesana"],
+        "alergenos": [],
+        "precio": 5.0,
+        "foto": "https://picsum.photos/seed/sidra/400/300",
+        "descripcion": "Sidra natural con un toque burbujeante.",
+        "recomendacion": "Perfecta para acompañar cualquier plato sin opacar sabores."
+      },
+      {
+        "nombre": "Cerveza Artesana 25cl",
+        "ingredientes": ["agua", "malta", "lúpulo", "levadura"],
+        "alergenos": ["gluten"],
+        "precio": 4.5,
+        "foto": "https://picsum.photos/seed/cerveza/400/300",
+        "descripcion": "Cerveza artesanal con sabor intenso y aroma lupulado.",
+        "recomendacion": "Ideal para maridar con platos salados o picantes."
+      }
+    ]
+  },
+  "galeria": [
+    "https://picsum.photos/seed/galeria1/600/400",
+    "https://picsum.photos/seed/galeria2/600/400",
+    "https://picsum.photos/seed/galeria3/600/400",
+    "https://picsum.photos/seed/galeria4/600/400",
+    "https://picsum.photos/seed/galeria5/600/400"
+  ]
+}
