@@ -1,0 +1,40 @@
+{
+    "alumnos": [
+        {
+            "nombre": "Himi",
+            "anio": 1998
+        },
+        {
+            "nombre": "Luis",
+            "anio": 1970
+        },
+        {
+            "nombre": "Cesar",
+            "anio": 1980
+        },
+        {
+            "nombre": "David",
+            "anio": 1994
+        },
+        {
+            "nombre": "Nadine",
+            "anio": 1975
+        },
+        {
+            "nombre": "Adalid",
+            "anio": 1994
+        },
+        {
+            "nombre": "Oscar",
+            "anio": 1991
+        },
+        {
+            "nombre": "David",
+            "anio": 2003
+        },
+        {
+            "nombre": "Sergio",
+            "anio": 1960
+        }
+    ]
+}
