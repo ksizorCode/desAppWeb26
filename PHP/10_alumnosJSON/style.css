@@ -1,0 +1,12 @@
+body{
+    font-family: sans-serif;
+    max-width:560px;
+    padding: 20px;
+}
+
+nav ul{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap:8px;
+}
