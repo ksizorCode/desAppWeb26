@@ -21,6 +21,7 @@
 
 <main>
 <h1>Alumnos</h1>
+<p>Alunos que hay en el JSON alumnos.json</p>
 
 
 <?
@@ -41,6 +42,12 @@ $alumnos = json_decode($json, true);
 
 //03 comprobamos con print_r
 printR2($alumnos);
+
+?>
+
+<p>Alumno insertados en alumnos2.json</p>
+
+<?php
 
 //04 Añadimos alumno
    array_push($alumnos['alumnos'], ['nombre'=>'Adalid','anio'=>1994]); // añadimos a Adalid
