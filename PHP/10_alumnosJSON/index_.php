@@ -1,6 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<header>
+    <nav>
+        <ul>
+            <li><a href="formulario.php">Formulario para agregar Alumno</a></li>
+<li><a href="borrar.php">Borrar todos los alumnos (resetear JSON)</a></li>
+<li><a href="index.php">Ver Listado completo</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
 <h1>Alumnos</h1>
 
-<a href="formulario.php">Formulario</a>
 
 <?
 function printR2($array){
@@ -37,7 +58,10 @@ printR2($alumnos);
     file_put_contents('alumnos2.json',$newjson);
 
 
-
-
-
 ?>
+
+</main>
+
+<footer>
+    <p>&copy; Copyright Alumnator</p>
+</footer>
