@@ -1,0 +1,30 @@
+{
+  "site": {
+    "title": "Agenda Cultural de Gijón",
+    "description": "Actividades culturales, conciertos, exposiciones y eventos en Gijón.",
+    "email": "cultura@gijon.es",
+    "telephone": "+34 985 18 10 00",
+    "web": "https://www.gijon.es",
+    "lastupdate": "2026-02-20",
+    "social": [
+      { "facebook": "https://facebook.com/agenda-cultural-gijon" },
+      { "instagram": "https://instagram.com/agenda-cultural-gijon" },
+      { "bluebertigo": "https://bsky.app/profile/agenda-cultural-gijon" }
+    ]
+  },
+  "actividades": [
+    {
+      "id": 1,
+      "titulo": "Concierto de música indie",
+      "categoria": "Música",
+      "descripcion": "Actuación en directo de bandas emergentes del panorama indie nacional.",
+      "fecha": "2026-03-05",
+      "hora": "21:00",
+      "lugar": "Teatro Jovellanos",
+      "direccion": "Paseo de Begoña, 11",
+      "precio": 18,
+      "destacado": true,
+      "icono": "🎸"
+    }
+  ]
+}

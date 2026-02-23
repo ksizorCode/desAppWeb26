@@ -1,0 +1,17 @@
+body{
+    font-family: sans-serif;
+    max-width:890px;
+    margin:10px auto;
+}
+
+nav ul{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap:8px
+}
+
+a{
+    color:tan;
+    text-decoration: none;
+}
