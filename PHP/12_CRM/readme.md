@@ -2,6 +2,33 @@
 Content Managment System es...
 
 El siguiente modelo tiene esta estructura:
+```
+/mini-cms
+│
+├── index.php              ← Router principal (?page=)
+├── functions.php          ← Funciones comunes
+├── config.php             ← Constantes de configuración de la App/Site
+│
+├── /inc
+│   ├── header.php         ← <head>, <header>, navegación y apertura del <HTML>
+│   └── footer.php         ← <footer>, scripts y cierre del </HTML>
+│
+├── /views                 ← Vistas (contenido)
+│   ├── home.php
+│   ├── servicios.php
+│   ├── apartados.php
+│   ├── ... .php
+│   ├── ... .php
+│   └── contacto.php
+│
+└── /assets
+    ├── /css
+    │   └── style.css
+    ├── /js
+    │   └── app.js
+    └── /img
+
+```
 
 De tal forma que separaremos los Datos, Funcionalidades, Apariencia de la siguiente manera:
 
