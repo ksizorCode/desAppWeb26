@@ -11,13 +11,6 @@
 </head>
 <body>
 <header>
-    <nav>
-        <ul class="mainmenu menu">
-            <li><a href="?page=home">Inicio</a></li>
-            <li><a href="?page=servicios">Servicios</a></li>
-            <li><a href="?page=contacto">Contacto</a></li>
-        </ul>
-    </nav>
     <?menu()?>
 </header>
 <main>

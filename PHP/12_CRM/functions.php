@@ -11,7 +11,7 @@ $data = json_decode($json, true);
 function debug($array){
     if (DEBUG) {
         echo '<pre><code>';
-        print_r($array);
+        print_r(htmlspecialchars(print_r($array,true)));
         echo '</code></pre>';
     }
 }
@@ -48,10 +48,22 @@ function description(){
  * Cosntructor de menús
  */
 
-function menu(array $datosMenu=$data['site']['menu']){
-    echo '<nav><ul>';
-    foreach ($datosMenu as $value) {
-        echo "<li><a href='$value['url']' target='$value['target']' >$value['texto']</a></li>";
+function menu(?array $datosMenu=null): void
+{   
+
+    if($datosMenu===null){
+        global $data;
+    $datosMenu= $data['site']['menu'];
     }
+    echo '<nav><ul>';
+
+    foreach ($datosMenu as $item) {
+        $target = !empty($item['target']) && $item['target'] ? ' target="_blank"' : '';
+
+        echo '<li>';
+        echo '<a href="' . $item['url'] . '"'.$target.'">'.$item['texto'].'</a>';
+        echo '</li>';
+    }
+
     echo '</ul></nav>';
 }
