@@ -10,8 +10,15 @@
       { "facebook": "https://facebook.com/agenda-cultural-gijon" },
       { "instagram": "https://instagram.com/agenda-cultural-gijon" },
       { "bluebertigo": "https://bsky.app/profile/agenda-cultural-gijon" }
-    ]
+    ],
+    "menu": [
+    { "texto": "Inicio",    "url": "?page=home",      "title": "Ir a inicio",        "blank": false },
+    { "texto": "Servicios", "url": "?page=servicios", "title": "Ver nuestros servicios", "blank": false },
+    { "texto": "Contacto",  "url": "?page=contacto",  "title": "Contacta con nosotros",  "blank": false },
+    { "texto": "Blog",      "url": "https://blog.externo.com", "title": "Visita nuestro blog", "blank": true }
+  ]
   },
+  
   "actividades": [
     {
       "id": 1,
