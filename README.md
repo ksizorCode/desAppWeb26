@@ -2,6 +2,8 @@
 
 Github Pages: https://ksizorcode.github.io/desAppWeb26/
 
+🛫Decargar Fragemento de respositorio: https://download-directory.github.io/
+
 
 # 📆 HOY
 https://www.figma.com/design/2OMhucfCrhLtQ0DQSFaAia/DATW---Prototipado?node-id=0-1&t=xEdGie1QWiqUsXvA-1
