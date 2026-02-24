@@ -40,3 +40,16 @@ function description(){
         echo '<meta name="description" content="' . $data['site']['description'] . '">';
     }
 }
+
+
+/**
+ * Cosntructor de menús
+ */
+
+function menu(array $datosMenu=$data['site']['menu']){
+    echo '<nav><ul>';
+    foreach ($datosMenu as $value) {
+        echo "<li><a href='$value['url']' target='$value['target']' >$value['texto']</a></li>";
+    }
+    echo '</ul></nav>';
+}

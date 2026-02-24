@@ -18,6 +18,7 @@
             <li><a href="?page=contacto">Contacto</a></li>
         </ul>
     </nav>
+    <?menu()?>
 </header>
 <main>
     <h1><?titulo()?></h1>
