@@ -21,12 +21,14 @@ function debug($array){
  * Imprime titulo del apartado
  */
 function titulo(){
-    global $data;
     global $titulo;
+    echo $titulo ?? 'Sin título';
+}
 
-    
 
-    echo $titulo .' - '. $data['site']['title'] ?? 'Sin título';
+function appTitulo(){
+    global $data;
+        echo $data['site']['title'] ?? 'Sin título';
 }
 
 

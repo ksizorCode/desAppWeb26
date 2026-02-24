@@ -3,7 +3,6 @@
 $title = 'Servicios';
 $description ="Listado de servicios de la agenda cultural";
 ?>
-<h1>Servicios</h1>
 <ul>
     <li> Actividades culturales</li>
     <li>Socialización</li>
