@@ -3,20 +3,40 @@ include 'config.php';
 $json = file_get_contents('data.json');
 $data = json_decode($json, true);
 
-const DEBUG = true;
+// -- MODO DEBUG -------------//
 
-function debug($valor){
+/**
+ * Si DEBUG está activado muestra el print_r del $array
+ */
+function debug($array){
     if (DEBUG) {
-        echo '<pre>';
-        print_r($valor);
-        echo '</pre>';
+        echo '<pre><code>';
+        print_r($array);
+        echo '</code></pre>';
     }
 }
 
 
-debug($data);
-
+/**
+ * Imprime titulo del apartado
+ */
 function titulo(){
     global $data;
-    echo $data['site']['title'] ?? 'Sin título';
+    global $titulo;
+
+    
+
+    echo $titulo .' - '. $data['site']['title'] ?? 'Sin título';
+}
+
+
+/**
+ * Imprime descripción del apartado. Si existe añade el meta description, si no: no.
+ */
+function description(){
+    global $data;
+
+    if (isset($data['site']['description'])) {
+        echo '<meta name="description" content="' . $data['site']['description'] . '">';
+    }
 }

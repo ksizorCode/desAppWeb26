@@ -1,6 +1,13 @@
-<?php include 'functions.php'?>
-<? $page = $_GET['page'] ?? 'home'; ?>
+<?php
+include 'functions.php';
 
-<?php include 'inc/header.php'?>
-<?php include 'views/'.$page.'.php'?>
-<?php include 'inc/footer.php'?>
+// https://dominio.com/?page=algo
+$page = $_GET['page'] ?? 'home'; 
+
+
+include 'inc/header.php';
+include 'views/'.$page.'.php';
+include 'inc/footer.php';
+
+
+?>

@@ -1,2 +1,9 @@
+<?php
+// Título específico del apartado
+$title = 'Contacto';
+$description ="Avisanos de actrividades culturales para añadir a la agenda o contacta con nosotros.";
+?>
+
 <h1>Contacto</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus mollitia maiores inventore cum repellendus, pariatur fuga repudiandae saepe, voluptatem neque debitis cumque facere, animi dolores iure. Dolore commodi hic doloribus.</p>
+<p>Ven a vernos a la Calle los Moros 32, Etnlo 7</p>
+<p>O llámanos al 666 777 888</p>
