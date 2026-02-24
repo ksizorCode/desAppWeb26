@@ -14,3 +14,19 @@ Utilizando esta base del nuestro mini-CRM (Content Management System):
 - d. **style.css** para la apariencia de todo el site/app 
 
 
+
+
+## Funciones
+
+titulo(); 
+define el titulo del apartado.
+si en view/apartado.php exista una variable $titulo con un texto. Añade ese texto como descripcion
+@variable $titulo en view/apartad.php 
+
+appTitulo()
+define el titulo de la app o site completo
+lo obtiene gracias a funcions.php de data.json
+
+description()
+si en view/apartado.php exista una variable $descripcion con un texto. Añade ese texto como descripcion
+@variable $titulo en view/apartad.php 
