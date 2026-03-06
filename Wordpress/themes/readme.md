@@ -1,3 +1,5 @@
+
+```php
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>">
 <head>
@@ -18,3 +20,5 @@
     <?php wp_footer(); ?>
 </body>
 </html>
+
+```
