@@ -14,8 +14,10 @@
  * License:           GNU General Public License v2.0 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
+
  :root{
     --c1:coral;
+    --c2:black;
     --ff:sans-serif;
  }
 
@@ -61,7 +63,7 @@ img{
     transition:.4s;
 
     p{
-        color:black;
+        color:var(--c2);
     }
  
     img{
@@ -71,18 +73,17 @@ img{
         /* aspect-ratio:1/1 !important; */
         object-fit:cover;
     }
-}
 
-.sumario article:hover{
-    background:var(--c1);
-    scale:1.02;
+    &:hover{
+        background:var(--c1);
+        scale:1.02;
+        
+        h2{
+        color:white;
+        }
 
-}
-
-.sumario article:hover h2{
-color:white;
-}
-
-.sumario article:hover p{
-color:black;
+        p{
+        color:black;
+        }
+    }
 }
