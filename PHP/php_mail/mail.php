@@ -3,6 +3,7 @@
 $para ='cesar@';
 $asunto ='Saludos';
 $mensaje ='Hola Cesas buenos días. Te escribo para saludarte y decirte hola 😎';
+/*
 $mensaje ='
 <style>.Hoja{ background:grey; padding:20px; border-radius:10px; font-family:sans-serif; max-width:540px;
     margin:20px auto;    }
@@ -10,6 +11,7 @@ $mensaje ='
 <div class="Hoja">
 Hola Cesas buenos días. Te escribo para saludarte y decirte hola 😎
 </div>';
+*/
 // 2. Cabeceras necesarias para enviar HTML
 $cabeceras  = "MIME-Version: 1.0" . "\r\n";
 $cabeceras .= "Content-type:text/html;charset=UTF-8" . "\r\n";
