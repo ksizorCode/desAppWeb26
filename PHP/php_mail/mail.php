@@ -4,6 +4,7 @@ $para ='cesar@';
 $asunto ='Saludos';
 $mensaje ='Hola Cesas buenos días. Te escribo para saludarte y decirte hola 😎';
 /*
+Formato HTML para mostrarlo bonito
 $mensaje ='
 <style>.Hoja{ background:grey; padding:20px; border-radius:10px; font-family:sans-serif; max-width:540px;
     margin:20px auto;    }
