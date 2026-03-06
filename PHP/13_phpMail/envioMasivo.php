@@ -1,20 +1,26 @@
 <?php
 // 1. Catálogo de Productos (Base de datos de stock)
 $catalogo = [
-    "silla"   => ["titulo" => "Silla Ergonómica", "url_img" => "https://www.ofiprecios.com/wp-content/uploads/2023/11/Black-8-800x798.jpg"],
-    "rpg"     => ["titulo" => "Videojuego RPG", "url_img" => "https://www.muycomputer.com/wp-content/uploads/2020/04/juegos-de-PS5-4.jpg"],
-    "dvd"     => ["titulo" => "Pack de DVDs Serie", "url_img" => "https://static.fnac-static.com/multimedia/Images/ES/NR/f4/19/06/399860/1540-6/tsp20160822171544/Pack-James-Bond-007-Coleccion-completa-DVD.jpg"],
-    "dinero"  => ["titulo" => "Plan Maestro de Ingresos", "url_img" => "https://thumbs.dreamstime.com/z/mont%C3%B3n-del-dinero-23622650.jpg?ct=jpeg"],
-    "millon"  => ["titulo" => "Un Millón de Dólares", "url_img" => "https://thumbs.dreamstime.com/z/mont%C3%B3n-del-dinero-23622650.jpg?ct=jpeg"]
+    "silla_Egok-R5800" => ["titulo" => "Silla Ergonómica", "url_img" => "https://www.ofiprecios.com/wp-content/uploads/2023/11/Black-8-800x798.jpg"],
+    "VideogameRPG"     => ["titulo" => "Videojuego RPG", "url_img" => "https://www.muycomputer.com/wp-content/uploads/2020/04/juegos-de-PS5-4.jpg"],
+    "DVDs007"     => ["titulo" => "Pack de DVDs Serie", "url_img" => "https://static.fnac-static.com/multimedia/Images/ES/NR/f4/19/06/399860/1540-6/tsp20160822171544/Pack-James-Bond-007-Coleccion-completa-DVD.jpg"],
+    "milEuros"         => ["titulo" => "Plan Maestro de Ingresos", "url_img" => "https://thumbs.dreamstime.com/z/mont%C3%B3n-del-dinero-23622650.jpg?ct=jpeg"],
+    "millonEuros"      => ["titulo" => "Un Millón de Dólares", "url_img" => "https://thumbs.dreamstime.com/z/mont%C3%B3n-del-dinero-23622650.jpg?ct=jpeg"]
 ];
 
 // 2. Base de Datos de Clientes (con referencia al producto por su 'ID' o clave)
 $suscriptores = [
-    ["nombre" => "César", "email" => "cesar@ejemplo.com", "interes" => "silla"],
-    ["nombre" => "Himi",  "email" => "himi@test.es",    "interes" => "rpg"],
-    ["nombre" => "Luis",  "email" => "luis@correo.com",  "interes" => "dvd"],
-    ["nombre" => "David", "email" => "david@correo.com", "interes" => "dinero"],
-    ["nombre" => "Nadine","email" => "nadine@correo.com","interes" => "millon"]
+    ["nombre" => "César", "email" => "cesar@ejemplo.com",   "interes" => "silla_Egok-R5800"],
+    ["nombre" => "Himi",  "email" => "himi@test.es",        "interes" => "VideogameRPG"],
+    ["nombre" => "Luis",  "email" => "luis@correo.com",     "interes" => "DVDs007"],
+    ["nombre" => "David", "email" => "david@correo.com",    "interes" => "milEuros"],
+    ["nombre" => "Nadine","email" => "nadine@correo.com",   "interes" => "millonEuros"],
+
+    ["nombre" => "Oscar", "email" => "oscar@correo.com",    "interes" => "milEuros"],
+    ["nombre" => "Roman", "email" => "roman@correo.com",    "interes" => "VideogameRPG"],
+    ["nombre" => "J.Manu", "email" => "jmanu@correo.com",   "interes" => "DVDs007"],
+    ["nombre" => "Adalid","email" => "adalid@correo.com",   "interes" => "silla_Egok-R5800"],
+    ["nombre" => "Sergio","email" => "sergio@correo.com",   "interes" => "millonEuros"]
 ];
 
 $cabeceras  = "MIME-Version: 1.0" . "\r\n";
@@ -61,11 +67,14 @@ foreach ($suscriptores as $cliente) {
     </div>
     ";
 
+    echo '<ul>';
     if (mail($email, $asunto, $cuerpo, $cabeceras)) {
-        echo "<p style='color: green;'>✅ Enviado a: <b>$nombre</b>. Interesado en: $titulo_prod</p>";
-    } else {
-        echo "<p style='color: red;'>❌ Fallo al enviar a: $email</p>";
-    }
+        echo "<li style='color: green;'>✅ Enviado a: <b>$nombre</b>. Interesado en: $titulo_prod                 <img src='$imagen_prod' alt='$titulo_prod' style='width: 30px; border-radius: 5px;'></li>";
+        }
+    else {
+            echo "<li style='color: red;'>❌ Fallo al enviar a: $email</li>";
+        }
+echo '</ul>';
 
 // Esperar medio segundo
 usleep(500000);
