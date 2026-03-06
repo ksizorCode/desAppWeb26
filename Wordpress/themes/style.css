@@ -2,8 +2,37 @@
  * Theme Name: Temazo
  */
 
+ :root{
+    --c1:coral;
+    --ff:sans-serif;
+ }
+
+html{
+    font-family: var(--ff);
+    background:var(--c1);
+    padding: 20px;
+}
 
 body{
-    font-family: sans-serif;
-    background:coral;
+    max-width: 960px;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+}
+
+a{
+    color:var(--c1);
+    text-decoration: none;
+}
+
+nav ul{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap:6px;
+}
+
+img{
+    max-width:100%
 }
