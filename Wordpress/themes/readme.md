@@ -44,4 +44,12 @@ Documentación Oficial: https://developer.wordpress.org/themes/core-concepts/the
 
 ## Listado de funciones de WP:
 
+### vistas
+para las vistas de apartados colomsingle.php, page.pho
+get_header
+get_footer
+
+
+
+
 
