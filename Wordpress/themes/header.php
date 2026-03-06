@@ -13,11 +13,7 @@
 
 <body <?php body_class(); ?>>
     <header>
-        <a href="<?= get_home_url() ?>"><? wp_title() ?></a>
-        <nav>
-            <ul>
-                <li><a href="#">Apartado</a></li>
-            </ul>
-        </nav>
+        <a href="<?= get_home_url() ?>"><? wp_title() ?><h1><?php bloginfo( 'name' ); ?></h1></a>
+        <p><?php bloginfo( 'description' ); ?></p>
     </header>
     <main>

@@ -1,6 +1,4 @@
 <?php
-
-//activa las capacidades del THUMBNAIL o imagenes miniatura de apartado
 function mi_tema_setup() {
     // Habilita las imágenes destacadas
     add_theme_support('post-thumbnails');
