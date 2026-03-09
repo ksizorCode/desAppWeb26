@@ -1,3 +1,7 @@
+VUE: Presentación de Oscar
+
+
+
 🐍 Python - Google Colab: https://colab.research.google.com/drive/1Sg4NIoe5sDSFeCNW1pyei2sMwyWpfhjy?usp=sharing
 
 🧵 https://www.drawdb.app/editor?shareId=bc6c09735bdfc935493ffd5dd2673cd7
