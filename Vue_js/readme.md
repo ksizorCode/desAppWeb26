@@ -84,14 +84,17 @@ Movese con las flechas e intros para avanzar
 | Add ESLint/Prettier | Sí                 |Mantener el código limpio y profesional.              |
 
 
-
+Nos aparecerá algo así para:
+- Acceder a la carpeta del proyecto
+- instalar elementos necesarios 
+- instalar elementos de desarrollo
 ```
    cd VueCoffe
    npm install
    npm run dev
 ```
 
-
+Cuando todo esté instalado nos saldrá algo parecido a esto de donde podremos acceder a la plataforma:
 ```
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
