@@ -46,14 +46,13 @@ Documentación Oficial: https://developer.wordpress.org/themes/core-concepts/the
 ├──* index.php              ← Aspecto de la pagina de inicio por defecto
 ├── functions.php          ← Funciones asociadas al theme
 │
-├── /inc
-│   ├── header.php         ← <head>, <header>, navegación y apertura del <html>
-│   ├── aside.php          ← <aside> y elementos del menú laterial </aside>
-│   └── footer.php         ← <footer>, scripts y cierre del </html>
+├── header.php         ← <head>, <header>, navegación y apertura del <html>
+├── aside.php          ← <aside> y elementos del menú laterial </aside>
+├── footer.php         ← <footer>, scripts y cierre del </html>
 │
-├── single.php              ← Aspecto de un apartado individual como un post o pagina (si no hay page)
-├── page.php              ← Aspecto de página
-├── 404.php              ← Aspecto del error 404
+├── single.php        ← Aspecto de un apartado individual como un post o pagina (si no hay page)
+├── page.php          ← Aspecto de página
+├── 404.php           ← Aspecto del error 404
 ```
 
 
@@ -136,13 +135,16 @@ Documentación Oficial: https://developer.wordpress.org/themes/core-concepts/the
 | `is_404()` | True si es una página de error 404 |
 
 
-
-
-home_url()  - url de la pagina de inciio
-
-site_url()  - direccción donde lso elementos están instalados
-
-bloginfo( 'name' ); - nombre del site
+### Otras funciones
+| Función | Descripción |
+|---|---|
+|home_url()  | url de la pagina de inicio       |
+|get_home_url()| lo mismo que lo anterior |
+|site_url()  | direccción donde los elementos están instalados|
+|bloginfo( 'name' ); | nombre del site|
+|bloginfo( 'description' ); | añade la descripción de la web|
+|bloginfo( 'charset' ); | Define el charset|
+|language_attributes() | define idioma (es-ES)|
 
 
 
