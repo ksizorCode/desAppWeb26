@@ -39,7 +39,7 @@ Código recomendado:
 Documentación Oficial: https://developer.wordpress.org/themes/core-concepts/theme-structure/
 
 
-
+```
 /TituloDelTheme
 │
 ├── style.css              ← Estilo CSS con comentarios anteriores
@@ -54,7 +54,7 @@ Documentación Oficial: https://developer.wordpress.org/themes/core-concepts/the
 ├── single.php              ← Aspecto de un apartado individual como un post o pagina (si no hay page)
 ├── page.php              ← Aspecto de página
 ├── 404.php              ← Aspecto del error 404
-
+```
 
 
 
