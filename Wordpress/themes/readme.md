@@ -42,8 +42,8 @@ Documentación Oficial: https://developer.wordpress.org/themes/core-concepts/the
 ```
 /TituloDelTheme
 │
-├── style.css              ← Estilo CSS con comentarios anteriores
-├── index.php              ← Aspecto de la pagina de inicio por defecto
+├──* style.css              ← Estilo CSS con comentarios anteriores
+├──* index.php              ← Aspecto de la pagina de inicio por defecto
 ├── functions.php          ← Funciones asociadas al theme
 │
 ├── /inc
@@ -134,6 +134,16 @@ Documentación Oficial: https://developer.wordpress.org/themes/core-concepts/the
 | `is_category()` | True si es una página de categoría |
 | `is_search()` | True si es una página de resultados de búsqueda |
 | `is_404()` | True si es una página de error 404 |
+
+
+
+
+home_url()  - url de la pagina de inciio
+
+site_url()  - direccción donde lso elementos están instalados
+
+bloginfo( 'name' ); - nombre del site
+
 
 
 
