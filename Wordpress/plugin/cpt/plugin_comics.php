@@ -119,3 +119,78 @@ function comics_activar() {
     flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'comics_activar' );
+
+
+
+// Obtener plantilla de visualización para single y para archive de la ruta del plugin en lugar de la del theme:
+
+
+/**
+ * Carga las plantillas single-comic.php y archive-comic.php
+ * desde la carpeta /templates/ del plugin, con fallback al tema.
+ */
+
+function comics_cargar_plantilla( $plantilla ) {
+
+    // ¿Es un single de comic?
+    $es_single  = is_singular( 'comic' );
+
+    // ¿Es un archivo de comic o de alguna de sus taxonomías?
+    $es_archivo = is_post_type_archive( 'comic' )
+            || is_tax( array(
+                    'comic_anio',
+                    'comic_autor',
+                    'comic_serie',
+                    'comic_universo',
+                    'comic_editorial',
+                    'comic_personajes',
+            ));
+
+    if ( ! $es_single && ! $es_archivo ) {
+        return $plantilla; // no es nuestro, devolver sin tocar
+    }
+
+    // Nombre del archivo según el tipo
+    $archivo = $es_single ? 'single-comic.php' : 'archive-comic.php';
+
+    // 1. Primero busca en el tema (permite al usuario sobreescribir)
+    $en_tema = locate_template( $archivo );
+    if ( $en_tema ) {
+        return $en_tema;
+    }
+
+    // 2. Si no existe en el tema, usa la del plugin
+    $en_plugin = plugin_dir_path( __FILE__ ) . 'templates/' . $archivo;
+    if ( file_exists( $en_plugin ) ) {
+        return $en_plugin;
+    }
+
+    // 3. Fallback: devuelve la plantilla original de WordPress
+    return $plantilla;
+}
+add_filter( 'template_include', 'comics_cargar_plantilla' );
+
+
+/*
+```
+
+---
+
+## Estructura de carpetas del plugin
+```
+comics-cpt/
+├── comics-cpt.php          ← registro CPT + taxonomías + este filtro
+└── templates/
+    ├── single-comic.php
+    └── archive-comic.php
+```
+
+---
+
+## Orden de prioridad
+```
+1. /wp-content/themes/tu-tema/single-comic.php   ← el tema manda
+2. /wp-content/plugins/comics-cpt/templates/     ← fallback del plugin
+3. Plantilla por defecto de WordPress             ← último recurso
+
+*/
