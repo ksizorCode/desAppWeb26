@@ -3,11 +3,8 @@
 ## Instalación:
 
 Para que VUE funcione tenemos que instalar node.js
-<<<<<<< HEAD
-Esto es javascript a nivel de servidor
-=======
+
 Esto es javascript a nivel de servidor y descargamos la versión msi 
->>>>>>> 89ce9af54d38345eaf15184d6d305629fe7dba4b
 
 1. https://nodejs.org/en/download
 
