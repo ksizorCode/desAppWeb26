@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Café Solo",
+    "category": "Bebidas",
+    "price": 1.5
+  },
+  {
+    "id": 2,
+    "name": "Café con Leche",
+    "category": "Bebidas",
+    "price": 1.7
+  },
+  {
+    "id": 3,
+    "name": "Cappuccino",
+    "category": "Bebidas",
+    "price": 2.2
+  },
+  {
+    "id": 4,
+    "name": "Té Negro",
+    "category": "Bebidas",
+    "price": 1.6
+  },
+  {
+    "id": 5,
+    "name": "Zumo de Naranja Natural",
+    "category": "Bebidas",
+    "price": 2.5
+  },
+  {
+    "id": 6,
+    "name": "Croissant",
+    "category": "Bollería",
+    "price": 1.8
+  },
+  {
+    "id": 7,
+    "name": "Napolitana de Chocolate",
+    "category": "Bollería",
+    "price": 2
+  },
+  {
+    "id": 8,
+    "name": "Tostada con Tomate",
+    "category": "Desayunos",
+    "price": 2.2
+  },
+  {
+    "id": 9,
+    "name": "Tostada con Mantequilla y Mermelada",
+    "category": "Desayunos",
+    "price": 2
+  },
+  {
+    "id": 10,
+    "name": "Sandwich Mixto",
+    "category": "Comida",
+    "price": 3.5
+  },
+  {
+    "id": 11,
+    "name": "Bocadillo de Jamón",
+    "category": "Comida",
+    "price": 4
+  },
+  {
+    "id": 12,
+    "name": "Brownie",
+    "category": "Postres",
+    "price": 2.8
+  }
+]
