@@ -1,40 +1,53 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # 
+# # #   Ten en cuenta que he metido todo el proyecto en una carpeta llamada /apache
+# # # 
+# # #   El archivo .htacces está en la raiz, pero los archivo que componen la web no
+# # # 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-### 🍕 EJEMPLO 001 
+
+### EJEMPLO 001  - ERROR 404
 #
 # En la raiz de LOCAL (public)
 # 1. Cambiar el motor del servidor a Apache
 # 2. Crear un 404.html con mensaje divertido de Error
 # 3. Redirijimos el error 404 a ese archivo
-    ErrorDocument 404 /404.html
+    ErrorDocument 404 /apache/404.html
 
 
 # 4. Simulamos el error con una ruta inexistente:
 #   Ejemplo: http://trasteo.local//asdklfjaslñkdfklñjjasd
 #
-#  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
+# ----------------------------------------------------
 
 
-### 🍕 EJEMPLO 002
+### EJEMPLO 002 - URLS LIMPIAS
 #
-# Ahora vamos a hacer una redirección LIMPIA:
-# algo.com/servicios.php -> algo.com/servicios
+# Ahora vamos a hacer una redirección limpia para que el usuario no vea cosas tipo algo.com/servicios.php si no algo.com/servicios
 
 
 # Activamos al redirección de direcciones
 RewriteEngine On
 
 # Especificamos a donde apunta cada dirección
-RewriteRule ^home/?$                                    /index.php      [L]
-RewriteRule ^inicio/?$                                  /index.php      [L]
-
-RewriteRule ^servicios/?$                               /servicios.php  [L]
-RewriteRule ^servicios-de-psicología-en-gijon/?$        /servicios.php  [L]
-RewriteRule ^area-de-intervencion/psicologia/gijon?$    /servicios.php  [L]
-
-RewriteRule ^contacto/?$                                /contacto.php   [L]
-RewriteRule ^promociones/?$                             /promociones.php [L]
+RewriteRule ^home/?$                                /apache/casita.html      [L]
+RewriteRule ^inicio/?$                              /apache/casita.html      [L]
+RewriteRule ^servicios/?$                           /apache/servicios.html  [L]
+RewriteRule ^servicios-de-psicología-en-gijon/?$    /apache/servicios.html  [L]
+RewriteRule ^contacto/?$                            /apache/contacto.html   [L]
+RewriteRule ^promociones/?$                         /apache/promociones.html [L]
 
 # Provamos si funciona (ahora las rutas de los a href= no necesitan .php o .html, si no el nombre que acabamos de indicar ejemplo: servicios)
 
 
-#  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
+### EJEMPLO 003 - REDIRECCIONES DE INICIO
+#
+# Redirijir punto de inicio a otra carpeta o archivo que no sea la raiz en index.html o index.php
+# en mi caso he creado la carpeta apache donde está todo el proyecto
+# en lugar de index.html uso casita.html
+
+DirectoryIndex apache/casita.html
+
+RewriteEngine On
+RewriteRule ^$ /apache/casita.html [L]
