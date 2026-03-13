@@ -1,5 +1,5 @@
 
-### EJEMPLO 001 
+### 🍕 EJEMPLO 001 
 #
 # En la raiz de LOCAL (public)
 # 1. Cambiar el motor del servidor a Apache
@@ -14,7 +14,7 @@
 # ----------------------------------------------------
 
 
-### EJEMPLO 002
+### 🍕 EJEMPLO 002
 #
 # Ahora vamos a hacer una redirección limpia para que el usuario no vea cosas tipo algo.com/servicios.php si no algo.com/servicios
 
