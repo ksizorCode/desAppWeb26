@@ -3,11 +3,23 @@
   padding: 0;
 }
 :root {
-  --c1: aquamarine;
-  --cl: white;
-  --cd: black;
+  --c1: var(--color-main);
+  --cl: var(--color-light);
+  --cd: var(--color-dark);
+
+
+  /* colores */
+  --color-main:tan;
+  --color-secundary:coral;
+  
+  --color-light:white;
+  --color-dark:black;
+
+  /* font*/
   --ff: sans-serif;
   --ff2: monospace;
+  
+  /* size*/
   --mxw: 450px;
 }
 
@@ -21,10 +33,12 @@ html {
 body {
   max-width: var(--mxw);
   margin: 0 auto;
-  background: white;
+  background: var(--cl);
   padding: 20px;
   border-radius: 10px;
 }
+
+a{ color:var(--c1); text-decoration:none}
 
 nav ul {
   list-style: none;
@@ -33,12 +47,16 @@ nav ul {
   gap: 4px;
 }
 
+img{
+  max-width: 100%;
+}
+
 .debug {
   font-family: monospace;
-  color: coral;
+  color: var(--c2);
   padding: 6px;
-  outline: coral 1px solid;
+  outline: var(--c2) 1px solid;
   border-radius: 6px;
-  border-left: coral 10px solid;
+  border-left: var(--c2) 10px solid;
   margin: 20px 0;
 }
