@@ -11,7 +11,7 @@
 # 4. Simulamos el error con una ruta inexistente:
 #   Ejemplo: http://trasteo.local//asdklfjaslñkdfklñjjasd
 #
-# ----------------------------------------------------
+#  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
 
 
 ### 🍕 EJEMPLO 002
@@ -31,3 +31,6 @@ RewriteRule ^contacto/?$                            /contacto.php   [L]
 RewriteRule ^promociones/?$                         /promociones.php [L]
 
 # Provamos si funciona (ahora las rutas de los a href= no necesitan .php o .html, si no el nombre que acabamos de indicar ejemplo: servicios)
+
+
+#  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
