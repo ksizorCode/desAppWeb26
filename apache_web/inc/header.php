@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="http://trasteo.local/apache/assets/style.css">
+    <link rel="stylesheet" href="estilo">
 </head>
 <body>
 
@@ -23,8 +23,3 @@
             </ul>
         </nav>
     </header>
-
-    <h1>Woops!!</h1>
-    <p>Se ha producido un error 404. La página que estás buscando no existe. <a href="inicio">Vuelve al comienzo</a>.</p>
-</body>
-</html>

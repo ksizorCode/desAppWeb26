@@ -1,0 +1,91 @@
+# ============================================================
+#
+#   El archivo .htaccess está en la raíz,
+#   pero el resto de archivos están en /apache_web
+#
+# ============================================================
+#
+#   ÍNDICE
+#   001 · Error 404 personalizado
+#   002 · URLs limpias
+#   003 · Archivo de arranque
+#
+# ============================================================
+
+
+
+# ============================================================
+#   001 · ERROR 404 PERSONALIZADO
+# ============================================================
+#
+#   Redirige cualquier ruta inexistente a una página
+#   de error personalizada con mensaje divertido.
+#
+#   Puedes probarlo con una ruta inventada:
+#   → http://trasteo.local/esto-no-existe
+#
+# ------------------------------------------------------------
+
+ErrorDocument 404 /apache_web/404.php
+
+
+
+# ============================================================
+#   002 · URLs LIMPIAS
+# ============================================================
+#
+#   El usuario ve URLs limpias tipo: trasteo.local/servicios
+#   en lugar de: trasteo.local/servicios.php
+#
+#   Los href= del HTML deben usar el nombre limpio:
+#   → <a href="/servicios"> en lugar de "/servicios.php"
+#
+# ------------------------------------------------------------
+
+RewriteEngine On
+
+#   · Inicio
+RewriteRule ^home/?$                             /apache_web/casita.php       [L]
+RewriteRule ^inicio/?$                           /apache_web/casita.php       [L]
+
+#   · Servicios
+RewriteRule ^servicios/?$                        /apache_web/servicios.php    [L]
+RewriteRule ^servicios-de-psicologia-en-gijon/?$ /apache_web/servicios.php    [L]
+
+#   · Contacto
+RewriteRule ^contacto/?$                         /apache_web/contacto.php     [L]
+
+#   · Promociones
+RewriteRule ^promociones/?$                      /apache_web/promociones.php  [L]
+
+#   · CSS
+RewriteRule ^estilo/?$                           /apache_web/assets/style.css  [L]
+
+
+
+# ============================================================
+#   003 · ARCHIVO DE ARRANQUE
+# ============================================================
+#
+#   En lugar de index.php usamos casita.php dentro de /apache
+#   como punto de entrada principal del proyecto.
+#
+#   Funciona tanto cargando la raíz directamente
+#   como escribiendo trasteo.local/ en el navegador.
+#
+# ------------------------------------------------------------
+
+DirectoryIndex apache_web/casita.php
+
+RewriteRule ^$ /apache_web/casita.php [L]
+
+#
+# algo.com/aspiradora-dyson-525A 
+#
+# MySQL => Tabla Productos
+#       · ID
+#       · Nombre
+#       . slug
+#
+# algo.com/productos.php?id=3434
+# 
