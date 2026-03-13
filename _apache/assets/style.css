@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --c1: aquamarine;
+  --cl: white;
+  --cd: black;
+  --ff: sans-serif;
+  --ff2: monospace;
+  --mxw: 450px;
+}
+
+html {
+  font-family: sans-serif;
+  padding: 20px;
+  background: linear-gradient(var(--c1), var(--cl));
+  min-height: 100dvh;
+}
+
+body {
+  max-width: var(--mxw);
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 4px;
+}
+
+.debug {
+  font-family: monospace;
+  color: coral;
+  padding: 6px;
+  outline: coral 1px solid;
+  border-radius: 6px;
+  border-left: coral 10px solid;
+  margin: 20px 0;
+}
