@@ -1,2 +1,11 @@
-# esto es un archivo .htaccess
-# (aún no hay nada)
+
+# En la raiz de LOCAL (public)
+# 1. Cambiar el motor del servidor a Apache
+# 2. Crear un 404.html con mensaje divertido de Error
+# 3. Redirijimos el error 404 a ese archivo
+    ErrorDocument 404 /404.html
+
+
+# 4. Simulamos el error con una ruta inexistente:
+#   Ejemplo: http://trasteo.local//asdklfjaslñkdfklñjjasd
+
