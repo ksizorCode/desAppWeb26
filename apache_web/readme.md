@@ -78,6 +78,66 @@ INSERT INTO videojuegos (nombre, precio, slug, imagen, descripcion) VALUES
 ```
 
 
+### 02 Testeamos la consulta
+Antes de continuar vamos a testear la consulta desde AdminNeo o phpmyadmin (la plataforma que estés usando para ver y gestionar la DB):
+
+Ejemplo:
+```sql
+SELECT * FROM videojuegos WHERE slug = 'gta-san-andreas'
+```
+
+### 03 Reprogramamos productos.php:
+En este caso voy a mostrar todo el código 'a  lo bruto', pero recuerda que en un proyecto real lo ideal sería particionarlo, hacer estructuras reutilizables, funciones, componentes, etc..
+
+```php
+
+<?php
+// Capturamos el valor que llega via URL slug=aqui-hay-algo
+$titulo=$_GET['slug'];
+
+
+/*
+ * BASE DE DATOS -----------------------------------
+ */
+
+// Credenciales de acceso a la DB:
+$SERV = "localhost";
+$USER = "root";
+$PASS = "root";
+$DBNM = "local";
+
+// Crear conexión
+$conn = new mysqli($SERV, $USER, $PASS, $DBNM);
+
+// Chequear conexción
+if ($conn->connect_error) { die("Conexión fallida: " . $conn->connect_error); }
+
+//Consulta:
+$sql = "SELECT * FROM videojuegos WHERE slug = '$titulo'";
+
+// Ejecutar Consulta (SQL query)
+$result = $conn->query($sql);
+
+// Procesar Resultado
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo "<h1>".$row["nombre"]. "<h1>";
+    echo "<img src='assets/img/".$row["imagen"]. "' alg=".$row[nombre].">";
+    echo "<p>".$row["descripcion"]. "</p>";
+    echo "<span>P.V.P. ".$row["precio"]. "€<span>";
+  }
+} else {
+  echo "<p>El producto solicitado no existe</p>";
+}
+
+//Cerramos Conexión
+$conn->close();
+?>
+
+
+
+
+
 
 
    
