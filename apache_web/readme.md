@@ -11,6 +11,7 @@ https://dominio.com/productos/kingdom-hearts-III
 https://dominio.com/productos.php?slug=kingdom-hearts-III
 ```
 
+----
 
 
 `.htaccess`
@@ -20,6 +21,7 @@ RewriteEngine On
 RewriteRule ^productos/([a-zA-Z0-9-]+)/?$ productos.php?slug=$1 [L,QSA]
 
 ```
+---
 
 `productos.php`
 ```php
@@ -33,4 +35,4 @@ RewriteRule ^productos/([a-zA-Z0-9-]+)/?$ productos.php?slug=$1 [L,QSA]
 </main>
 
 <footer>    <p>&copy;  Shop International</p></footer>
-``
+```
