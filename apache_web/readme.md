@@ -33,6 +33,4 @@ RewriteRule ^productos/([a-zA-Z0-9-]+)/?$ productos.php?slug=$1 [L,QSA]
 <main>
   <h1> <?=$titulo?></h1>
 </main>
-
-<footer>    <p>&copy;  Shop International</p> </footer>
 ```
