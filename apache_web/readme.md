@@ -134,7 +134,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videogame Shop - </title>
+    <title>Videogame Shop - AQUÍ DEBERÍA IR EL TITULO DEL VIDEOJUEGO</title>
     <style>
         body{
             font-family: sans-serif;
@@ -174,7 +174,6 @@ if ($result->num_rows > 0) {
     
 </body>
 </html>
-?>
 ```
 
 
