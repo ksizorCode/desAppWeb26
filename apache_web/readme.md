@@ -13,7 +13,7 @@ https://dominio.com/productos.php?slug=kingdom-hearts-III
 
 ----
 
-## FASE 001
+## 🐊FASE 001
 
 `.htaccess`
 ```
@@ -39,7 +39,7 @@ RewriteRule ^productos/([a-zA-Z0-9-]+)/?$ productos.php?slug=$1 [L,QSA]
 Para testearlo escribe: producto/lo-que-tu-quieras y debería aparecer ese contenido escrito como h1
 
 ---
-## FASE 002
+## 🦎 FASE 002
 
 1. Creamos tabla  SQL `videojuegos` que contenga un campo slug
 2. Probamos a hacer la consulta en la propia base de datos a traves del slug
