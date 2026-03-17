@@ -34,3 +34,5 @@ RewriteRule ^productos/([a-zA-Z0-9-]+)/?$ productos.php?slug=$1 [L,QSA]
   <h1> <?=$titulo?></h1>
 </main>
 ```
+
+Para testearlo escribe: producto/lo-que-tu-quieras y debería aparecer ese contenido escrito como h1
