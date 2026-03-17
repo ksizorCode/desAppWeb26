@@ -92,7 +92,6 @@ En este caso voy a mostrar todo el código 'a  lo bruto', pero recuerda que en u
 ```php
 
 <?php
-<?php
 // Capturamos el valor que llega via URL slug=aqui-hay-algo
 $titulo = $_GET['slug'];
 
@@ -109,6 +108,9 @@ $DBNM = "local";
 
 // Crear conexión
 $conn = new mysqli($SERV, $USER, $PASS, $DBNM);
+
+// 🔹 Forzar UTF-8 real (IMPORTANTE)
+$conn->set_charset("utf8mb4");
 
 // Chequear conexción
 if ($conn->connect_error) {
@@ -157,7 +159,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()):?>
 
     <h1><? echo $row['nombre']?> </h1>
-    <img src="<? $row['imagen']?>" alt="<?=$row['nombre']?>">
+    <img src="<? echo $row['imagen']?>" alt="<?=$row['nombre']?>">
     <p><? echo $row['descripcion']?></p>
     <span>P.V.P. <? echo  $row['precio'] ?>€<span>
     
