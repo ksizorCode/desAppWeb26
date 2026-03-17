@@ -68,13 +68,13 @@ Llenamos la tabla con datos:
 ```sql
 INSERT INTO videojuegos (nombre, precio, slug, imagen, descripcion) VALUES
 ('The Legend of Zelda: Ocarina of Time', 59.99, 'zelda-ocarina-of-time', 'https://static.wikia.nocookie.net/zelda/images/4/4f/Car%C3%A1tula_OoT_3D.jpg/revision/latest/scale-to-width-down/1000?cb=20150816123006&path-prefix=es', 'Aventura épica de Link en Hyrule considerada uno de los mejores juegos de la historia.'),
-('Super Mario Bros', 29.99, 'super-mario-bros', 'https://en.wikipedia.org/wiki/Super_Mario_Bros.#/media/File:Super_Mario_Bros._box.png', 'El clásico de plataformas que definió a toda una generación.'),
+('Super Mario Bros', 29.99, 'super-mario-bros', 'https://upload.wikimedia.org/wikipedia/en/0/03/Super_Mario_Bros._box.png', 'El clásico de plataformas que definió a toda una generación.'),
 ('Final Fantasy VII', 49.99, 'final-fantasy-vii', 'https://upload.wikimedia.org/wikipedia/en/c/c2/Final_Fantasy_VII_Box_Art.jpg', 'RPG legendario con Cloud y Sephiroth en una historia inolvidable.'),
 ('Metal Gear Solid', 39.99, 'metal-gear-solid', 'https://en.wikipedia.org/wiki/Metal_Gear_Solid_%281998_video_game%29#/media/File:Metal_Gear_Solid_cover_art.png', 'Acción y sigilo con una narrativa revolucionaria.'),
 ('Grand Theft Auto: San Andreas', 34.99, 'gta-san-andreas', 'https://m.media-amazon.com/images/I/71aaHRac81L._AC_SY741_.jpg', 'Mundo abierto enorme con libertad total en Los Santos.'),
 ('Half-Life 2', 44.99, 'half-life-2', 'https://upload.wikimedia.org/wikipedia/en/2/25/Half-Life_2_cover.jpg?_=20200629082017', 'Shooter innovador con físicas avanzadas y gran narrativa.'),
-('The Witcher 3: Wild Hunt', 59.99, 'the-witcher-3', 'witcher3.jpg', 'RPG moderno con mundo abierto y decisiones complejas.'),
-('Dark Souls', 39.99, 'dark-souls', 'dark-souls.jpg', 'Juego desafiante que redefinió la dificultad en videojuegos.');
+('The Witcher 3: Wild Hunt', 59.99, 'the-witcher-3', 'https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg', 'RPG moderno con mundo abierto y decisiones complejas.'),
+('Dark Souls', 39.99, 'dark-souls', 'https://upload.wikimedia.org/wikipedia/en/8/8d/Dark_Souls_Cover_Art.jpg', 'Juego desafiante que redefinió la dificultad en videojuegos.');
 ```
 
 
