@@ -187,6 +187,14 @@ Una vez reprogramado productos.php vamos a insertar la siguiente url:
  - http://tuservidor.local/productos/zelda-ocarina-of-time
 
 
+### 05 Indice de Productos
+Hasta ahora hemos echo el interfaz para mostrar el producto. Ahora vamos a crear la lista de productos a modo de indice de contenido.
+Vamos a llamar a este archivo: 'tienda.php'. 
+La tienda NO recibirá por el momento nada a través de GET (a no ser que en un futuro hiciésemos un sistema de clasificación por categorías, orden alfavetico / temporal, productos en oferta, productos destacados, etc..).
+
+Simplemente mostrará una lista de productos y un enlace a productos/nombre-del-producto con la URL limpia obtenida de slug
+
+
 
    
 
