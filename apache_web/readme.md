@@ -196,6 +196,141 @@ La tienda NO recibirá por el momento nada a través de GET (a no ser que en un 
 Simplemente mostrará una lista de productos y un enlace a productos/nombre-del-producto con la URL limpia obtenida de slug
 
 
+`tienda.php`
+
+```php
+
+<?php
+
+/*
+ * BASE DE DATOS -----------------------------------
+ */
+
+// Credenciales de acceso a la DB:
+$SERV = "localhost";
+$USER = "root";
+$PASS = "root";
+$DBNM = "local";
+
+// Crear conexión
+$conn = new mysqli($SERV, $USER, $PASS, $DBNM);
+
+// 🔹 Forzar UTF-8 real (IMPORTANTE)
+$conn->set_charset("utf8mb4");
+
+// Chequear conexción
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+//Consulta:
+$sql = "SELECT * FROM videojuegos";
+
+// Ejecutar Consulta (SQL query)
+$result = $conn->query($sql);
+
+//Almacenamos los resultados de la consulta en un array
+$datos = []; // array vacío
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $datos[] = $row; // metemos cada fila en el array
+    }
+}
+
+
+//Cerramos Conexión
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videogame Shop - </title>
+    <link rel="stylesheet" href="./estilo_tienda.css">
+</head>
+<body>
+
+
+<header>
+    Videogame Shop
+</header>
+
+<main>
+    <ul class="productos">
+
+
+
+<? foreach ($datos as $item): ?>
+    <li>
+        <a href="productos/<?= $item['slug'] ?>">
+            <img src="<?= $item['imagen'] ?>" alt="<?= $item['nombre'] ?>">
+            <h2><?= $item['nombre'] ?></h2>
+        </a>
+    </li>
+<? endforeach; ?>
+
+</ul>
+</main>
+<footer>&copy; Videogame Shop 2026</footer>
+    
+</body>
+</html>
+
+```
+
+
+
+---
+Estilo CSS:
+
+`estilo_tienda.css`
+```css
+body{
+            font-family: sans-serif;
+            max-width:960px;
+            margin:20px auto;
+            padding: 20px;
+        }
+
+a{
+    text-decoration:none;
+    color:lightcoral;
+}
+
+
+    ul{
+
+        list-style:none;
+        padding-left:0;
+        display: flex;
+        flex-wrap:wrap;
+        gap:4px;
+    }
+    li{
+        flex: 1 1 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius:10px;
+        padding:4px;
+
+        h2{
+            font-size:10px;
+            text-transform:uppercase;
+        }
+        
+        img{
+            aspect-ratio:1/1.3;
+            object-fit:cover;
+        }
+    }
+
+    img{
+        max-width:100%;
+        border-radius:8px;
+    }
+```
 
    
 
