@@ -67,7 +67,7 @@ Llenamos la tabla con datos:
 
 ```sql
 INSERT INTO videojuegos (nombre, precio, slug, imagen, descripcion) VALUES
-('The Legend of Zelda: Ocarina of Time', 59.99, 'zelda-ocarina-of-time', 'zelda.jpg', 'Aventura épica de Link en Hyrule considerada uno de los mejores juegos de la historia.'),
+('The Legend of Zelda: Ocarina of Time', 59.99, 'zelda-ocarina-of-time', '[zelda.jpg](https://static.wikia.nocookie.net/zelda/images/4/4f/Car%C3%A1tula_OoT_3D.jpg/revision/latest/scale-to-width-down/1000?cb=20150816123006&path-prefix=es)', 'Aventura épica de Link en Hyrule considerada uno de los mejores juegos de la historia.'),
 ('Super Mario Bros', 29.99, 'super-mario-bros', 'mario.jpg', 'El clásico de plataformas que definió a toda una generación.'),
 ('Final Fantasy VII', 49.99, 'final-fantasy-vii', 'ff7.jpg', 'RPG legendario con Cloud y Sephiroth en una historia inolvidable.'),
 ('Metal Gear Solid', 39.99, 'metal-gear-solid', 'mgs.jpg', 'Acción y sigilo con una narrativa revolucionaria.'),
@@ -157,7 +157,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()):?>
 
     <h1><? echo $row['nombre']?> </h1>
-    <img src="assets/img/<? $row['imagen']?>" alt="<?=$row['nombre']?>">
+    <img src="<? $row['imagen']?>" alt="<?=$row['nombre']?>">
     <p><? echo $row['descripcion']?></p>
     <span>P.V.P. <? echo  $row['precio'] ?>€<span>
     
