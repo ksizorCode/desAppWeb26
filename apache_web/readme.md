@@ -45,7 +45,7 @@ Para testearlo escribe: producto/lo-que-tu-quieras y debería aparecer ese conte
 2. Probamos a hacer la consulta en la propia base de datos a traves del slug
 3. Reprogramamos el `productos.php` para que haga la consulta a la base de datos a través ddel valor slug testeado anteriorimente
 4. Probamos las URL limpias
-5. Hacemos un index que liste lod productos
+5. Hacemos un index que liste los productos
 
 
 ### 01 Creamos tabla
@@ -92,8 +92,9 @@ En este caso voy a mostrar todo el código 'a  lo bruto', pero recuerda que en u
 ```php
 
 <?php
+<?php
 // Capturamos el valor que llega via URL slug=aqui-hay-algo
-$titulo=$_GET['slug'];
+$titulo = $_GET['slug'];
 
 
 /*
@@ -110,7 +111,9 @@ $DBNM = "local";
 $conn = new mysqli($SERV, $USER, $PASS, $DBNM);
 
 // Chequear conexción
-if ($conn->connect_error) { die("Conexión fallida: " . $conn->connect_error); }
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
 
 //Consulta:
 $sql = "SELECT * FROM videojuegos WHERE slug = '$titulo'";
@@ -118,25 +121,70 @@ $sql = "SELECT * FROM videojuegos WHERE slug = '$titulo'";
 // Ejecutar Consulta (SQL query)
 $result = $conn->query($sql);
 
-// Procesar Resultado
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    echo "<h1>".$row["nombre"]. "<h1>";
-    echo "<img src='assets/img/".$row["imagen"]. "' alg=".$row[nombre].">";
-    echo "<p>".$row["descripcion"]. "</p>";
-    echo "<span>P.V.P. ".$row["precio"]. "€<span>";
-  }
-} else {
-  echo "<p>El producto solicitado no existe</p>";
-}
+
 
 //Cerramos Conexión
 $conn->close();
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videogame Shop - </title>
+    <style>
+        body{
+            font-family: sans-serif;
+            max-width:660px;
+            margin:20px auto;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<header>
+    Videogame Shop
+</header>
+
+<main>
+<?
+// Procesar Resultado
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()):?>
+
+    <h1><? echo $row['nombre']?> </h1>
+    <img src="assets/img/<? $row['imagen']?>" alt="<?=$row['nombre']?>">
+    <p><? echo $row['descripcion']?></p>
+    <span>P.V.P. <? echo  $row['precio'] ?>€<span>
+    
+    <? endwhile;
+} else {
+    echo "<p>El producto solicitado no existe</p>";
+}
+
+?>
+</main>
+<footer>&copy; Videogame Shop 2026</footer>
+    
+</body>
+</html>
+?>
+```
 
 
 
+### 04  Probamos las URL limpias
+
+Una vez reprogramado productos.php vamos a insertar la siguiente url:
+
+ - http://tuservidor.local/productos/super-mario-bros
+ - http://tuservidor.local/productos/half-life-2
+ - http://tuservidor.local/productos/the-witcher-3
+ - http://tuservidor.local/productos/zelda-ocarina-of-time
 
 
 
