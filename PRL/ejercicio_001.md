@@ -2,6 +2,7 @@
 Crea como prefieras (individual, en grupos o en parejas): Una aplicación para el movil (o web responsive) que tenga la PRL como temática principal. Añade una actividad interactiva hecha con Genialy u otra herramienta similar (puede ser un quiz, preguntas y respuestas, etc..)
 
 ## Grupo 1
+👨‍👨‍👦 Himi y Luis
 Introducción y normativa
 Conceptos: riesgo, daño, prevención
 Salud laboral en oficina (fatiga visual, sedentarismo)
@@ -17,6 +18,7 @@ Derechos y deberes	Pantalla tipo “guía básica”
 
 
 ## Grupo 2
+👨‍👨‍👦 Roman, Cesar, Sergio 1
 Riesgos generales
 Riesgos comunes en oficina:
 - Posturas incorrectas
@@ -35,6 +37,7 @@ Casos prácticos con imágenes?
 ¿Cuál es el rango de temperatura recomendado en una oficina?
 
 ## Grupo 3
+👨‍👨‍👦 Nadine, JoseM.
 Riesgos específicos + EPI
 Ergonomía informática:
 - Altura pantalla
@@ -54,6 +57,7 @@ Selector de EPI según problema
 
 
 ## Grupo 4
+👨‍👨‍👦 Oscar, David
 Ergonomía y salud
 Posturas correctas
 Manipulación de equipos (PCs, cajas)
