@@ -47,3 +47,29 @@ Incendios (equipos eléctricos)
 Protocolo PAS
 Primeros auxilios básicos
 Simulación de emergencia
+
+
+--
+En total ha de responder a los siguientes conceptos:
+
+
+¿Qué factores pueden provocar fatiga visual en el trabajo con pantallas?
+¿Con qué frecuencia es recomendable realizar pausas visuales durante el trabajo?
+¿Cómo debe colocarse la pantalla en relación con la altura de los ojos?
+¿Cuál es la postura más adecuada al trabajar sentado frente al ordenador?
+¿Qué riesgos pueden derivarse del uso continuo del teclado y el ratón?
+¿Qué medidas ayudan a prevenir problemas en muñecas y manos como el túnel carpiano?
+¿Cómo debe ser la iluminación en un puesto de trabajo con pantallas?
+¿Cuál es el rango de temperatura recomendado en una oficina?
+¿Qué se debe hacer cuando aparecen molestias físicas durante el trabajo?
+¿Qué elementos favorecen una postura correcta en el puesto de trabajo?
+¿Qué riesgos pueden generar los cables mal organizados en un entorno laboral?
+¿Qué prácticas ayudan a reducir la fatiga mental en el trabajo?
+¿Qué acciones forman parte de una buena ergonomía en el puesto de trabajo?
+¿Cuál es la distancia adecuada entre los ojos y la pantalla?
+¿Qué es la fatiga postural y por qué se produce?
+¿Qué medidas ayudan a evitar reflejos o deslumbramientos en la pantalla?
+¿En qué consiste una pausa activa durante la jornada laboral?
+¿Qué efectos puede tener el ruido en el entorno de trabajo?
+¿Qué consecuencias puede tener trabajar muchas horas sin descanso?
+¿Cómo se debe actuar ante un equipo informático defectuoso?
