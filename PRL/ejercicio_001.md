@@ -58,27 +58,36 @@ Simulación de emergencia
 En total ha de responder a los siguientes conceptos:
 
 Grupo 1
-Introducción y normativa	¿Qué factores pueden provocar fatiga visual en el trabajo con pantallas?
+Introducción y normativa
+¿Qué factores pueden provocar fatiga visual en el trabajo con pantallas?
 ¿Con qué frecuencia es recomendable realizar pausas visuales durante el trabajo?
 ¿Qué consecuencias puede tener trabajar muchas horas sin descanso?
 ¿Qué prácticas ayudan a reducir la fatiga mental en el trabajo?
+
 Grupo 2
-Riesgos generales	¿Qué riesgos pueden generar los cables mal organizados en un entorno laboral?
+Riesgos generales
+¿Qué riesgos pueden generar los cables mal organizados en un entorno laboral?
 ¿Qué efectos puede tener el ruido en el entorno de trabajo?
 ¿Cómo debe ser la iluminación en un puesto de trabajo con pantallas?
 ¿Cuál es el rango de temperatura recomendado en una oficina?
+
 Grupo 3
-Riesgos específicos + EPI	¿Qué riesgos pueden derivarse del uso continuo del teclado y el ratón?
+Riesgos específicos + EPI
+¿Qué riesgos pueden derivarse del uso continuo del teclado y el ratón?
 ¿Qué medidas ayudan a prevenir problemas en muñecas y manos como el túnel carpiano?
 ¿Qué acciones forman parte de una buena ergonomía en el puesto de trabajo?
 ¿Qué elementos favorecen una postura correcta en el puesto de trabajo?
+
 Grupo 4
-Ergonomía y salud	¿Cómo debe colocarse la pantalla en relación con la altura de los ojos?
+Ergonomía y salud
+¿Cómo debe colocarse la pantalla en relación con la altura de los ojos?
 ¿Cuál es la postura más adecuada al trabajar sentado frente al ordenador?
 ¿Cuál es la distancia adecuada entre los ojos y la pantalla?
 ¿Qué es la fatiga postural y por qué se produce?
 ¿Qué se debe hacer cuando aparecen molestias físicas durante el trabajo?
 ¿En qué consiste una pausa activa durante la jornada laboral?
+
 Grupo 5
-Emergencias y primeros auxilios	¿Cómo se debe actuar ante un equipo informático defectuoso?
+Emergencias y primeros auxilios
+¿Cómo se debe actuar ante un equipo informático defectuoso?
 ¿Qué medidas ayudan a evitar reflejos o deslumbramientos en la pantalla?
