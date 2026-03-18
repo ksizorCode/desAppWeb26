@@ -7,6 +7,7 @@ Conceptos: riesgo, daño, prevención
 Salud laboral en oficina (fatiga visual, sedentarismo)
 Ley 31/1995 (resumen)
 Derechos y deberes	Pantalla tipo “guía básica”
+--> Interactivo en Genialy o Similar
 
 
 Grupo 2
@@ -19,6 +20,7 @@ Riesgos comunes en oficina:
 Señalización
 Identificador de riesgos (checklist interactivo)
 Casos prácticos con imágenes?
+--> Interactivo en Genialy o Similar
 
 Grupo 3
 Riesgos específicos + EPI
@@ -30,6 +32,7 @@ EPI en oficina (menos comunes pero reales):
 - Gafas protección luz azul
 - Reposamuñecas	Simulador de puesto de trabajo ideal
 Selector de EPI según problema
+--> Interactivo en Genialy o Similar
 
 Grupo 4
 Ergonomía y salud
@@ -39,6 +42,7 @@ Estrés laboral (burnout)
 Organización del trabajo
 Guía interactiva + rutinas
 Timer de descansos
+--> Interactivo en Genialy o Similar
 
 Grupo 5
 Emergencias y primeros auxilios
@@ -47,6 +51,7 @@ Incendios (equipos eléctricos)
 Protocolo PAS
 Primeros auxilios básicos
 Simulación de emergencia
+--> Interactivo en Genialy o Similar
 
 
 --
