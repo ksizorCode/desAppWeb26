@@ -54,7 +54,6 @@ Simulación de emergencia
 --> Interactivo en Genialy o Similar
 
 --------------------------------------------------------------------------------------------------
-
 En total ha de responder a los siguientes conceptos:
 
 Grupo 1
