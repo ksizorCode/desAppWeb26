@@ -1,6 +1,5 @@
-📱 Proyecto PRL – Aplicación para entorno informático/oficina
-🧩 Estructura general del proyecto
-Grupo	Módulo	Contenidos adaptados a oficina / informática	Funcionalidad en la app
+📱 Proyecto PRL
+Crea como prefieras (individual, en grupos o en parejas): Una aplicación para el movil (o web responsive) que tenga la PRL como temática principal. Añade una actividad interactiva hecha con Genialy u otra herramienta similar (puede ser un quiz, preguntas y respuestas, etc..)
 
 Grupo 1
 Introducción y normativa
