@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li{
+            list-style: none;
+            padding-left: 0;
+            width: 50px;
+            aspect-ratio: 1/1;
+            display: inline-block;
+            background-color: red;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            font-family: sans-serif;
+            font-weight: bold;
+            color:white;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+
+    <input oninput="cantidad()" type="range" id="intervalo" value="15" min="0" max="200">
+    <span id="valor">100</span>  
+
+    <ul></ul>
+  
+
+    <script>
+function   cantidad(){
+    //OBTENER VALORES
+    // leer valor de intervalo
+    let intervalo = document.getElementById('intervalo').value;
+    //actualizar numero en pantalla
+    document.getElementById('valor').innerText = intervalo;
+    
+    //PINTAR
+    // crear variable de almacenamiento de HTML
+    let miHTML='';
+    // bucle para iterar la cantidad de elementos a crear
+        for(i=0; i<intervalo; i++){
+            miHTML += `<li >${i}</li>`;
+        }
+    //insertar HTML en el DOM
+    document.querySelector('ul').innerHTML = miHTML;
+}
+
+cantidad();
+
+    </script>
+</body>
+</html>

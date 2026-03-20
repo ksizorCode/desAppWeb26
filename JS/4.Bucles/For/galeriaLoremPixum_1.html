@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            max-width:540px;
+            margin:0 auto;
+            padding: 0 20px;
+        }
+
+        ul{
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap:wrap;
+            gap:5px;
+        }
+        li{
+            font-size: 8px;
+            cursor: pointer;
+        }
+        li:hover{
+            scale:1.1;
+            background: grey;
+            outline:grey solid 2px;
+        }
+
+        img{
+            max-width: 100%;
+            display: block;
+            border-radius: 6px;;
+        }
+    </style>
+</head>
+<body>
+<h1>Galería Lorem Pixum </h1>
+    <ul></ul>
+    <script>
+
+        function fragmento(){
+            //Definimos variable que almacenará el contenido
+            let miHTML='';
+
+            //bucle
+            for(i=0; i<20; i++){
+                miHTML+=`
+                <li onclick="cargarImg(${i})">
+                <img src="https://picsum.photos/id/${i}/50/50" alt="Elemento ${i}">
+                <p>Elemento ${i}</p>
+                </li>`;
+            }
+
+            //devolvemos resultado
+            return miHTML;
+        }
+
+        //mostramos en pantalla el restultado de la función llamada
+        document.querySelector('ul').innerHTML= fragmento();
+
+</script>
+</body>
+</html>

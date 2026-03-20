@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:10px;
+
+            background: tan;
+        }
+        ul{
+            background: white;
+            padding: 20px;
+            border-radius:10px;
+            list-style: none;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <ul></ul>
+    
+    <script>
+        // Lo que vamos a pintar
+        let libreta='';
+
+        for(y=1;y<=20;y++){
+            //bucle que repite las acciones
+            libreta +='<ul>';
+            libreta +=`<strong>Tabla del ${y}</strong>`;
+            for(i=1;i<=10;i++){
+                //cada iteración
+                libreta +=`<li>${y} x ${i} = ${y*i}</li>`;
+            }
+            libreta +='</ul>';
+        }
+
+
+
+        //pintar en pantalla
+        document.body.innerHTML=libreta;
+
+    </script>
+</body>
+</html>

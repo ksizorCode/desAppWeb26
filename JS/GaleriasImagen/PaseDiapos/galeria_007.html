@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="galeria">
+        <img src="" alt="">
+        <div class="botonera">
+            <button id="btnAnt" onclick="cargarAnt()">Ant</button>
+            <button id="btnSig" onclick="cargarSig()">Sig</button>
+        </div>
+    </section>
+<script>
+    // DATOS
+    // Lista de fotos
+    const fotos = [
+        "https://picsum.photos/id/236/200/300",
+        "https://picsum.photos/id/238/200/300",
+        "https://picsum.photos/id/239/200/300",
+        "https://picsum.photos/id/240/200/300",
+        "https://picsum.photos/id/241/200/300"
+    ];
+
+    let indiceActual = 0;
+
+    function cargar(direccion) {
+        indiceActual += direccion;
+
+        // Ocultar o mostrar botones según el índice actual
+        document.getElementById('btnAnt').style.display = (indiceActual <= 0) ? 'none' : 'inline';
+        document.getElementById('btnSig').style.display = (indiceActual >= fotos.length - 1) ? 'none' : 'inline';
+
+        // Asegurarse de que el índice esté dentro de los límites
+        if (indiceActual < 0) {
+            indiceActual = 0;
+        } else if (indiceActual >= fotos.length) {
+            indiceActual = fotos.length - 1;
+        }
+
+        document.querySelector('img').src = fotos[indiceActual];
+    }
+
+    // Cargar la primera imagen al inicio
+    cargar(0);
+</script>
+</body>
+
+</html>

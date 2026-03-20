@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            max-width:320px;
+            margin:0 auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90dvh;
+        }
+        .cara{
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+
+            
+        }
+        img{
+            max-width: 100%;
+        }
+
+        .controles{
+            margin-top: 50px;;
+            text-align: center;
+        }
+
+        button{
+            background:none;
+            border:solid tan 1px;
+            color:tan;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="avatarFraggle">
+        <div class="cara">
+        <img id="ojosFraggle" src="imagenes/ojos/ojo0.png" alt="">
+        <img id="bocaFraggle" src="imagenes/bocas/boca0.png" alt="">
+    </div>
+
+
+    <div class="controles">
+        <button onclick="cargarOjos()">ojos</button>
+        <button onclick="cargarBocas()">bocas</button>
+    </div>
+
+
+    </section>
+
+
+    <script>
+        function cargarOjos(){
+            document.querySelector('#ojosFraggle').src='imagenes/ojos/ojo1.png';
+        }
+
+        function cargarBocas(){
+            document.querySelector('#bocaFraggle').src='imagenes/bocas/boca1.png';
+
+        }
+
+</script>
+    
+</body>
+</html>

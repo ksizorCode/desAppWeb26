@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle FOR</title>
+</head>
+
+<body>
+    <h1>Bucle For</h1>
+
+    <ul></ul>
+
+    <script>
+        // DATOS
+        // Array con lista de Frutas
+        let frutas = ['manzana', 'pera', 'uva'];
+
+        // - - - - - - - - - - - - - - - - - - 
+
+
+
+            let miHTML = "";
+
+            // Bucle for para recorrer todos los elementos del array
+            // y vamos añadiendo cada elemento a la variable miHTML
+            for (let i = 0; i < frutas.length; i++) {
+                miHTML += "<li class='cosa"+i+"'>Objeto " + i + ":" + frutas[i] + "</li>";
+            }
+
+            // Pintamos en el HTML dentro del ul
+            document.querySelector('ul').innerHTML = miHTML;
+     
+
+    </script>
+</body>
+
+</html>

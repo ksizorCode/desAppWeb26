@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #000;
+            color: white;
+            padding: 20px;
+        }
+
+        header {
+            padding: 20px;
+        }
+
+        #contenido {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        #contenido img {
+            max-height: 320px;
+            aspect-ratio: 1/1.15;
+            border-radius: 2px;
+            object-fit: contain;
+        }
+
+        #contenido h1 {
+            font-size: 1.5em;
+            color: #a9a9a9;
+        }
+
+        #contenido {
+            text-align: center;
+        }
+
+
+        button {
+            color: yellow;
+            background: none;
+            border: yellow 1px solid;
+            border-radius: 4px;
+            margin: 0 4px
+        }
+
+        header {
+            display: flex;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Star Wars</h1>
+        <div class="g1">
+            <button onclick="saludar()">Saludo</button>
+            <button onclick="borrar()">Borrar</button>
+        </div>
+        <div class="g2">
+            <button onclick="peli(1)">1</button>
+            <button onclick="peli(2)">2</button>
+            <button onclick="peli(3)">3</button>
+            <button onclick="peli(4)">4</button>
+            <button onclick="peli(5)">5</button>
+            <button onclick="peli(6)">6</button>
+
+            <button onclick="anterior()">&lt;</button>
+            <button onclick="siguiente()">&gt;</button>
+        </div>
+        <div class="g3">
+            <button onclick="todas()">Lista</button>
+            <button onclick="aleat()">Aleatorio</button>
+        </div>
+    </header>
+    <div id="contenido">Aquí las cosas</div>
+
+    <script>
+
+        //DATOS
+        const datos = [
+            ['La Amenaza Fantasma', 'epi1.jpg', 'La Federación de Comercio ha bloqueado el pequeño planeta de Naboo.'],
+            ['El Ataque de los Clones', 'epi2.jpg', 'Diez años después de la invasión de Naboo, la galaxia está al borde de la guerra.'],
+            ['La Venganza de los Sith', 'epi3.jpg', 'La galaxia está sumida en la guerra. Los caballeros Jedi luchan por mantener la paz y el orden.'],
+            ['Una Nueva Esperanza', 'epi4.jpg', 'La princesa Leia es capturada por las fuerzas imperiales, lideradas por Darth Vader.'],
+            ['El Imperio Contraataca', 'epi5.jpg', 'Tras la destrucción de la Estrella de la Muerte, las fuerzas imperiales persiguen a la rebelión.'],
+            ['El Retorno del Jedi', 'epi6.jpg', 'El Emperador Palpatine y Darth Vader han muerto, pero la lucha por la libertad aún no ha terminado.']
+        ];
+
+        //VARIABLES
+        let numPeli = 0; // almacena el número de la peli por la que voy en este momento
+
+        //saludar - iguala contenido del div a 'Hola'
+        function saludar() {
+            document.getElementById('contenido').innerHTML = 'Misa te desea una buona jornada';
+        }
+        // borrar - iguala contenido del div a ''
+        function borrar() {
+            document.getElementById('contenido').innerHTML = '<img src="img/explosion.gif" alt=""><h1>Estos no son los Androides que buscáis</h1>';
+        }
+
+
+        //peli - muestra la ficha de la pelicula
+        function peli(valor) {
+            numPeli = valor - 1;
+            dibujar();
+        }
+
+        //dibujar
+        function dibujar() {
+            let miHTML = `
+            <img src="img/${datos[numPeli][1]}" alt="">
+            <h1>${datos[0][0]}</h1>
+            <p>${datos[0][2]}</p>
+            `;
+            document.getElementById('contenido').innerHTML = miHTML;
+        }
+
+
+
+
+
+
+
+
+        //siguiente - incrementa numPeli y muestra la ficha de la siguiente pelicula
+        function siguiente() {
+            numPeli++;
+            if (numPeli >= datos.length) {
+                numPeli = 0;
+            }
+            dibujar();
+        }
+
+        //anterior - decrementa numPeli y muestra la ficha de la anterior pelicula
+        function anterior() {
+            numPeli--;
+            if (numPeli < 0) {
+                numPeli = datos.length - 1;
+            }
+            dibujar();
+        }
+
+
+
+        //todas - muestra todas las fichas
+        function todas() {
+            let miHTML = '';
+            for (let i = 0; i < datos.length; i++) {
+                miHTML += `
+                <img src="img/${datos[i][1]}" alt="">
+                <h1>${datos[i][0]}</h1>
+                <p>${datos[i][2]}</p>
+                `;
+            }
+            document.getElementById('contenido').innerHTML = miHTML;
+        }
+
+        //aleatorio - muestra una ficha aleatoria
+        function aleat() {
+            numPeli = Math.floor(Math.random() * datos.length); //genera un nº aleatorio entre 0 y el nº de elementos del array datos
+            dibujar();
+        }
+
+        //inicialización
+        dibujar();
+
+
+    </script>
+</body>
+
+</html>

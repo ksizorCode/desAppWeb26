@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .enemigo {
+            width: 30px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="batalla"></div>
+
+    <button onclick="cargarNaves()">Siguiente Fase</button>
+
+    <script>
+
+     let fase =1;   
+
+//Despliega todas las naves
+        function cargarNaves(){
+            let cantidadDeNaves=fase*5;
+            let miHTML="";
+            for(i=0; i<cantidadDeNaves; i++){
+                miHTML+='<img onclick="exp(this)" class="enemigo" src="img/tie.png" alt="tie">';
+            }
+
+            document.querySelector('#batalla').innerHTML=miHTML;
+            fase++;
+        }
+
+//carga las naves
+        cargarNaves();
+
+
+     //explota la nave que recibe como parámetro
+        function exp(nave) {
+            console.log(nave)
+            nave.src = "img/explosion.gif";
+        }
+    </script>
+
+</body>
+
+</html>

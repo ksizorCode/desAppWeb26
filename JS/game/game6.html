@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="batalla"></div>
+
+    <footer>
+    <button onclick="cargarNaves()">Siguiente Fase</button>
+    <p>Naves destruidas: <span id="x">0</span></p>
+</footer>
+    <script>
+
+     let fase =1;
+     let navesDestruidas=0;
+     let cantidadDeNaves=''; 
+
+
+//Función aleatoria que llamaremos cuando necesitemos un nº entero aleatorio entre un min y un max
+function aleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+
+//Despliega todas las naves
+        function cargarNaves(){
+            
+            //CARGAR NUEVA FASE
+            //tenemso que volver a poner todos los valores a cero
+            navesDestruidas=0;
+
+            //define la cantidad de naves en total
+            cantidadDeNaves=fase*2;
+            
+            let miHTML="";
+            //repite el bucle la cantidad de naves que existan
+            for(i=0; i<cantidadDeNaves; i++){
+                miHTML+='<img onclick="exp(this)" class="enemigo" src="img/tie.png" alt="tie" style="position:absolute; top:'+aleatorio(-200,200)+'px; left:'+aleatorio(-200,200)+'px; rotate:'+aleatorio(-20,40)+'deg; animation-delay:'+aleatorio(-30,0)+'s";>';
+            }
+
+
+            document.querySelector('#batalla').innerHTML=miHTML;
+            //Actualiza el valor que se muestra como "naves destruidas"
+            document.querySelector('#x').innerText=navesDestruidas;
+            //Oculta el botón para que el usuario no pueda saltar a la siguiente fase
+            document.querySelector('button').style.display='none';
+
+
+
+
+            fase++;
+        }
+
+//carga las naves
+        cargarNaves();
+
+
+     //explota la nave que recibe como parámetro
+        function exp(nave) {
+            console.log(nave)
+            //reemplaza la imagen obtenida como parámetro por una imagen de explosión
+            nave.src = "img/explosion.gif";
+            //suma uno a la variable navesDestruidas
+            navesDestruidas++;
+            //muestra en el texto "naves destruidas" el valor de la función con el total de naves destruidas en esta fase
+            document.querySelector('#x').innerText=navesDestruidas;
+
+            //Si se da la condición de que el número total de naves es igual a las naves destruidas
+            if(cantidadDeNaves==navesDestruidas){
+                //Muestra el botón para que el usuario pueda saltar a la siguiente fase
+                document.querySelector('button').style.display='block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1. Función Declarada (Function Declaration)
+
+function saludo() {
+  console.log(`Hola`);
+}
+
+saludo();  // Output: Hola
+
+
+//2. Función Declarada con Argumentos
+
+function saludar() {
+  console.log(`Hola, ${nombre}`);
+}
+
+saludar('Juan');  // Output: Hola, Juan
+
+
+
+// 3. Función Expresada (Function Expression)
+// Una función definida como una expresión asignada a una variable. Puede ser anónima o tener nombre.
+
+const saludos = function(nombre) {
+  console.log(`Hola, ${nombre}`);
+};
+
+saludos('Ana');  // Output: Hola, Ana
+
+
+// 4. Función Flecha (Arrow Function)
+
+const saludar = nombre => console.log(`Hola, ${nombre}`);
+
+saludar('Laura');  // Output: Hola, Laura
+
+
+//5. Función Anónima
+[1, 2, 3].forEach(numero => console.log(numero));
+// Output: 1 2 3
+
+
+
+//6 Parámetros por defecto
+function saludar(nombre = 'invitado') {
+  console.log(`Hola, ${nombre}`);
+}
+
+saludar();        // Output: Hola, invitado
+saludar('Luis');  // Output: Hola, Luis
+    </script>
+</body>
+</html>

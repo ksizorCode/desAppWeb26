@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle FOR</title>
+</head>
+
+<style>
+    body{
+        font-family: sans-serif;
+    }
+    ul{ background: yellow; padding: 40px; max-width: 250px; box-shadow: 4px 4px 8px}
+    li span{ font-weight: bold;}
+
+
+</style>
+
+<body>
+    <h1>Bucle For</h1>
+    <p>push añade elementos y pop los elimina</p>
+   
+    <label for="input1">Insertar Tarea:</label>
+    <input type="text" id="input1">
+    <button onclick="agregar()">Añadir </button>
+
+    <h2>Mi Lista de Tareas:</h2>
+    <ul></ul>
+    <button id="btn1">Eliminar última tarea</button>
+
+    <script>
+        // DATOS
+        // Array con lista de Frutas
+       let tarea = [];
+
+        // Añadir un elemento al final del array
+        tarea.push("Comprar pan");
+        tarea.push("Estudiar JS");
+        tarea.push("Hacer deporte");
+        tarea.push("Comprar fruta");
+
+        // - - - - - - - - - - - - - - - - - - 
+
+
+        // INTERACTIVIDAD DE BOTÓN
+        // al hacer click en el botón #btn1 se ejecuta la función eliminar
+        document.querySelector('#btn1').addEventListener('click', eliminar);
+
+        // Función que define la acción del botón
+        function eliminar() {
+            // Eliminar el último elemento del array
+            tarea.pop();
+            // Tras haberlo eliminado tenemos que mostrar el pantalla como se ve ahora el array
+            pintar();
+
+        } // cierre de la función eliminar
+
+
+        //Añadir tarea que exista en el imput
+        function agregar(){
+            const nuevaTarea=document.querySelector('#input1').value;
+            if(nuevaTarea==="" || nuevaTarea===null || nuevaTarea===undefined){
+                alert("Debes escribir una tarea");
+                return;
+            };
+         
+            tarea.push(nuevaTarea); //añade la tarea al final
+            tarea.unshift(nuevaTarea); // añade la tarea al principio
+            pintar();
+           document.querySelector('#input1').value="";
+
+        }
+
+
+        // - - - - - - - - - - - - - - - - - - 
+
+        //PINTAR EN PANTALLA mi lista de tareas:
+        function pintar() {
+            // Variable que contendra el HTML que vamos a pintar
+            let miHTML = "";
+
+            // Bucle for para recorrer todos los elementos del array
+            // y vamos añadiendo cada elemento a la variable miHTML
+            for (let i = 0; i < tarea.length; i++) {
+                miHTML += "<li class='cosa"+i+"'>Tarea " + i + ": <span>" + tarea[i] + "</span></li>";
+            }
+
+            // Pintamos en el HTML dentro del ul
+            document.querySelector('ul').innerHTML = miHTML;
+        }
+
+
+        // Al cargar la página, el array
+        pintar();
+
+
+    </script>
+</body>
+
+</html>

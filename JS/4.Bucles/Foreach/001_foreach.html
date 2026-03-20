@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Lista de alumnos
+let alumnos = [
+  { nombre: "Juan", edad: 18 },
+  { nombre: "Ana", edad: 19 },
+  { nombre: "Carlos", edad: 20 },
+  { nombre: "Laura", edad: 17 }
+];
+
+// Usando forEach para recorrer y mostrar los nombres de los alumnos
+alumnos.forEach(alumno => {
+  document.write(`<li>${alumno.nombre}</li>`);  // Muestra el nombre de cada alumno
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 50px;
+            aspect-ratio: 1/1;
+            display: inline-block;
+            background-color: red;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            font-family: sans-serif;
+            font-weight: bold;
+            color:white;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+
+let miHTML='';
+        for(i=0; i<200; i++){
+            miHTML += `<div>${i}</div>`;
+        }
+        document.body.innerHTML = miHTML;
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Movies</title>
+</head>
+<body>
+  <h1>Star Wars Movies</h1>
+  <ul id="movie-list"></ul>
+
+  <script>
+// Función principal para cargar y mostrar las películas
+function cargarPeliculas() {
+  fetch('data.json')
+    .then(manejarRespuesta)
+    .then(mostrarPeliculas)
+    .catch(manejarError);
+}
+
+// Manejar la respuesta del fetch
+function manejarRespuesta(respuesta) {
+  return respuesta.json();
+}
+
+// Mostrar las películas en la lista
+function mostrarPeliculas(datos) {
+  var listaPeliculas = document.querySelector('ul#movie-list');
+  listaPeliculas.innerHTML = datos.movies.map(crearElementoListaPelicula).join('');
+}
+
+// Crear un elemento de lista para cada película
+function crearElementoListaPelicula(pelicula) {
+  return `<li>${pelicula.title}(${pelicula.year})</li>`;
+}
+
+// Manejar errores
+function manejarError(error) {
+  console.error('Error al cargar el JSON:', error);
+}
+
+// Llamar a la función principal
+cargarPeliculas();
+
+
+
+
+
+/* Arrow functions */
+/*
+    // Leer y mostrar JSON
+    fetch('data.json')
+      .then(response => response.json()) // Convertir respuesta en JSON
+      .then(data => {
+
+        // Crear la lista de películas
+        document.querySelector('ul#movie-list').innerHTML = data.movies
+          .map(movie => `<li>${movie.title} (${movie.year})</li>`)
+          .join('');
+      })
+      .catch(error => console.error('Error al cargar el JSON:', error));
+      */
+  </script>
+</body>
+</html>

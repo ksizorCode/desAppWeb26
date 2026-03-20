@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+
+    <style>
+
+        body{
+            font-family: sans-serif;
+            max-width: 320px;
+            margin: 10px auto;
+        }
+
+        button{width: 100%;}
+    </style>
+</head>
+<body>
+    <h1>Convertidor € - $</h1>
+    <input type="number" id="entradas" placeholder="2"> entradas
+
+    <select name="festival" id="festival">
+        <option value="70">Cream Fields</option>
+        <option value="80">LEV Festival</option>
+        <option value="110">Tsunami</option>
+        <option value="120">Ressurektion</option>
+        <option value="60">BBK</option>
+    </select>
+
+    <button onclick="calcular()">Calcular precio</button>
+
+    <p id="resultado">48,55€</p>
+
+    <script>
+       
+       function calcular(){
+        let precioFestival = document.querySelector('#festival').value;
+        let nEntradas = document.querySelector('#entradas').value;
+
+        let miHTML = precioFestival * nEntradas;
+
+        document.querySelector('#resultado').innerHTML=miHTML+'€';
+
+       }
+
+
+    </script>
+</body>
+</html>

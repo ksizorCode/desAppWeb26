@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        /* esto es CSS */
+ul{
+list-style: none;
+padding-left: 0;
+display:flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+
+li{
+width: 30px;
+background-color: #AAA;
+border-radius: 50%;
+aspect-ratio: 1/1;
+color:aliceblue;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: sans-serif;
+ }
+
+li:hover{
+    background: blue;
+}
+
+
+    </style>
+<body>
+    <ul>
+        
+    </ul>
+
+
+
+    <script>
+    //Esto es Javascript
+    
+    //DATOS
+    let bolitas=9;
+  
+
+    //PINTAR
+    //variable que almacenara el contenido a pintar
+    let libreta="";
+    
+
+    //bucle que repite una acción 100 veces
+    for(i=0;i<=bolitas;i++){
+    //libreta+='<li style="rotate:'+i+'deg">'+i+'</li>';
+    libreta+=`<li style="background:#${i}00">${i}</li>`;
+    //libreta+="<li>"+i+"</li> ";
+    //libreta+=`<li>${i}</li>`;
+
+
+    }
+
+
+//insertar en el ul el contenido de libreta
+document.querySelector("ul").innerHTML=libreta;
+
+    </script>
+</body>
+</html>

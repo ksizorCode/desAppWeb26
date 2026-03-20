@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    
+<ul>
+    <li>1 x 5 = 5</li>
+    <li>2 x 5 = 10</li>
+    <li>3 x 5 = 15</li>
+    <li>4 x 5 = 20</li>
+</ul>
+
+<script>    
+    let numero=1;
+    let nMax=40;
+    
+
+    let libreta="";
+    for(i=0; i<=nMax; i++){
+        libreta += "<li>"+i+" x "+numero+" = "+i*numero+"</li>";
+    }
+    document.querySelector('ul').innerHTML=libreta;
+</script>
+
+</body>
+</html>

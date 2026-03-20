@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Transiciones de página */
+.fade {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}

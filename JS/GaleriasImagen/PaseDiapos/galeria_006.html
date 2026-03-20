@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="galeria">
+        <img src="" alt="">
+        <div class="botonera">
+            <button id="btnAnt" onclick="cargarAnt()">Ant</button>
+            <button id="btnSig" onclick="cargarSig()">Sig</button>
+        </div>
+    </section>
+
+    <script>
+        // DATOS
+        // Lista de fotos
+        const fotos = [
+            "https://picsum.photos/id/236/200/300",
+            "https://picsum.photos/id/238/200/300",
+            "https://picsum.photos/id/239/200/300",
+            "https://picsum.photos/id/240/200/300",
+            "https://picsum.photos/id/241/200/300"
+        ];
+
+        // Almacena indice del array fotos
+        let numFoto = 1;
+
+        // FUNCIONES - Definen acciones que van a ser realizadas
+
+        // definimos las tareas de función cargar Siguiente:
+        function cargarSig() {
+            // Consultamos por que foto vamos y le sumamos 1
+            numFoto++;
+            // Llamamos a la funcion cargarImg con el parametro de la foto por la que vamos
+            cargarImg(numFoto);
+
+            if (numFoto == fotos.length - 1) {
+                document.querySelector('#btnSig').style.display = 'none';
+            } else {
+                document.querySelector('#btnAnt').style.display = 'inline';
+            }
+        }
+
+        // Carga foto anterior
+        function cargarAnt() {
+            // Consultamos por que foto vamos y le restamos 1
+            numFoto--;
+            // Llamamos a la funcion cargarImg con el parametro de la foto por la que vamos
+            cargarImg(numFoto);
+
+            if (numFoto == 0) {
+                document.querySelector('#btnAnt').style.display = 'none';
+            } else {
+                document.querySelector('#btnSig').style.display = 'inline';
+            }
+        }
+
+        function cargarImg(teresa) {
+            let direccionImagen = fotos[teresa];
+
+            document.querySelector('img').src = direccionImagen;
+        }
+
+        cargarAnt();
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Lorem</h1>
+    <button onclick="pedido('rafael','Gijón','gin tonic')">Rafa</button>
+    <button onclick="pedido('iker','Madrid','ron cola')">Iker</button>
+    <button onclick="pedido('Cristian','Málaga','Martini')">Cristian</button>
+    <button onclick="pedido('Richard','Mieres','Fernet')">Richar</button>
+    <button onclick="pedido('Miguel',undefined,'malibú piña')">Miguel</button>
+    
+    
+
+
+    <script>
+
+
+
+        function pedido(nombre="no se sabe", direccion="a saber", bebida="agua") {
+            document.querySelector("h1").innerHTML = "Hola, soy " + nombre + " y quiero pedir una " + bebida + " a la calle " + direccion + ".";
+        }
+
+pedido();
+    </script>
+</body>
+
+</html>
