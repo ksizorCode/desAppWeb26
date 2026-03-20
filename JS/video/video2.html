@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+    
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: sans-serif;
+}
+
+body{
+    min-height: 100dvh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+}
+
+video{
+    width:100%;
+    max-width:840px;
+}
+
+button{
+    padding: 5px;
+    background:none;
+    color:white;
+    text-align: center;
+    font-size: 8px;
+    text-transform: uppercase;
+    border:solid 1px white;
+    border-radius: 4px;
+    &:hover{
+        background: white;
+        color:black;
+        cursor:pointer;
+    }
+
+}
+
+
+  </style>
+</head>
+<body id="video2">
+    
+<video id="miVideo" src="https://file-examples.com/storage/fe3e273bca69bcf6897c71c/2017/04/file_example_MP4_1920_18MG.mp4" controls preload="auto"></video>
+
+<div class="controls">
+    <button onclick="pause()">Pause</button>
+    <button onclick="play()">Play</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="miReset()">Restart</button>
+    <button onclick="customFrame()">F55</button>
+    <button onclick="lastFrame()">Last</button>
+</div>
+
+<script>
+    let miVideo = document.querySelector('#miVideo');
+
+// Pausar
+    function pause(){
+        miVideo.pause();
+    }
+// Play
+    function play(){
+        miVideo.play();
+    }
+// Stop
+    function stop(){
+        miVideo.pause();
+        miVideo.currentTime = 0; // ir al fotograma de inicio
+    }
+// Reset - va al comienzo y arranca
+    function reset(){
+        miVideo.currentTime = 0; // ir al fotograma de inicio
+        miVideo.play();
+    }
+
+
+// Fotograma Personalizado
+    function customFrame(){
+        miVideo.pause();
+        miVideo.currentTime = 12;
+    }
+// Último Fotograma
+    function lastFrame(){
+        miVideo.pause();
+        miVideo.currentTime = miVideo.duration;
+    }
+
+</script>
+
+</body>
+</html>
