@@ -123,3 +123,13 @@ Caraterística 1
 Tarea A
 Tarea B
 {content: }
+
+```
+
+**Colores:**
+* green $\color{green}{\text{esto es verde}}$  
+* blue $\color{blue}{\text{azul}}$  
+* red $\color{red}{\text{rojo}}$  
+* black $\color{black}{\text{negro}}$  
+* pink $\color{pink}{\text{rosa}}$  
+* orange $\color{orange}{\text{naranjo}}$  
