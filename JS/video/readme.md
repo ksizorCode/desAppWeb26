@@ -31,6 +31,15 @@ También puedes usar varias fuentes para mejorar la compatibilidad:
 </video>
 ```
 
+---
+Bancos de videos:
+https://samplelib.com/sample-mp4.html
+https://file-examples.com/index.php/sample-video-files/sample-mp4-files/
+https://www.pexels.com/es-es/buscar/videos/videos/
+https://pixabay.com/es/videos/search/
+
 
 Ver más:
 https://www.w3schools.com/html/html5_video.asp
+Video como fondo:
+https://www.w3schools.com/howto/howto_css_fullscreen_video.asp
