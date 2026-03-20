@@ -76,17 +76,16 @@ Crea checklists interactivas que se pueden marcar sin editar el código:
 - [ ] Tarea pendiente
 ```
 
-6. 🔗 Vínculos Relativos y Anclas
+## 6. 🔗 Vínculos Relativos y Anclas
 Vínculos relativos: Enlaza a otros archivos en tu repo sin usar la URL completa: [Documentación](./docs/guia.md).
 Anclas automáticas: GitHub genera anclas para los títulos. ## Mi Título se convierte en #mi-titulo. 
 
 
-7. 🎭 Emojis y Octicons
+## 7. 🎭 Emojis y Octicons
 Emojis: Usa el código :nombre_emoji: (ej. :rocket:, :bug:).
 Octicons: GitHub tiene sus propios iconos (requiere sintaxis Liquid en repositorios de documentación): {% octicon "plus" %}. 
 
-
-8. 📊 Tablas Avanzadas
+## 8. 📊 Tablas Avanzadas
 Puedes crear tablas organizadas y alinear texto (izquierda, centro, derecha): 
 
 | Alinear | Izquierda | Derecha |
@@ -101,11 +100,11 @@ Puedes crear tablas organizadas y alinear texto (izquierda, centro, derecha):
 | Dato | Más | 100 |
 ```
 
-9. 🎨 Badges (Insignias)
+## 9. 🎨 Badges (Insignias)
 Usa Shields.io para añadir placas de estado, versión o licencia en la parte superior del README. 
 
 
-10. 📝 Ejemplo plantilla rápida README.md
+## 10. 📝 Ejemplo plantilla rápida README.md
 
 # Nombre del Proyecto
 ![Logo](URL-LOGO)
