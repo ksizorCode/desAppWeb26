@@ -3,11 +3,20 @@
 ## 1. 🚨 Alertas (Callouts) - Nuevo y Destacado
 GitHub permite resaltar información importante usando citas especiales: 
 
-> [!NOTE] (Nota): Información útil.
-> [!TIP] (Consejo): Consejos para mejorar algo.
-> [!IMPORTANT] (Importante): Clave para el objetivo.
-> [!WARNING] (Advertencia): Urgente para evitar problemas.
-> [!CAUTION] (Precaución): Riesgos negativos.
+> [!NOTE]
+> (Nota): Información útil.
+
+> [!TIP]
+> (Consejo): Consejos para mejorar algo.
+
+> [!IMPORTANT]
+> (Importante): Clave para el objetivo.
+
+> [!WARNING]
+> (Advertencia): Urgente para evitar problemas.
+
+> [!CAUTION]
+> (Precaución): Riesgos negativos.
 
 Ejemplo:
 
