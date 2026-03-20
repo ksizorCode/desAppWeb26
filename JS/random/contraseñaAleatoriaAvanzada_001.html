@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Color Aleatorio</title>
+    <style>
+        :root {
+            --c1: tan;
+            --c2: brown;
+            --cl: white;
+            --cd: black;
+            --ff: sans-serif;
+            --maxw: 960px;
+        }
+
+
+        body {
+            font-family: var(--ff);
+            padding: 20px;
+            max-width: var(--maxw);
+            margin: 0 auto;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 10px;
+            color: var(--c1);
+        }
+
+
+
+        a {
+            text-decoration: none;
+            color: var(--c1);
+        }
+
+        a:hover {
+            color: var(--c2);
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        header,
+        main,
+        footer {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        nav ul,
+        .flex {
+            list-style: none;
+            padding: 0;
+
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul li,
+        .flex>* {
+            flex: 1 1 100px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        button,
+        input[type=submit] {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: var(--c1);
+            cursor: pointer;
+            width: 100%;
+        }
+
+
+
+
+        button:hover,
+        input[type=submit]:hover {
+            background-color: var(--c2);
+            color: --cl;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus,
+        textarea:focus {
+            border-color: #888;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+    <h1>Generador de Contraseñas</h1>
+
+    <code id="referencia">Aqui la contraseña</code>
+    
+    <br>
+    <label for="logitud">Longitud</label>
+    <input type="number" id="longitud" placeholder="Longitud de la contraseña" value="12">
+    <br>
+    <input type="checkbox" id="numer" checked>
+    <label for="numer">Numeros</label>
+
+    <input type="checkbox" id="minus" checked>
+    <label for="minus">Minusculas</label>
+
+    <input type="checkbox" id="mayus" checked>
+    <label for="mayus">Mayúsculas</label>
+
+    <input type="checkbox" id="simbl" checked>
+    <label for="simbl">Símbolos</label>
+
+    <br>
+    <button onclick="generar()">Generar</button>
+    </main>
+
+    <script>
+        //array con letras minúsculas
+
+        // minusculas
+        const datosminus = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+        // mayusculas
+        const datosmayus = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+        // numeros
+        const datosnumer = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+        // simbolos
+        const datossimbl = ['!', '@', '#', '$', '%', '&', '/', '(', ')', '¿', '¡', '*', '+', '-', '_', '[', ']', '{', '}', '<', '>'];
+
+        //devuelve un valor aleatorio entre 0 y el parámetro que le pasemos
+        // aleatorio(10) devolverá un número entre 0 y 9
+        function aleatorio(parametro) {
+            return Math.floor(Math.random() * parametro);
+        }
+
+
+        function generar() {
+            //variable que almacenara los caracteres de la contraseña
+            let contrasena = [];
+
+            //cargar valores de la formulario (inputs y checkbox)
+            let longitud = document.querySelector('#longitud').value;
+            let numer = document.querySelector('#numer').checked;
+            let minus = document.querySelector('#minus').checked;
+            let mayus = document.querySelector('#mayus').checked;
+            let simbl = document.querySelector('#simbl').checked;
+
+        
+                if(numer){
+                    contrasena.push(datosnumer[aleatorio(datosnumer.length - 1)]);
+                }
+                if(minus){
+                    contrasena.push( datosminus[aleatorio(datosminus.length - 1)]);
+                }
+                if(mayus){
+                    contrasena.push( datosmayus[aleatorio(datosmayus.length - 1)]);
+                }
+                if(simbl){
+                    contrasena.push( datossimbl[aleatorio(datossimbl.length - 1)]);
+                }
+
+
+                // construir la contraseña a partir del array contrasena
+                // join me quita las comas y me deja un string
+                let contrasenaTexto = contrasena.join('');
+
+    
+                // si el usuario ha puesto menos de 4 caracteres sale un aviso de error
+                if(longitud<4){
+                    contrasena="ERROR: La contraseña debe tener al menos 4 caracteres, que hemos actualizado automáticamente (de nada)";
+                    document.querySelector('#longitud').value=4;
+                }
+
+                // Por si el usuario le da por deactivar todo sale un aviso de error
+                if(!numer && !minus && !mayus && !simbl){
+                contrasena="ERROR: Algo tendra que tener seleccionado...";
+                }
+
+            document.querySelector('#referencia').innerHTML = contrasenaTexto;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            max-width: :960px;
+            padding: 20px;
+            background: #DDD;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 6px;
+        }
+
+        li {
+            background-color: white;
+            padding: 4px;
+            border-radius: 10px;
+
+        }
+
+        li .muestra {
+            padding: 30px;
+            margin: 0 0 20px 0;
+            border-radius: 6px;;
+        }
+
+
+        li p span{
+            width: 14px;
+            height: 14px;
+            margin-right:8px;
+            display: inline-block;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Catalogo Degradados Aleatorios</h1>
+    <ul>
+        <li>
+            <div style="background:#FF0088" class="muestra"></div>
+            <p>#FF0088</p>
+        </li>
+
+        <li>
+            <div style="background:#FF4488" class="muestra"></div>
+            <p>#FF4488</p>
+        </li>
+
+        <li>
+            <div style="background:#59ff00" class="muestra"></div>
+            <p>#59ff00</p>
+        </li>
+
+        <li>
+            <div style="background:#2e99bc" class="muestra"></div>
+            <p>#2e99bc</p>
+        </li>
+
+        <li>
+            <div style="background:#FF0088" class="muestra"></div>
+            <p>#FF0088</p>
+        </li>
+
+        <li>
+            <div style="background:#FF4488" class="muestra"></div>
+            <p>#FF4488</p>
+        </li>
+
+        <li>
+            <div style="background:#59ff00" class="muestra"></div>
+            <p>#59ff00</p>
+        </li>
+
+        <li>
+            <div style="background:#2e99bc" class="muestra"></div>
+            <p>#2e99bc</p>
+        </li>
+
+        <li>
+            <div style="background:#FF0088" class="muestra"></div>
+            <p>#FF0088</p>
+        </li>
+
+        <li>
+            <div style="background:#FF4488" class="muestra"></div>
+            <p>#FF4488</p>
+        </li>
+
+        <li>
+            <div style="background:#59ff00" class="muestra"></div>
+            <p>#59ff00</p>
+        </li>
+
+        <li>
+            <div style="background:#2e99bc" class="muestra"></div>
+            <p>#2e99bc</p>
+        </li>
+
+        <li>
+            <div style="background:#FF0088" class="muestra"></div>
+            <p>#FF0088</p>
+        </li>
+
+        <li>
+            <div style="background:#FF4488" class="muestra"></div>
+            <p>#FF4488</p>
+        </li>
+
+        <li>
+            <div style="background:#59ff00" class="muestra"></div>
+            <p>#59ff00</p>
+        </li>
+
+        <li>
+            <div style="background:#2e99bc" class="muestra"></div>
+            <p>#2e99bc</p>
+        </li>
+    </ul>
+
+
+    <script>
+
+        const valores = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+        function colorAleatorio() {
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += valores[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function dibujar() {
+            let miHTML = '';
+            for (let i = 0; i < 60; i++) {
+                let aleatorio1= colorAleatorio();
+                let aleatorio2= colorAleatorio();
+                miHTML += `<li>
+                    <div style="background:linear-gradient(${aleatorio1},${aleatorio2})" class="muestra"></div>
+                    <p><span style="background:${aleatorio1}"></span>${aleatorio1}</p>
+                    <p><span style="background:${aleatorio2}"></span>${aleatorio2}</p>
+                </li>`;
+
+            }
+
+            document.querySelector('ul').innerHTML = miHTML;
+
+        }
+
+
+setInterval(dibujar, 1000);
+
+        dibujar();
+
+    </script>
+
+
+</body>
+
+</html>
