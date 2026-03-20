@@ -21,11 +21,20 @@ GitHub permite resaltar información importante usando citas especiales:
 Ejemplo:
 
 ```markdown
-[!NOTE] (Nota): Información útil.
-[!TIP] (Consejo): Consejos para mejorar algo.
-[!IMPORTANT] (Importante): Clave para el objetivo.
-[!WARNING] (Advertencia): Urgente para evitar problemas.
-[!CAUTION] (Precaución): Riesgos negativos.
+> [!NOTE]
+> (Nota): Información útil.
+
+> [!TIP]
+> (Consejo): Consejos para mejorar algo.
+
+> [!IMPORTANT]
+> (Importante): Clave para el objetivo.
+
+> [!WARNING]
+> (Advertencia): Urgente para evitar problemas.
+
+> [!CAUTION]
+> (Precaución): Riesgos negativos.
 ```
 ## 2. 🧩 Secciones Contraídas (<details>)
 Ideal para ocultar información larga o técnica (logs, ejemplos de código) y mantener el README limpio. 
