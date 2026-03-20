@@ -1,0 +1,52 @@
+{
+    "pelisCartelera": [
+        {
+            "titulo": "Inception",
+            "director": "Christopher Nolan",
+            "cartel": "https://pics.filmaffinity.com/inception-652954101-msmall.jpg"
+        },
+        {
+            "titulo": "The godfather",
+            "director": "Francis Ford Coppola",
+            "cartel": "https://pics.filmaffinity.com/the_godfather-488102675-msmall.jpg"
+        },
+        {
+            "titulo": "Flow",
+            "director": "Gints Zilbalodis",
+            "cartel": "https://pics.filmaffinity.com/flow-382508168-mmed.jpg"
+        },
+        {
+            "titulo": "Wolfwalkers",
+            "director": "Tomm Moore, Ross Stewart",
+            "cartel": "https://pics.filmaffinity.com/wolfwalkers-626856682-mmed.jpg"
+        },
+        {
+            "titulo": "Alien, el octavo pasajero",
+            "director": "Ritley Scoot",
+            "cartel": "https://pics.filmaffinity.com/alien-657278575-mmed.jpg"
+        },
+        {
+            "titulo": "Toy Story",
+            "director": "John Lasseter",
+            "cartel": "https://pics.filmaffinity.com/toy_story-626273371-mmed.jpg"
+        },
+        {
+            "titulo": "asdf",
+            "director": "asdf",
+            "cartel": "asdf"
+        }
+    ],
+    "cafeteria": [
+        {
+            "producto": "Palomitas Mini",
+            "precio": "5"
+        }
+    ],
+    "usuarios": [
+        {
+            "usuario": "admin",
+            "pass": "123",
+            "rol": 1
+        }
+    ]
+}

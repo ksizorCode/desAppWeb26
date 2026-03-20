@@ -1,0 +1,365 @@
+:root {
+    --c1: #007bff;
+    --c2: #9500ff;
+    --cl: #bfbdd7;
+    --cd: black;
+    --font-family: "Poppins", sans-serif;
+    --maxw: 960px;
+}
+
+
+body {
+    font-family: var(--font-family);
+    padding: 20px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+
+h1 {
+    margin-bottom: 10px;
+    color: var(--cd);
+    text-align: center
+}
+
+a {
+    text-decoration: none;
+    color: var(--c1);
+}
+
+p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    /* Ancho maxximo de la imagen */
+    height: auto;
+    /* Altura automatica para mantener la proporcion */
+}
+
+
+header,
+main,
+footer {
+    margin-bottom: 20px;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* background-color: #f9f9f9; */
+}
+
+header {
+    text-align: center;
+    gap: 20px;
+
+}
+
+nav ul{
+   padding-left: 10;
+   list-style: none;
+   display:flex;
+   gap:20px;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+}
+
+
+header nav ul li:last-child{
+    margin-left:auto;
+}
+
+ul.obras {
+    padding-left: 10;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+
+
+ul.obras li {
+    list-style: none;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    overflow:hidden;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition:.4s;
+
+    scale:1;
+}
+
+ul.obras li h2{
+    margin:10px 0 0 0;
+    font-size:18px;
+    line-height:1em;
+    
+}
+
+ul.obras li a{
+    color:black;
+}
+
+ul.obras li:hover{
+    box-shadow: 2px 8px 18px rgba(0, 0, 0, 0.6);
+    scale:1.04;
+}
+
+ul.obras li img {
+    aspect-ratio: 1/1;
+    /* 1:1 para que la imagen mida lo mismo y se alinee*/
+    object-fit: cover;
+    /* imagen mida lo mismo y se alinee*/
+
+    scale:1.1;
+    transition:.4s;
+
+    mask-image:linear-gradient(black 80%, transparent);
+}
+
+
+
+    ul.obras li .autor{
+    color:grey;
+        font-size:14px;
+}
+
+
+ul.obras li:hover img {
+    scale:1;
+}
+
+footer {
+    text-align: center;
+}
+
+.redes-sociales {}
+
+
+/* redes */
+.redes-sociales a {
+    padding: 10px;
+}
+
+
+
+.redes-sociales a i {
+    color: var(--c1)
+}
+
+/* ADMIN---- formulario con la clase .form-obras */
+form{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para las etiquetas */
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+/* Estilo para los campos de entrada */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing:border-box
+}
+
+/* Boton enviar*/
+.btn,
+input[type="submit"] {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+a.btn{
+    max-width:190px;
+    margin:10px auto;
+}
+
+
+/* Efecto hover en el boton */
+input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+
+
+/* EXPO-PHP----- exposiciones */
+.exposiciones {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+    --font-family: "Poppins", sans-serif;
+}
+
+.exposiciones h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contenedor de cada exposiciÃƒÂ³n */
+.expo {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+/* ImÃƒÂ¡genes de las exposiciones */
+.expo img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* InformaciÃƒÂ³n de la exposiciÃƒÂ³n */
+.expo-info {
+    padding: 0 20px;
+}
+
+.expo-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.expo-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.expo-info span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Enlace de mÃƒÂ¡s informaciÃƒÂ³n */
+.expo-info a {
+    display: inline-block;
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.expo-info a:hover {
+    background: #0056b3;
+    position:relative;  
+}
+
+.ficharGrande{
+    position:relative;  
+}
+
+.ficharGrande img.portada{
+    display:block;
+    margin:0 auto;
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    
+}
+
+.minificha{
+    position:absolute;
+    top:0;
+    right:0;
+    background:#FFFFFF88;
+    padding: 69px 10px;
+    /* height: 18px; */
+}
+
+
+
+.debug{
+    padding: 6px;
+    border-radius: 20px;
+    border: dashed red 2px;
+    outline: red 1px solid;
+    outline-offset: 6px;
+    font-family: monospace;
+    margin:20px 30px;
+}
+
+
+.aviso {
+    padding: 20px;
+    outline: solid 1px var(--c1);
+    border-radius: 50px;
+    color: var(--c1);
+    text-align: center;
+    max-width:450px;
+    margin: 10px auto;
+}
+
+.aviso a{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+.login img {
+    width: 23px;
+    border-radius: 50%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    border: solid var(--c1) 3px;
+    box-shadow: 0 3px 8px #2f2f2f;
+}
+
+.login a{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.tac{
+    text-align: center;
+    display: block;
+}
+

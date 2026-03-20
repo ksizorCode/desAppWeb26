@@ -1,0 +1,108 @@
+{
+    "cervezas": [
+        {
+            "id": 1,
+            "nombre": "Heineken",
+            "tipo": "Lager",
+            "origen": "Países Bajos",
+            "alcohol": 5,
+            "precio": 1.5
+        },
+        {
+            "id": 2,
+            "nombre": "Guinness",
+            "tipo": "Stout",
+            "origen": "Irlanda",
+            "alcohol": 4,
+            "precio": 2
+        },
+        {
+            "id": 3,
+            "nombre": "Paulaner",
+            "tipo": "Weißbier",
+            "origen": "Alemania",
+            "alcohol": 5.5,
+            "precio": 2.5
+        },
+        {
+            "id": 4,
+            "nombre": "Budweiser",
+            "tipo": "Lager",
+            "origen": "Estados Unidos",
+            "alcohol": 5,
+            "precio": 1.8
+        },
+        {
+            "id": 5,
+            "nombre": "Estrella Galicia",
+            "tipo": "Pale Lager",
+            "origen": "España",
+            "alcohol": 5.5,
+            "precio": 1.7
+        },
+        {
+            "id": 6,
+            "nombre": "Corona",
+            "tipo": "Pale Lager",
+            "origen": "México",
+            "alcohol": 4.5,
+            "precio": 1.8
+        },
+        {
+            "id": 7,
+            "nombre": "Mahou 5 Estrellas",
+            "tipo": "Lager",
+            "origen": "España",
+            "alcohol": 5.5,
+            "precio": 1
+        },
+        {
+            "id": 8,
+            "nombre": "Leffe Blonde",
+            "tipo": "Belgian Blonde Ale",
+            "origen": "Bélgica",
+            "alcohol": 6.5,
+            "precio": 2
+        },
+        {
+            "id": 9,
+            "nombre": "Duvel",
+            "tipo": "Belgian Strong Ale",
+            "origen": "Bélgica",
+            "alcohol": 8.5,
+            "precio": 3
+        },
+        {
+            "id": 10,
+            "nombre": "Modelo Especial",
+            "tipo": "Pilsner",
+            "origen": "México",
+            "alcohol": 4,
+            "precio": 2
+        },
+        {
+            "id": 10,
+            "nombre": "&amp;lt;script&amp;gt;alert(&amp;#039;Hola Mundo&amp;#039;)&amp;lt;/script&amp;gt;",
+            "tipo": "Pilsner",
+            "origen": "México",
+            "alcohol": 4,
+            "precio": 2
+        },
+        {
+            "id": 1739261979,
+            "nombre": "",
+            "tipo": null,
+            "origen": null,
+            "alcohol": null,
+            "precio": null
+        },
+        {
+            "id": 1739267578,
+            "nombre": "",
+            "tipo": null,
+            "origen": null,
+            "alcohol": null,
+            "precio": null
+        }
+    ]
+}

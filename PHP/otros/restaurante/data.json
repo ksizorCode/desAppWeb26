@@ -1,0 +1,34 @@
+{
+    "carta": [
+        {
+            "nombre": "Fabada Asturiana",
+            "ingredientes": "Fabes asturianes, chorizo, morciella, lacón, azafrán, aceite oliva, cebolla",
+            "precio": "18"
+        },
+        {
+            "nombre": "Gazpacho Andaluz",
+            "ingredientes": "Tomate, pepino, pimiento, cebolla, ajo, aceite de oliva, vinagre, pan",
+            "precio": "10"
+        },
+        {
+            "nombre": "Croquetas de Jamón",
+            "ingredientes": "Jamón serrano, leche, harina, mantequilla, pan rallado, huevo, aceite para freír",
+            "precio": "8"
+        },
+        {
+            "nombre": "pastel de cabracho",
+            "ingredientes": "cabracho",
+            "precio": "12"
+        },
+        {
+            "nombre": "Picadillo con Huevo y Patates",
+            "ingredientes": "picadillo de cerdo, patates frites, aceite, huevos de la aldea",
+            "precio": "14"
+        },
+        {
+            "nombre": "Lacón con Pulpo",
+            "ingredientes": "pulpo, lacón, aceite de oliva, pimentón",
+            "precio": "15"
+        }
+    ]
+}

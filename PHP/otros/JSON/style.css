@@ -1,0 +1,29 @@
+html{
+    background-color:lightcyan;
+}
+
+body{
+    font-family: sans-serif;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    max-width:540px;
+    margin: 20px auto;
+}
+
+li{ list-style:none; padding:0; }
+
+.btn{
+    background: purple;
+    border-radius:20px;
+    padding: 10px 30px;
+    color:white;
+    text-decoration:none;
+}
+
+
+
+.director{ color:orangered; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+.year{
+    color:blue
+}

@@ -1,0 +1,20 @@
+/* Esto es el CSS para alertas y esas movidas */
+
+
+.alerta{
+    border:red solid 1px;
+    padding: 20px;
+    color:red;
+    border-radius:10px;
+    margin: 10px;
+    font-family: monospace;
+}
+
+.alerta strong{
+    background: red;
+    color:white;
+}
+
+html{
+    background: red !important;
+}
