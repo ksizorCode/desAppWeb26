@@ -1,6 +1,6 @@
-GithubPage: https://ksizorcode.github.io/desAppWeb26/
+🩹 GithubPage: https://ksizorcode.github.io/desAppWeb26/
 
-🏆VUE: Presentación de Oscar
+🏆 VUE: Presentación de Oscar
 https://www.figma.com/slides/voBsVVofV1PS3MoVmmyk3f?node-id=36:22
 
 
