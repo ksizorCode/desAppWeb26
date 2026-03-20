@@ -1,0 +1,121 @@
+body:active *{ border: 1px solid red;
+    padding: 2px;
+
+}
+
+body{
+background:#38134d url(../img/0.png)top center fixed;
+background-size:cover;}
+
+header { color:white;
+padding:170px 20px;}
+
+header h1{
+font-size:90px;
+
+}
+
+header a{ display: block;
+    padding:16px;
+    border: 1px solid salmon;
+    width:200px;
+    text-align: center;
+    color:salmon;
+    border-radius:5px;
+    text-decoration: none;
+    
+}
+ header a:hover{
+text-decoration: none;
+background-color: salmon;
+color:purple;
+
+ }
+
+ header p{
+font-size:22px;
+width:340px;
+ }
+
+
+.blanquito{
+    background:white;
+    min-height:720px;
+}
+
+h2{
+margin-top: 20px;
+font-size: 55px;
+text-align: center;
+max-width: 650px;
+margin: auto;
+}
+
+h2+p{
+    text-align: center;
+    max-width: 520px;
+    margin: 20px auto 50px auto;
+    font-size: 22px;
+
+}
+
+h3{
+    font-size: 40px;
+    text-align: left;
+    padding: 50px;
+}
+
+.rojin{
+    background: salmon;
+    text-align: center;
+    color: white;
+    padding: 60px;
+}
+
+.rojin a{ display: block;
+    padding:16px;
+    border: 1px solid white;
+    width:300px;
+    text-align: center;
+    color:white;
+    border-radius:50px;
+    text-decoration: none;
+    margin: auto;
+}
+
+.rojin a:hover{
+    background: white;
+    color: salmon;
+}
+
+.rojin h3{
+    padding-bottom: 8px;
+}
+
+footer{
+    margin-top: 20px;
+
+}
+footer p{
+    font-size: 15px;
+}
+
+footer li{
+    list-style: none;
+    font-size: 10px;
+    padding: 2px;
+}
+
+footer ul{
+    margin: 0;
+    padding: 0;
+}
+.gris{
+    color: #EEE;
+}
+
+footer i{
+    color: lightgray;
+    padding-right: 8px;
+}
+

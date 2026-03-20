@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Virtual Visit</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+img{ width: 100%;}
+
+</style>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-2">
+        <button onclick="step(2)">left</button>
+      </div>
+      <div class="cofl-2">
+        <button onclick="step(1)">up</button>
+        <button onclick="step(4)">down</button>
+      </div>
+      <div class="col-2">
+        <button onclick="step(3)">right</button>
+      </div>
+      <div class="col-3"></div>
+      <div class="col-12">
+        <img id="pic" src="" alt="imagen">
+        <p id="text"></p>
+        <div id="development"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var bU = ""; // pressing button Up
+    var bL = ""; // pressing button Left
+    var bR = ""; // pressing button Right
+    var bD = ""; // pressing button Down
+
+    var scene = 0;
+
+    var testeo =true;
+
+
+    var scenes = [
+      //        0 pic         1Up   2Left 3Right 4Down  5text
+      /* 0 */ ['entrada.jpg', '1',  '',   '',    '0',    'Park Entrance'],
+      /* 1 */ ['ms_01.jpg',   '2',  '10', '15', '0',    'Main Street USA Entrance'],
+      /* 2 */ ['ms_02.jpg',   '3',  '2L', '2R', '1',    'Center Square & Orchestra'],
+      /* 3 */ ['ms_03.jpg',   '4',  '3L', '3R', '2',    'Start of the Street'],
+      /* 4 */ ['ms_04.jpg',   '5',  '4L', '4R', '3',    'Middle of the Street'],
+      /* 5 */ ['ms_05.jpg',   '6',  '5L', '5R', '4',    'End of Street'],
+      /* 6 */ ['ms_06.jpg',   '7',  '5L', '5R', '5',    'End of Street'],
+      /* 7 */ ['ms_07.jpg',   '8',  '5L', '5R', '6',    'End of Street'],
+      /* 8 */ ['fl_00.jpg',   '9',  '5L', '5R', '7',    'End of Street'],
+      /* 9 */ ['fl_01.jpg',   '9',  '5L', '5R', '8',    'End of Street'],
+
+      /* 10*/ ['ms_01_L.jpg',   '11', '10', '11', '1',    'End of Street'],
+      /* 11*/ ['ms_01_L1.jpg',  '12', '5L', '5R', '10',    'End of Street'],
+      /* 12*/ ['ms_01_L2.jpg',  '2', '5L', '5R', '11',    'End of Street'],
+      /* 13*/ ['ms_01_LL.jpg',  '14', '5L', '5R', '12',    'End of Street'],
+      /* 14*/ ['ms_01_LLL.jpg', '15', '5L', '5R', '13',    'End of Street'],
+
+      /* 15*/ ['ms_01_R.jpg',   '16', '5L', '5R', '1',    'End of Street'],
+      /* 16*/ ['ms_01_R1.jpg',  '17', '5L', '5R', '15',    'End of Street'],
+      /* 17*/ ['ms_01_R2.jpg',  '18', '5L', '5R', '16',    'End of Street'],
+      /* 18*/ ['ms_01_R3.jpg',  '19', '5L', '5R', '17',    'End of Street'],
+      /* 19*/ ['ms_01_R4.jpg',  '2', '5L', '5R', '18',    'End of Street'],
+      /* 20*/ ['ms_01_RR.jpg',  '21', '5L', '5R', '19',    'End of Street'],
+
+      /* 21*/ ['ms_05.jpg',   '6',  '5L', '5R', '4',    'End of Street'],
+      /* 22*/ ['ms_05.jpg',   '6',  '5L', '5R', '4',    'End of Street'],
+      /* 23*/ ['ms_05.jpg',   '6',  '5L', '5R', '4',    'End of Street'],
+      /* 24*/ ['ms_05.jpg',   '6',  '5L', '5R', '4',    'End of Street'],
+      /* 25*/ ['ms_05.jpg',   '6',  '5L', '5R', '4',    'End of Street'],
+      /* 26*/ ['ms_05.jpg',   '6',  '5L', '5R', '4',    'End of Street']
+    ];
+
+
+
+    function changeScene() {
+      document.getElementById('pic').src = "img/"+scenes[scene][0];
+      bU = scenes[scene][1];
+      bL = scenes[scene][2];
+      bR = scenes[scene][3];
+      bD = scenes[scene][4];
+      testear();
+    }
+
+
+    
+    function step(v) {
+      scene = scenes[scene][v];
+      changeScene();
+    }
+
+
+    // REFERENCIAS PARA EL MODO TESTEO
+    function testear(){
+      if(testeo){
+        var txt ="<div class='alert alert-danger' role='alert'>";
+        txt+="<strong>var scene </strong>es: " +scene+"<br><br>";
+        
+        txt+="<strong>array scenes </strong>es: <br>";
+        txt+="// 0pic    1Up   2Left   3Right   4Down   5Text";
+        txt+="/*"+scene+"*/  ["+scenes[scene][0]+" "+scenes[scene][1]+" "+scenes[scene][2]+" "+scenes[scene][3]+" "+scenes[scene][4]+" "+scenes[scene][5]+"]<br>"
+        txt+="//--------------------------------- <br>";
+        txt+="//-- Desglosadino------------------ <br>";
+        txt+="0pic: "+scenes[scene][0]+"<br>";
+        txt+="1Up: "+scenes[scene][1]+"<br>";
+        txt+="2Left: "+scenes[scene][2]+"<br>";
+        txt+="3Right: "+scenes[scene][3]+"<br>";
+        txt+="4Down: "+scenes[scene][4]+"<br>";
+        txt+="5Text: "+scenes[scene][4]+"<br>";
+        txt+="//--------------------------------- <br>";
+        txt+="//-- Todo el ARRAY ------------------ <br>";
+
+          var txt2="";
+          for(var i=0; i<scenes.length; i++){
+            txt2+="[ "+ scenes[i] + "] <br>";
+          }
+
+          txt+=txt2;
+
+        
+        txt+="</div>";
+
+        document.getElementById('development').innerHTML= txt;
+      }
+    }
+
+
+// LANZAR TODAS LAS FUNCIONES
+testear();
+changeScene();
+    
+  </script>
+</body>
+</html>

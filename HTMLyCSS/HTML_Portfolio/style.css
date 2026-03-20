@@ -1,0 +1,131 @@
+:root{
+    --c1:#610bd9;
+}
+
+*{
+    margin: 0;
+box-sizing: border-box;
+    cursor:default;
+}
+
+::selection {
+    background: black;
+    color:white;
+}
+
+
+body{
+    font-family: sans-serif;
+
+    max-width: 1200px;
+    margin: 10px auto;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #EEE, #EFEFEF);
+}
+
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+
+a,button, .btn{ cursor:pointer;}
+
+p a{ text-decoration: underline;}
+
+img{ max-width: 100%;}
+
+
+
+
+.destacado{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+
+}
+
+.design{}
+.learn{}
+
+.design, .learning{
+    border: solid grey 1px;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+
+
+/* flex */
+nav ul,
+.galeria,
+.flex{
+    list-style: none; padding-left:0;
+    display: flex;
+    flex-wrap: wrap;
+    gap:8px;
+    justify-content: space-between;
+}
+
+.scroll-x{overflow-x: scroll}
+.galeria{ flex-wrap: nowrap; width: 2600px;}
+.galeria li{ width:200px !important;}
+.galeria img{ width:100%; aspect-ratio: 1 / 1;  object-fit: cover; border-radius: 10px;}
+
+
+.grupo{ padding: 20px 0;}
+.grupo h2{ padding: 20px 0;}
+
+
+header .preheader nav ul{
+    justify-content:flex-end;
+    gap:20px;
+    opacity: 0.3;
+    padding-top:20px;
+    
+}
+
+header #header{
+    justify-content:space-between;
+    padding-bottom: 16px; ;
+}
+
+header .mainmenu{
+    gap:30px;
+    font-size:20px;
+}
+
+header{ margin: 20px 0 50px 0;}
+
+
+
+footer{
+    margin-top: 120px;
+    padding-top: 60px;
+    border-top:2px solid grey;
+}
+
+
+footer .web-map {
+    margin-top:60px;
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+footer .web-map ul{
+    display: flex;
+    flex-direction:column;
+    gap:0;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+
+
+footer .web-map a{
+    opacity:0.5;
+    padding-left:10px;
+}

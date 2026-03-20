@@ -1,0 +1,17 @@
+h1{ 
+	background: red;
+	color: hsl(226, 45%, 42%);
+	padding: 10px;
+	border-radius: 20px;
+	font-family: sans-serif;
+	font-size: 30px;
+	
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	
+	margin-left:-100px;
+	margin-top:-100px;
+}

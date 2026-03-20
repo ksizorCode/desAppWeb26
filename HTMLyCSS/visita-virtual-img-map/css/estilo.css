@@ -1,0 +1,9 @@
+body{ margin: 0; overflow: hidden;}
+
+img{ width: 100% !important; object-fit: cover;}
+
+body, area, a{ cursor: default;}
+.left, .l{ cursor:w-resize}
+.top, .t{ cursor: n-resize;}
+.right, .r{ cursor: e-resize;}
+.no, .n{ cursor:no-drop;}

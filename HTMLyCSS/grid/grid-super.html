@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+               
+        body * {
+            outline: 1px solid;
+            margin: 5px;
+            font-family: sans-serif;
+            padding: 5px;
+        }
+
+
+        header {    grid-area: hea ;}
+        nav {       grid-area: nav ;}
+        main {      grid-area: mai ;}
+        aside {     grid-area: asi ;}
+        footer {    grid-area: foo ;}
+
+body{
+    min-height: 90dvh;
+
+    display: grid;
+    gap:5px;
+    grid-template-areas: 
+    "hea hea hea nav nav"
+    "asi mai mai mai mai"
+    "asi mai mai mai mai"
+    "asi mai mai mai mai"
+    "asi mai mai mai mai"
+    " .  foo foo foo . ";
+    
+    ;
+}
+
+@media (max-width:450px){
+    body{
+        grid-template-areas: 
+        "hea hea hea"
+        "nav nav nav"
+        "mai mai asi"
+        "mai mai asi"
+        "foo foo  . ";
+        
+        ;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>header</header>
+    <nav>nav</nav>
+    <main>main</main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+
+</body>
+
+</html>

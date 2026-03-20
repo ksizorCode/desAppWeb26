@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: #cafaf3;
+            font-family: sans-serif;
+        }
+
+        table * {
+            border: solid 1px black;
+            padding: 10px;
+        }
+
+        thead {
+            background: blue;
+            color: white
+        }
+
+        tbody {
+            background-color: white;
+        }
+
+        tfoot {
+            background-color: azure;
+            color: green;
+        }
+
+        table tbody tr:nth-child(2n -1 ){
+        background: lightgrey;
+    }
+
+
+    tbody tr td:nth-child(2n){
+        color:red;
+    }
+
+    tbody tr:hover{
+        background: black !important;
+        color:white;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>8:00</td>
+                <td>Clase</td>
+                <td>Clase</td>
+                <td>Clase</td>
+                <td>Clase</td>
+                <td>Clase</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td>café</td>
+                <td>café</td>
+                <td>café</td>
+                <td>café</td>
+                <td>café</td>
+            </tr>
+            <tr>
+                <td>10:20</td>
+                <td>Más clase</td>
+                <td>Más clase</td>
+                <td>Más clase</td>
+                <td>Más clase</td>
+                <td>Más clase</td>
+            </tr>
+            <tr>
+                <td>13:15</td>
+                <td>Café2</td>
+                <td>Café2</td>
+                <td>Café2</td>
+                <td>Café2</td>
+                <td>Café2</td>
+            </tr>
+            <tr>
+                <td>13:30</td>
+                <td>Más clase todavía</td>
+                <td>Más clase todavía</td>
+                <td>Más clase todavía</td>
+                <td>Más clase todavía</td>
+                <td>Más clase todavía</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Pa casa!!!</td>
+                <td>Pa casa!!!</td>
+                <td>Pa casa!!!</td>
+                <td>Pa casa!!!</td>
+                <td>Pa casa!!!</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>Calorías</th>
+                <th>3000</th>
+                <th>2000</th>
+                <th>4000</th>
+                <th>1000</th>
+                <th>1200</th>
+            </tr>
+        </tfoot>
+
+
+    </table>
+
+
+
+</body>
+
+</html>

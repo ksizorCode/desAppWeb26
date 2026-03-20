@@ -1,0 +1,21 @@
+body{
+    background: orange;
+    color: rgb(63, 61, 59);
+    font-family: sans-serif;
+
+    max-width: 550px;
+    margin: 10px auto;
+
+    text-align: center;
+}
+
+img{
+    width: 100%;
+}
+
+nav ul{ padding: 0;}
+nav li{ list-style: none; display: inline-block; text-align: center;}
+nav li a{ text-decoration: none; color: red; border: solid 2px red; padding: 4px 8px; border-radius: 20px; font-weight: bold;}
+nav li a:hover{ background: red; color: white;}
+
+li{text-align-last: left;}

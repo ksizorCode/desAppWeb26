@@ -1,0 +1,283 @@
+/* Fuentes de google*/
+
+/* Variables */
+:root{}
+
+/* Reset*/
+*{ margin: 0; padding: 0; bottom: 0; outline: none;}
+
+body{
+    font-family: sans-serif;
+
+}
+
+/* Titulos*/
+h1, h2, h3, h4, h5, h6{}
+h1{}
+h2{}
+h3{}
+
+
+/* Enlaces*/
+a{ text-decoration: none; color:black;}
+a:hover{}
+
+p{}
+
+p a{}
+
+img{ max-width:100%;}
+
+
+header, main, footer{}
+
+header.flex,
+footer .flex{
+    justify-content: space-between;
+}
+
+
+header{
+    padding:10px;
+    max-width:960px;
+    margin: 0 auto;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1;
+}
+
+
+
+header a{
+    color:white;
+}
+
+
+main{}
+
+
+section{
+    padding: 20px;
+}
+
+section h2{
+    text-align: center;
+padding: 16px;
+}
+
+section h2+p{
+    text-align: center;
+}
+
+
+section .flex{
+    justify-content: center;
+}
+
+#destacado{
+    text-align: center;
+
+    background: url(img/fondo.jpg) center center no-repeat;
+    background-position: cover;
+    height: 90vh;
+
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    mask-image:linear-gradient(black 85%,transparent)
+}
+
+#destacado h1{
+    font-size: clamp(1rem, 10vw, 2rem); ;
+}
+
+#destacado h2{
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0;
+}
+
+/* Servicios  - - - - - - - - - - - - - - - - */
+
+
+#servicios ul{
+    padding: 10px 0;
+}
+
+
+#servicios .card{   
+    background: #F9F9F9;
+}
+
+
+
+#servicios i{
+    padding: 10px 0 ;
+    font-size: 22px;
+}
+
+#servicios .billetes i{
+    color:#32DF8F;
+}   
+
+#servicios .hotel i{
+    color:#00B8E0;
+}   
+
+#servicios .plan i{
+    color:#E48B78;
+}   
+
+
+
+/* MAPA - - - - - - - - - - - - - - - - */
+
+#mapa{
+    background:#00585322  url(img/mapa.png) center center no-repeat;
+    background-size: contain;
+}
+
+
+
+#mapa .card{
+    background: #FFF;
+    text-align: center;
+    flex: 1 1 0;
+}
+
+#mapa h2{ padding: 0;}
+#mapa h2+p{
+    padding-bottom: 20px;
+}
+
+#mapa .flex{
+    padding: 20px 0;
+}
+
+#mapa .card i{
+    display: block;
+    padding: 10px;
+    color: green;
+}
+
+
+#mapa .card span{
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#mapa .card p{
+    font-size: 10px;
+}
+
+
+/* PUEBLOS - - - - - - - - - - - - - - - - */
+
+
+#pueblos{
+    padding-left: 55vw;
+    background: url(img/mapa.png) center center;
+    background-size: cover;
+}
+
+#pueblos ul.flex{
+    flex-direction: column;
+}
+
+#pueblos ul.flex li{
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    display: flex;
+
+    background: #ffffff88;
+    backdrop-filter: blur(2px);   
+}
+#pueblos ul.flex li p{
+    padding: 10px;
+}
+#pueblos ul.flex li img{
+transition:.3s;
+width: 120px;;
+}
+#pueblos ul.flex li:hover img{
+    scale: 1.1;
+}
+
+
+
+
+
+#newsletter{
+    background-color: aquamarine;
+    border-radius: 50px 20px 10px 0pc;
+    text-align: center;
+}   
+
+
+footer{
+    margin-top:80px
+}
+
+
+
+
+
+/* Mi Framework */
+
+.flex,
+.menu{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap:10px;
+}
+
+.card,
+.tarjeta{
+    padding: 16px;
+    border-radius: 10px;
+    background: #ffffff88;
+}
+
+.sombrita{
+    box-shadow:5px 5px 20px black;
+}
+
+
+
+.btn{
+    background-color: green;
+    padding: 8px 20px;
+    text-align: center;
+    color:white;
+    border-radius: 10px;
+    border:none;
+    margin: 20px 0
+}
+
+input[type="email"]{
+    padding: 8px 20px;
+    border-radius: 10px;
+    border:none;
+    margin: 20px 0
+
+}
+
+
+section{
+    animation: ale 5s;
+}
+
+@keyframes ale{
+    0%{ opacity:0;}
+}

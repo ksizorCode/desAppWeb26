@@ -1,0 +1,102 @@
+body {
+  background: tan;
+  font-family: sans-serif;
+  max-width: 940px;
+  margin: 20px auto;
+}
+
+a {
+  text-decoration: none;
+  color: brown;
+}
+
+img {
+  max-width: 320px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 4px 6px 8px;
+  border: 8px white solid;
+  border-bottom: 38px solid white;
+  rotate: -3deg;
+  transition: 0.3s;
+  margin: 20px 0;
+}
+
+img:hover {
+  rotate: 0deg;
+  scale: 2;
+  filter: sepia(1);
+}
+
+nav ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+footer {
+  text-align: center;
+}
+
+ul:not(header ul):not(footer ul) {
+  text-shadow: 2px 2px 3px white;
+}
+
+.miBotonico {
+  background: brown;
+  color: white;
+  padding: 4px 32px;
+  border-radius: 12px;
+  border: solid 3px white;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 8px black;
+  text-shadow: 2px 2px 8px black;
+  transition: 0.3s;
+}
+
+.miBotonico:hover {
+  background: black;
+}
+
+.columnitas2 {
+  display: flex;
+  gap: 60px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;url(https://d17umfmk0e27oh.cloudfront.net/articulos/articulos-788498.jpg)
+  align-items: center;
+  background: white;
+  padding: 12px 20px;
+  border-bottom: solid 6px brown;
+}
+
+.logo {
+  color: brown;
+  font-weight: bold;
+  font-size: 53px;
+  text-shadow: 2px 2px 7px black;
+  -webkit-text-stroke: 1px white;
+}
+
+.escaparate{
+  display: flex;
+  gap:5px;
+  flex-wrap: wrap;
+  list-style:none;
+  padding-left: 0;
+}
+
+.escaparate img{
+  max-width: 150px;
+  rotate: 0deg;
+}
+
+.escaparate .miBotonico{
+  font-size:12px;
+  letter-spacing: 2px;
+}
+
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.calculadora {
+    display: grid;
+    max-width: 560px;
+    min-width: 320px;
+    grid-template-areas:
+        "resultado resultado resultado resultado"
+        "c c prc  mas"
+        "b1 b2 b3 menos"
+        "b4 b5 b6 por"
+        "b7 b8 b9 div"
+        "b0  b0 bp ig"; /* Distribución de botones en la cuadrícula */
+    gap: 3px;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.resultado {
+    grid-area: resultado;
+    background: linear-gradient(43deg, #333 0%, #333 30%, #444 40%,#444 45%, #333 45%, #333 60%, #444 60%, #444 65%, #333 67%, #333 100%);
+    color: white;
+    width: 100%;
+    height: 120px;;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 42px;
+    letter-spacing: 2px;;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    background-color: #f1f1f1;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    scale:1;
+
+
+
+}
+button:hover{
+    background: radial-gradient(circle, #f1f1f1, #e1e1e1);
+}
+
+button:active {
+    background: radial-gradient(circle, #f1f1f1, #9f9f9f);
+    box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 0.652) inset;
+    scale:0.95;
+
+}
+
+/* Asociamos cada botón con su área */
+.b1 { grid-area: b1; }
+.b2 { grid-area: b2; }
+.b3 { grid-area: b3; }
+.b4 { grid-area: b4; }
+.b5 { grid-area: b5; }
+.b6 { grid-area: b6; }
+.b7 { grid-area: b7; }
+.b8 { grid-area: b8; }
+.b9 { grid-area: b9; }
+.b0 { grid-area: b0; }
+.bp { grid-area: bp; }
+.prc { grid-area: prc; }
+.c { grid-area: c; }
+
+
+.mas { grid-area: mas; }
+.por { grid-area: por; }
+.igual { grid-area: ig; }
+.menos { grid-area: menos; }
+.div { grid-area: div; }
+
+
+.mas, .por, .igual, .menos, .div {
+    background-color: orange;
+    color: #333;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+    <div class="calculadora">
+        <div class="resultado">180,345</div>
+        <button class="c">C</button>
+        <button class="prc">%</button>
+
+        <button class="b1">1</button>
+        <button class="b2">2</button>
+        <button class="b3">3</button>
+        <button class="b4">4</button>
+        <button class="b5">5</button>
+        <button class="b6">6</button>
+        <button class="b7">7</button>
+        <button class="b8">8</button>
+        <button class="b9">9</button>
+        <button class="b0">0</button>
+        <button class="bp">,</button>
+        <button class="mas">+</button>
+        <button class="menos">-</button>
+        <button class="por">×</button>
+        <button class="div">÷</button>
+        <button class="igual">=</button>
+    </div>
+
+</html>

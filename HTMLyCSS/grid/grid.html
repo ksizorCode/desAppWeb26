@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            background: tan;
+            font-family: sans-serif;
+            padding: 10px;
+        }
+
+        body {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+            body * {
+                outline: grey solid 1px;
+                margin: 5px;
+                padding: 2px;
+            }
+
+
+            /* Apilar elemento en los 2000*/
+            .contendor {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .elemento {}
+
+    </style>
+</head>
+
+<body>
+    <h1>Apliar elementos con grid (2017)</h1>
+    <div class="contendor">
+        <div class="elemento" id="cosa1">
+            Elemento Primero
+        </div>
+
+        <div class="elemento" id="cosa2">
+            Elemento Segundo
+        </div>
+    </div>
+
+</body>
+
+</html>
