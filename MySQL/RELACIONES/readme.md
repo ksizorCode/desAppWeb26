@@ -107,9 +107,36 @@ Reivisamos director:
 SELECT * FROM director
 ```
 
+### 0.5 Tabla de realación
+Vamos a crear una tabla que relacione las películas con los directores:
+
+Creamos la tabla:
+```sql
+CREATE TABLE `peliculas-directores` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_peliculas` int(11) NOT NULL,
+  `id_directores` int(11) NOT NULL,
+  FOREIGN KEY (`id_peliculas`) REFERENCES `peliculas` (`id`),
+  FOREIGN KEY (`id_directores`) REFERENCES `director` (`id`)
+);
+```
 
 
----
+
+Insertamos los datos de la relación:
+```sql
+INSERT INTO `peliculas_director` (`id_pelicula`, `id_director`) VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 1),
+  (5, 2),
+  (6, 1),
+  (7, 4);
+```
+
+
+
 
 
 
