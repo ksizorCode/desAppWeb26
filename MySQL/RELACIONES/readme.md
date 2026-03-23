@@ -37,7 +37,7 @@ Vamos a crear una base de datos con 2-3 tablas de datos relacionadas entre sí.
 
 ---
 
-## Desarrollo técnico
+## 💾 Desarrollo técnico
 
 ### 01. Crear nueva base de datos
 
@@ -46,10 +46,17 @@ En AdminerNeo (o el sistema que estemos usando), crear una nueva base de datos v
 ```sql
 CREATE DATABASE db_peliculas;
 ```
+Antes de crear las tablas asegúrate de que estás dentro de la base de datos `db_peliculas`. Puedes hacerlo a meno en el administrador de base de datos o por comanando:
+
+```sql
+USE db_peliculas;
+```
+
 
 ---
 
 ### 02. Crear las tablas
+
 
 #### Tabla `peliculas`
 
