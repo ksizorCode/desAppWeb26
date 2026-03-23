@@ -1,69 +1,76 @@
-# Bases de Datos relacionadas
-Vamos a hacer una base de datos conde generaremos 2 o 3 tablas con datos que relacionaremos entre sí.
+# Bases de datos relacionales
+
+Vamos a crear una base de datos con 2-3 tablas de datos relacionadas entre sí.
+
+---
 
 ## DB Películas
 
-### Tablas de datos:
-- Peliculas
-· id
-· nombre
+### Estructura de tablas
 
-- Director
-· id
-· nombre
+**Tablas de datos**
 
-### Tablas de relación
-- peliculas-director
-· id
-· id_peliculas
-· id_director
+| Tabla       | Campos                        |
+|-------------|-------------------------------|
+| `peliculas` | `id`, `nombre`, `anio`        |
+| `director`  | `id`, `nombre`                |
 
+**Tabla de relación**
 
-### Películas con las que jugar
+| Tabla               | Campos                                  |
+|---------------------|-----------------------------------------|
+| `peliculas_director` | `id`, `id_pelicula`, `id_director`     |
 
-- La lista de Shindler                              1993     Steven Spielberg
-- Volver a Empezar                                  1982     Jose Luis Garci
-- Holocausto canibal                                1980     Jugero de Odato
-- Jurassic Park                                     1994     Steven Spielberg
-- El Abuelo                                         1998     Jose Luis Garci
-- Indiana Jones. En Busca del Arca Perdida          1981     Steven Spielberg
-- La Guerra de las Galaxias. Una nueva Esperanza    1977     George Lucas
+---
 
+### Datos de ejemplo
 
+| Título                                           | Año  | Director          |
+|--------------------------------------------------|------|-------------------|
+| La lista de Schindler                            | 1993 | Steven Spielberg  |
+| Volver a empezar                                 | 1982 | José Luis Garci   |
+| Holocausto caníbal                               | 1980 | Ruggero Deodato   |
+| Jurassic Park                                    | 1994 | Steven Spielberg  |
+| El abuelo                                        | 1998 | José Luis Garci   |
+| Indiana Jones: En busca del arca perdida         | 1981 | Steven Spielberg  |
+| La guerra de las galaxias: Una nueva esperanza   | 1977 | George Lucas      |
 
-----
+---
 
-Una vez definido lo que vamos a hacer comencemos con el desarrollo técnico:
+## Desarrollo técnico
 
+### 01. Crear nueva base de datos
 
-## 01. Crear Nueva base de datos
-En AdminerNeo o el sistema que estemos utilizando creamos una nueva base de datos
+En AdminerNeo (o el sistema que estemos usando), crear una nueva base de datos vacía.
 
-## 02. Crear tablas
+---
 
-Craemos tablas de películas y directores:
+### 02. Crear las tablas
 
-
-
-
-
-Tabla películas
+#### Tabla `peliculas`
 ```sql
-
 CREATE TABLE `peliculas` (
-  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nombre` varchar(255) NOT NULL,
-  `anio` int(4) NOT NULL
-
+  `id`     INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL,
+  `anio`   INT(4)       NOT NULL
 );
-
 ```
-Tabla directores
+
+#### Tabla `director`
 ```sql
-
 CREATE TABLE `director` (
-  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nombre` varchar(255) NOT NULL
+  `id`     INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL
 );
+```
 
+#### Tabla de relación `peliculas_director`
+```sql
+CREATE TABLE `peliculas_director` (
+  `id`          INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_pelicula` INT NOT NULL,
+  `id_director` INT NOT NULL,
+  FOREIGN KEY (`id_pelicula`) REFERENCES `peliculas`(`id`),
+  FOREIGN KEY (`id_director`) REFERENCES `director`(`id`)
+);
 ```
