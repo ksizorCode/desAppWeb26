@@ -65,7 +65,7 @@ CREATE TABLE `director` (
 ```
 
 
-### Rellenamos las tablas con los siguientes datos:
+### 0.3 Rellenamos las tablas con los siguientes datos:
 
 Datos para la tabla películas
 ```sql
@@ -95,6 +95,23 @@ VALUES
 ```
 
 
+### 0.4 Revisamos los datos insertados:
+
+Revisamos peliculas:
+```sql 
+SELECT * FROM peliculas
+```
+
+Reivisamos director:
+```sql 
+SELECT * FROM director
+```
+
+
+
+---
+
+
 
 > [!CAUTION]
 > No puedes pasarrrr!!!!!
@@ -112,4 +129,13 @@ CREATE TABLE `peliculas_director` (
   FOREIGN KEY (`id_pelicula`) REFERENCES `peliculas`(`id`),
   FOREIGN KEY (`id_director`) REFERENCES `director`(`id`)
 );
+```
+
+
+
+Recuerda que si tienes que borrar todos los datos de una tabla puedes usar:
+
+```sql
+TRUNCATE TABLE NombreDeTuTabla;
+
 ```
