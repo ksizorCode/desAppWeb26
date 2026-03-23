@@ -4,7 +4,7 @@ Vamos a crear una base de datos con 2-3 tablas de datos relacionadas entre sí.
 
 ---
 
-## DB Películas
+## DB Pelis
 
 ### Estructura de tablas
 
@@ -63,6 +63,37 @@ CREATE TABLE `director` (
   `nombre` VARCHAR(255) NOT NULL
 );
 ```
+
+
+### Rellenamos las tablas con los siguientes datos:
+
+Datos para la tabla películas
+```sql
+INSERT INTO `peliculas` (`nombre`,`anio`)
+VALUES
+('La lista de Shindler',1993),
+('Volver a Empezar',1982),
+('Holocausto Canibal',1980),
+('Jurasic Park',1994),
+('El Abuelo',1998),
+('Indiana Jones. En Busca del Arca Perdida',1981),
+('La Guerra de las Galaxias. Una nueva esperanza',1977)
+;
+
+```
+Datos para directores
+```sql
+INSERT INTO `director` (`nombre`)
+VALUES
+('Steven Spielberg'),
+('José Luis Garci'),
+('Ruggero Deodato'),
+('George Lucas'),
+('Christopher Nolan')
+;
+
+```
+
 
 
 > [!CAUTION]
