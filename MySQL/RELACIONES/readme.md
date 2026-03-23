@@ -286,3 +286,16 @@ FROM peliculas_director
   JOIN peliculas ON peliculas_director.id_pelicula = peliculas.id
   JOIN director  ON peliculas_director.id_director = director.id;
   ```
+
+
+
+  ### Ejercicio
+A. Repetir lo anterior
+  1. Replica lo hecho anteriormetne
+  2. Añade datos de forma manual a la base de datos (más pelis, más directores, más relaciones)
+  3. Revisa que los datos se ven y relacionan correctamente 
+
+B. Creación de tu propia base de datos relacionada
+ 1. Hacemos un esquema en el Figma Compartido (añade tu nombre arriba del todo)
+ 2. Creamos el código y vamos registrando los pasos en un .md por si metemos la pata y tenemos que volver atrás que tengamos maneras de reutilizar código o revisar pasos.
+ 3. Testeamos en AdminerNeo y avisamos al profe para enseñarselo con orgullo.
