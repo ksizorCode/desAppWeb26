@@ -215,3 +215,73 @@ Resultado esperado:
 
 > **Importante:** `TRUNCATE` no funciona en tablas con claves foráneas activas.
 > En ese caso usa `DELETE FROM nombre_tabla;` en su lugar.
+
+---
+
+## Todo de golpe:
+
+```sql
+# Crear base de datos:
+CREATE DATABASE db_peliculas;
+
+
+# Crear Tabla Peliculas
+CREATE TABLE `peliculas` (
+  `id`     INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL,
+  `anio`   INT(4)       NOT NULL
+);
+
+# Creat Tabla Director
+CREATE TABLE `director` (
+  `id`     INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL
+);
+
+# Crear Tabla de Relación:
+CREATE TABLE `peliculas_director` (
+  `id`          INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_pelicula` INT NOT NULL,
+  `id_director` INT NOT NULL,
+  FOREIGN KEY (`id_pelicula`) REFERENCES `peliculas`(`id`),
+  FOREIGN KEY (`id_director`) REFERENCES `director`(`id`)
+);
+
+
+# Insertar datos:
+INSERT INTO `peliculas` (`nombre`, `anio`) VALUES
+  ('La lista de Schindler',                          1993),
+  ('Volver a empezar',                               1982),
+  ('Holocausto caníbal',                             1980),
+  ('Jurassic Park',                                  1994),
+  ('El abuelo',                                      1998),
+  ('Indiana Jones: En busca del arca perdida',       1981),
+  ('La guerra de las galaxias: Una nueva esperanza', 1977);
+
+INSERT INTO `director` (`nombre`) VALUES
+  ('Steven Spielberg'),
+  ('José Luis Garci'),
+  ('Ruggero Deodato'),
+  ('George Lucas'),
+  ('Christopher Nolan');
+
+INSERT INTO `peliculas_director` (`id_pelicula`, `id_director`) VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 1),
+  (5, 2),
+  (6, 1),
+  (7, 4);
+
+
+
+```
+
+## Consulta
+
+``sql
+SELECT * FROM peliculas-director
+   JOIN peliculas    ON peliculas.id=peliculas-director.id_pelicula
+   JON  director     ON director.id= peliculas-director.id_director
+  ```
