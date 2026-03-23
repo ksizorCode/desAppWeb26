@@ -161,6 +161,15 @@ Para unir tres tablas encadenamos dos `JOIN` seguidos.
 
 #### Consulta básica (todos los campos)
 
+Versión sin abreviaturas
+```sql
+SELECT *
+FROM peliculas_director
+  JOIN peliculas ON peliculas_director.id_pelicula = peliculas.id
+  JOIN director  ON peliculas_director.id_director = director.id;
+```
+
+Con uso de abreviaturas (igual que la anterior pero con abreviaturas)
 ```sql
 SELECT *
 FROM peliculas_director pd
