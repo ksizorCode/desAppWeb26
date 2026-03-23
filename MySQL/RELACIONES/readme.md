@@ -65,8 +65,8 @@ CREATE TABLE `director` (
 ```
 
 
->[!Note]
-> No puedes pasar!!!!!
+> [!CAUTION]
+> No puedes pasarrrr!!!!!
 > ------
 ---
 
