@@ -46,7 +46,7 @@ En AdminerNeo (o el sistema que estemos usando), crear una nueva base de datos v
 ```sql
 CREATE DATABASE db_peliculas;
 ```
-Antes de crear las tablas asegúrate de que estás dentro de la base de datos `db_peliculas`. Puedes hacerlo a meno en el administrador de base de datos o por comanando:
+Antes de crear las tablas asegúrate de que estás dentro de la base de datos `db_peliculas`. Puedes hacerlo a mano en el administrador de base de datos o por comanando:
 
 ```sql
 USE db_peliculas;
