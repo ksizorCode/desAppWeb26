@@ -287,15 +287,42 @@ FROM peliculas_director
   JOIN director  ON peliculas_director.id_director = director.id;
   ```
 
+---
 
 
-  ### Ejercicio
+```mermaid
+erDiagram
+  peliculas {
+    INT id PK
+    VARCHAR nombre
+    INT anio
+  }
+  director {
+    INT id PK
+    VARCHAR nombre
+  }
+  peliculas_director {
+    INT id PK
+    INT id_pelicula FK
+    INT id_director FK
+  }
+  peliculas ||--o{ peliculas_director : "id → id_pelicula"
+  director  ||--o{ peliculas_director : "id → id_director"
+```
+
+
+---
+### Ejercicio
+
 A. Repetir lo anterior
   1. Replica lo hecho anteriormetne
   2. Añade datos de forma manual a la base de datos (más pelis, más directores, más relaciones)
   3. Revisa que los datos se ven y relacionan correctamente 
 
-B. Creación de tu propia base de datos relacionada
+B. Creación de tu propia base de datos relacionada (simple)
  1. Hacemos un esquema en el Figma Compartido (añade tu nombre arriba del todo)
  2. Creamos el código y vamos registrando los pasos en un .md por si metemos la pata y tenemos que volver atrás que tengamos maneras de reutilizar código o revisar pasos.
  3. Testeamos en AdminerNeo y avisamos al profe para enseñarselo con orgullo.
+
+ C. Diseña tu propia base de datos (compleja)
+  1. Ahora flípate y crea un esquema (en Figma o draw_db) de una posible base de datos mucho más compleja (sólo disélala de forma visual, no hace falta que la construyas).
