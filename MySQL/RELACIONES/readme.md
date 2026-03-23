@@ -231,6 +231,8 @@ Resultado esperado:
 # Crear base de datos:
 CREATE DATABASE db_peliculas;
 
+# Entramos en la base de datos
+USE db_peliculas;
 
 # Crear Tabla Peliculas
 CREATE TABLE `peliculas` (
