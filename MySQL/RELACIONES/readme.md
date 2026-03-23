@@ -64,6 +64,14 @@ CREATE TABLE `director` (
 );
 ```
 
+
+>[!Note]
+> No puedes pasar!!!!!
+> ------
+---
+
+
+
 #### Tabla de relación `peliculas_director`
 ```sql
 CREATE TABLE `peliculas_director` (
