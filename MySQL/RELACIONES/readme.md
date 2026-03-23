@@ -280,8 +280,9 @@ INSERT INTO `peliculas_director` (`id_pelicula`, `id_director`) VALUES
 
 ## Consulta
 
-``sql
-SELECT * FROM peliculas-director
-   JOIN peliculas    ON peliculas.id=peliculas-director.id_pelicula
-   JON  director     ON director.id= peliculas-director.id_director
+```sql
+SELECT *
+FROM peliculas_director
+  JOIN peliculas ON peliculas_director.id_pelicula = peliculas.id
+  JOIN director  ON peliculas_director.id_director = director.id;
   ```
