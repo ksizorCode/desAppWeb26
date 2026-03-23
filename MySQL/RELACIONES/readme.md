@@ -4,36 +4,36 @@ Vamos a crear una base de datos con 2-3 tablas de datos relacionadas entre sí.
 
 ---
 
-## DB Pelis
+## DB Películas
 
 ### Estructura de tablas
 
 **Tablas de datos**
 
-| Tabla       | Campos                        |
-|-------------|-------------------------------|
-| `peliculas` | `id`, `nombre`, `anio`        |
-| `director`  | `id`, `nombre`                |
+| Tabla       | Campos                  |
+|-------------|-------------------------|
+| `peliculas` | `id`, `nombre`, `anio`  |
+| `director`  | `id`, `nombre`          |
 
 **Tabla de relación**
 
-| Tabla               | Campos                                  |
-|---------------------|-----------------------------------------|
-| `peliculas_director` | `id`, `id_pelicula`, `id_director`     |
+| Tabla                | Campos                              |
+|----------------------|-------------------------------------|
+| `peliculas_director` | `id`, `id_pelicula`, `id_director`  |
 
 ---
 
 ### Datos de ejemplo
 
-| Título                                           | Año  | Director          |
-|--------------------------------------------------|------|-------------------|
-| La lista de Schindler                            | 1993 | Steven Spielberg  |
-| Volver a empezar                                 | 1982 | José Luis Garci   |
-| Holocausto caníbal                               | 1980 | Ruggero Deodato   |
-| Jurassic Park                                    | 1994 | Steven Spielberg  |
-| El abuelo                                        | 1998 | José Luis Garci   |
-| Indiana Jones: En busca del arca perdida         | 1981 | Steven Spielberg  |
-| La guerra de las galaxias: Una nueva esperanza   | 1977 | George Lucas      |
+| id | Título                                          | Año  | Director          |
+|----|-------------------------------------------------|------|-------------------|
+| 1  | La lista de Schindler                           | 1993 | Steven Spielberg  |
+| 2  | Volver a empezar                                | 1982 | José Luis Garci   |
+| 3  | Holocausto caníbal                              | 1980 | Ruggero Deodato   |
+| 4  | Jurassic Park                                   | 1994 | Steven Spielberg  |
+| 5  | El abuelo                                       | 1998 | José Luis Garci   |
+| 6  | Indiana Jones: En busca del arca perdida        | 1981 | Steven Spielberg  |
+| 7  | La guerra de las galaxias: Una nueva esperanza  | 1977 | George Lucas      |
 
 ---
 
@@ -43,11 +43,16 @@ Vamos a crear una base de datos con 2-3 tablas de datos relacionadas entre sí.
 
 En AdminerNeo (o el sistema que estemos usando), crear una nueva base de datos vacía.
 
+```sql
+CREATE DATABASE db_peliculas;
+```
+
 ---
 
 ### 02. Crear las tablas
 
 #### Tabla `peliculas`
+
 ```sql
 CREATE TABLE `peliculas` (
   `id`     INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -57,6 +62,7 @@ CREATE TABLE `peliculas` (
 ```
 
 #### Tabla `director`
+
 ```sql
 CREATE TABLE `director` (
   `id`     INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -64,66 +70,67 @@ CREATE TABLE `director` (
 );
 ```
 
+#### Tabla de relación `peliculas_director`
 
-### 0.3 Rellenamos las tablas con los siguientes datos:
+La tabla de relación contiene dos **claves foráneas**: `id_pelicula` apunta al `id`
+de la tabla `peliculas`, e `id_director` apunta al `id` de la tabla `director`.
+Esto es lo que establece la relación entre ambas entidades.
 
-Datos para la tabla películas
 ```sql
-INSERT INTO `peliculas` (`nombre`,`anio`)
-VALUES
-('La lista de Shindler',1993),
-('Volver a Empezar',1982),
-('Holocausto Canibal',1980),
-('Jurasic Park',1994),
-('El Abuelo',1998),
-('Indiana Jones. En Busca del Arca Perdida',1981),
-('La Guerra de las Galaxias. Una nueva esperanza',1977)
-;
-
-```
-Datos para directores
-```sql
-INSERT INTO `director` (`nombre`)
-VALUES
-('Steven Spielberg'),
-('José Luis Garci'),
-('Ruggero Deodato'),
-('George Lucas'),
-('Christopher Nolan')
-;
-
-```
-
-
-### 0.4 Revisamos los datos insertados:
-
-Revisamos peliculas:
-```sql 
-SELECT * FROM peliculas
-```
-
-Reivisamos director:
-```sql 
-SELECT * FROM director
-```
-
-### 0.5 Tabla de realación
-Vamos a crear una tabla que relacione las películas con los directores:
-
-Creamos la tabla:
-```sql
-CREATE TABLE `peliculas-directores` (
-  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id_peliculas` int(11) NOT NULL,
-  `id_directores` int(11) NOT NULL,
-  FOREIGN KEY (`id_peliculas`) REFERENCES `peliculas` (`id`),
-  FOREIGN KEY (`id_directores`) REFERENCES `director` (`id`)
+CREATE TABLE `peliculas_director` (
+  `id`          INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_pelicula` INT NOT NULL,
+  `id_director` INT NOT NULL,
+  FOREIGN KEY (`id_pelicula`) REFERENCES `peliculas`(`id`),
+  FOREIGN KEY (`id_director`) REFERENCES `director`(`id`)
 );
 ```
 
+---
 
+### 03. Insertar datos
 
-Insertamos los datos de la relación:
+#### Películas
+
+```sql
+INSERT INTO `peliculas` (`nombre`, `anio`) VALUES
+  ('La lista de Schindler',                          1993),
+  ('Volver a empezar',                               1982),
+  ('Holocausto caníbal',                             1980),
+  ('Jurassic Park',                                  1994),
+  ('El abuelo',                                      1998),
+  ('Indiana Jones: En busca del arca perdida',       1981),
+  ('La guerra de las galaxias: Una nueva esperanza', 1977);
+```
+
+#### Directores
+
+```sql
+INSERT INTO `director` (`nombre`) VALUES
+  ('Steven Spielberg'),
+  ('José Luis Garci'),
+  ('Ruggero Deodato'),
+  ('George Lucas'),
+  ('Christopher Nolan');
+```
+
+> **Nota:** Se incluye Christopher Nolan sin películas asignadas, útil para
+> practicar consultas con `LEFT JOIN` y ver directores sin coincidencias.
+
+#### Relaciones película–director
+
+Los `id` corresponden al orden de inserción en cada tabla.
+
+| id | id_pelicula | id_director | Relación                                        |
+|----|-------------|-------------|-------------------------------------------------|
+| 1  | 1           | 1           | La lista de Schindler → Steven Spielberg        |
+| 2  | 2           | 2           | Volver a empezar → José Luis Garci              |
+| 3  | 3           | 3           | Holocausto caníbal → Ruggero Deodato            |
+| 4  | 4           | 1           | Jurassic Park → Steven Spielberg                |
+| 5  | 5           | 2           | El abuelo → José Luis Garci                     |
+| 6  | 6           | 1           | Indiana Jones → Steven Spielberg                |
+| 7  | 7           | 4           | La guerra de las galaxias → George Lucas        |
+
 ```sql
 INSERT INTO `peliculas_director` (`id_pelicula`, `id_director`) VALUES
   (1, 1),
@@ -135,34 +142,67 @@ INSERT INTO `peliculas_director` (`id_pelicula`, `id_director`) VALUES
   (7, 4);
 ```
 
-
-
-
-
-
-> [!CAUTION]
-> No puedes pasarrrr!!!!!
-> ------
 ---
 
-
-
-#### Tabla de relación `peliculas_director`
-```sql
-CREATE TABLE `peliculas_director` (
-  `id`          INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id_pelicula` INT NOT NULL,
-  `id_director` INT NOT NULL,
-  FOREIGN KEY (`id_pelicula`) REFERENCES `peliculas`(`id`),
-  FOREIGN KEY (`id_director`) REFERENCES `director`(`id`)
-);
-```
-
-
-
-Recuerda que si tienes que borrar todos los datos de una tabla puedes usar:
+### 04. Revisar los datos insertados
 
 ```sql
-TRUNCATE TABLE NombreDeTuTabla;
-
+SELECT * FROM peliculas;
+SELECT * FROM director;
+SELECT * FROM peliculas_director;
 ```
+
+---
+
+### 05. Consultar los datos con JOIN
+
+Un `JOIN` cruza dos tablas usando una condición `ON` que vincula sus claves.
+Para unir tres tablas encadenamos dos `JOIN` seguidos.
+
+#### Consulta básica (todos los campos)
+
+```sql
+SELECT *
+FROM peliculas_director pd
+  JOIN peliculas p ON pd.id_pelicula = p.id
+  JOIN director  d ON pd.id_director = d.id;
+```
+
+#### Consulta específica (solo los campos útiles)
+
+```sql
+SELECT
+  p.nombre AS pelicula,
+  p.anio   AS año,
+  d.nombre AS director
+FROM peliculas_director pd
+  JOIN peliculas p ON pd.id_pelicula = p.id
+  JOIN director  d ON pd.id_director = d.id
+ORDER BY p.anio;
+```
+
+Resultado esperado:
+
+| pelicula                                        | año  | director          |
+|-------------------------------------------------|------|-------------------|
+| La guerra de las galaxias: Una nueva esperanza  | 1977 | George Lucas      |
+| Holocausto caníbal                              | 1980 | Ruggero Deodato   |
+| Indiana Jones: En busca del arca perdida        | 1981 | Steven Spielberg  |
+| Volver a empezar                                | 1982 | José Luis Garci   |
+| La lista de Schindler                           | 1993 | Steven Spielberg  |
+| Jurassic Park                                   | 1994 | Steven Spielberg  |
+| El abuelo                                       | 1998 | José Luis Garci   |
+
+---
+
+### Utilidades
+
+| Acción                            | Comando SQL                          |
+|-----------------------------------|--------------------------------------|
+| Borrar los datos (conserva tabla) | `TRUNCATE TABLE nombre_tabla;`       |
+| Eliminar la tabla completa        | `DROP TABLE nombre_tabla;`           |
+| Eliminar la base de datos entera  | `DROP DATABASE nombre_base_datos;`   |
+| Crear una nueva base de datos     | `CREATE DATABASE nombre_base_datos;` |
+
+> **Importante:** `TRUNCATE` no funciona en tablas con claves foráneas activas.
+> En ese caso usa `DELETE FROM nombre_tabla;` en su lugar.
