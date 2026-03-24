@@ -1,17 +1,34 @@
 # 🗄️ Apuntes de Bases de Datos Relacionales
-Guía completa sobre **relaciones** y **claves** en bases de datos, con ejemplos prácticos usando un sistema de tienda online.
+
+Guía  sobre **relaciones** y **claves** en bases de datos, con ejemplos.
 ---
 
-# 🔗 Parte 1: Tipos de Relaciones
+# 🔗 Parte 01: Tipos de Relaciones
+
 Las relaciones describen cómo dos tablas están conectadas entre sí. Existen tres tipos principales.
 ---
 
 ## 1️⃣ Uno a Uno (1:1)
-Cada registro de la tabla A corresponde a **exactamente un** registro en la tabla B, y viceversa.
-Se usa principalmente para separar datos sensibles o poco accedidos de la tabla principal.
 
-### 📌 Ejemplo: Persona y Pasaporte
-Una persona tiene un único pasaporte, y ese pasaporte pertenece a una única persona.
+Cada registro de la tabla A corresponde a **exactamente un** registro en la tabla B, y viceversa.
+Se usa principalmente para separar datos sensibles o poco accedidos de la tabla principal. << Expresa esto mejor, no me gusta eso de accedidos>>
+
+
+
+
+```mermaid
+erDiagram
+    PERSONA ||--|| PASAPORTE : tiene
+```
+
+### 📌 Ejemplos (conceptuales)
+
+- Usuario ↔ Perfil  
+- Empleado ↔ Contrato  
+- Vehículo ↔ Matrícula  
+
+### 📌 Ejemplo Práctico: Persona y Pasaporte
+Una persona tiene un único pasaporte, y ese pasaporte pertenece a una única persona. 
 
 **Tabla `persona`**
 | id (PK) | nombre        | fecha_nac  |
@@ -40,6 +57,7 @@ CREATE TABLE pasaporte (
     -- UNIQUE obliga a que sea 1:1
 );
 ```
+<< añade ejemplo de la consulta >>
 
 ---
 ## 🔢 Uno a Muchos (1:N)
@@ -47,7 +65,20 @@ Un registro de la tabla A puede estar relacionado con **múltiples** registros e
 
 Es la relación **más habitual**. La clave foránea siempre vive en el lado "muchos".
 
-### 📌 Ejemplo: Cliente y Pedidos
+```mermaid
+erDiagram
+    CLIENTE ||--o{ PEDIDO : realiza
+```
+### 📌 Ejemplos (conceptuales)
+
+- Autor → Libros  
+- Profesor → Alumnos  
+- Categoría → Productos  
+
+---
+
+
+### 📌 Ejemplo Práctico: Cliente y Pedidos
 Un cliente puede realizar varios pedidos, pero cada pedido pertenece a un solo cliente.
 
 **Tabla `cliente`**
@@ -85,6 +116,13 @@ CREATE TABLE pedido (
 Varios registros de A pueden relacionarse con varios registros de B, y viceversa.
 
 Se implementa con una **tabla intermedia** que almacena las FK de ambas tablas. Esta tabla puede además tener atributos propios de la relación.
+
+```mermaid
+erDiagram
+    ESTUDIANTE ||--o{ MATRICULA : tiene
+    CURSO ||--o{ MATRICULA : incluye
+```
+
 
 ### 📌 Ejemplo: Estudiantes y Cursos
 
@@ -217,6 +255,8 @@ Tanto `id` como `email` identifican unívocamente a un cliente. Se eligió `id` 
 
 ---
 
+<<añade también el usarname como clave candidata>>
+
 ## ✅ 4. Clave Única (Unique Key)
 
 Igual que la PK en cuanto a unicidad, pero **sí permite un valor `NULL`** y puede haber varias en la misma tabla.
@@ -311,3 +351,59 @@ Al definir claves foráneas, puedes controlar qué ocurre cuando se borra o actu
 | `ON DELETE CASCADE`    | Borra automáticamente los registros hijos                 |
 | `ON DELETE SET NULL`   | Pone la FK a `NULL` cuando se borra el padre              |
 | `ON DELETE RESTRICT`   | Impide borrar el padre si tiene hijos *(comportamiento por defecto)* |
+
+
+
+###🛡️ Ejemplos Conceptuales
+
+## 📊 Resumen general
+
+| Opción              | Ejemplo real                                                                 | Qué ocurre al borrar el “padre” |
+|---------------------|------------------------------------------------------------------------------|---------------------------------|
+| **CASCADE**         | 🧑 Cliente → 🧾 Pedidos                                                      | Si borras el cliente, se borran automáticamente todos sus pedidos |
+| **SET NULL**        | 🧑 Cliente → 🧾 Pedidos                                                      | Si borras el cliente, los pedidos siguen existiendo pero sin cliente asignado |
+| **RESTRICT**        | 🧑 Cliente → 🧾 Pedidos                                                      | No puedes borrar el cliente si tiene pedidos asociados |
+
+---
+
+## 🎯 Más ejemplos
+
+### 🔁 CASCADE
+
+| Escenario                                   | Explicación |
+|--------------------------------------------|-------------|
+| 🏫 Curso → 📄 Matrículas                    | Si se elimina el curso, desaparecen todas las matrículas asociadas |
+| 🛒 Pedido → 📦 Detalles del pedido          | Si borras el pedido, se borran sus líneas de productos |
+| 🧑 Usuario → 💬 Comentarios                 | Si eliminas el usuario, se eliminan sus comentarios |
+
+---
+
+### 🟡 SET NULL
+
+| Escenario                                   | Explicación |
+|--------------------------------------------|-------------|
+| 🧑 Empleado → 🏢 Departamento               | Si se elimina el departamento, el empleado se queda sin departamento |
+| 🎬 Película → 🎭 Director                   | Si borras el director, la película sigue pero sin director asignado |
+| 📦 Producto → 🏷️ Categoría                 | El producto sigue existiendo pero sin categoría |
+
+---
+
+### ⛔ RESTRICT
+
+| Escenario                                  | Explicación |
+|-------------------------------------------|-------------|
+| 🏦 Cuenta → 💸 Movimientos                | No puedes borrar la cuenta si tiene movimientos |
+| 🧑 Cliente → 🧾 Facturas                 | No puedes borrar el cliente si tiene facturas |
+| 🏫 Profesor → 👨‍🎓 Alumnos              | No puedes borrar el profesor si tiene alumnos asignados |
+
+---
+
+## 🧠 Regla rápida para recordar
+
+| Opción     | Frase fácil |
+|------------|-------------|
+| CASCADE    | “Si borro el padre, se borra todo lo que cuelga de él” |
+| SET NULL   | “Si borro el padre, los hijos se quedan huérfanos” |
+| RESTRICT   | “No te dejo borrar el padre si tiene hijos” |
+
+---
