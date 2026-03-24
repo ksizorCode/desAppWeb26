@@ -1,0 +1,140 @@
+:root {
+    --c1: #E66613;
+    --c2: #EEE;
+
+    --ff: sans-serif;
+    --m: 50px;
+}
+
+body {
+    background-color: white;
+    font-family: var(--ff);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: var(--c1);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+p a:hover{ text-decoration: underline;}
+
+header,
+footer {
+    background-color: var(--c2);
+}
+
+header {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+header nav ul {
+    list-style: none;
+    padding-left: 0;
+
+    display: flex;
+    gap: 1px;
+    margin-top: 50px;
+}
+
+
+header nav ul li a {
+    background-color: grey;
+    padding: 10px;
+    color: white;
+}
+
+header nav ul li a:hover{
+    background-color: var(--c1);
+}
+
+header nav ul li.actual a {
+    background-color: var(--c1);
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 10px;
+    flex-direction: row-reverse;
+}
+
+main aside {
+    width: 30%;
+}
+
+main section {
+    width: 75%;
+}
+
+
+main aside ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+main aside ul li a{
+    border-bottom: grey 1px dotted;
+    display: block;
+    text-align:right;
+    padding-right:18px;
+    background: url(imagenes/img03.jpg) right center no-repeat;
+    padding: 4px;
+}
+
+main aside ul li a:hover{
+    color:#333;
+}
+
+
+
+
+footer {
+    text-align: center;
+
+    /*
+    padding: var(--m);
+    margin-top: calc(var(--m)/2);
+    */
+
+    padding: 50px;
+    margin-top: 25px;
+}
+
+
+
+.logo {
+    padding-left: 70px;
+    background: url(imagenes/img02.jpg) left center no-repeat;
+}
+
+
+.milogo {
+    color: #333;
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.milogo span {
+    color: var(--c1);
+}
+
+.eslogan {
+    color: #888;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+}

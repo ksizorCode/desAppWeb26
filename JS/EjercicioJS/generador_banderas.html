@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bandera {
+            width: 60px;
+            height:40px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            
+            box-shadow: 2px 2px 8px;
+        }
+
+        .bandera span {
+            flex:1 1 auto;
+            padding: 5px;
+            transition: 2s;
+        }
+
+        .columna{
+            flex-direction: column;
+        }
+        .fila{
+            flex-direction: row;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Generador de Banderas</h1>
+        <button onclick="generar()">Generar Banderas</button>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+        <p>&copy; Generador de Banderas</p>
+    </footer>
+
+    <script>
+
+   //FUNCIONES
+   function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        //DATOS
+        let colores = ['#FF0000', '#FFFFFF', '#0000FF', '#FFFF00', '#008000', '#000000', '#FFA500', '#800080', '#808080', '#87CEEB','#FFD700', '#F5F5DC', '#40E0D0', '#FFC0CB', '#00FFFF', '#E6E6FA', '#8A2BE2', '#800000', '#A52A2A', '#90EE90','#ADD8E6', '#FFD700', '#000080', '#8B0000', '#228B22', '#D2B48C', '#FA8072', '#A9A9A9', '#800080', '#30D5C8', '#228B22', '#F5F5F5', '#FF7F50', '#FF6347', '#FF00FF', '#BFFF00', '#FFDB58', '#F0E6F7', '#9B6A6D', '#7FFFD4','#6F4F37', '#8B4513', '#E1C7B8', '#F7E7CE', '#0F52BA', '#B87333', '#FFFFE0', '#FFBF00', '#808000', '#9E7B2D']; // Colores comunes en banderas
+        let clase = ['fila','columna']; // Clases aleatorias
+
+        let banderas = 1000;
+
+     
+
+
+        //PINTAR
+       // PINTAR
+function generar() {
+    let miBandera = '';
+
+    for (let i = 0; i < banderas; i++) { // Primer bucle: crea las filas de la bandera
+        miBandera += `<div class="bandera ${clase[aleatorio(0,1)]}">`;
+        
+        let barras= aleatorio(1,4)
+
+        for (let j = 0; j < barras; j++) { // Segundo bucle: crea las barras dentro de cada fila
+            miBandera += `<span style="background-color:${colores[aleatorio(0, colores.length)]}"></span>`;
+        }
+
+        miBandera += '</div>';
+    }
+
+    document.querySelector('main').innerHTML = miBandera;
+}
+
+        generar();
+    </script>
+</body>
+
+</html>

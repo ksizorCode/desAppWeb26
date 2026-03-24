@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fondo de Color Aleatorio</h1>
+
+    <p id="referencia">Aqui la referencia de color</p>
+
+    <script>
+        function randomColor(){
+            return Math.floor(Math.random() * 256);
+        }
+        function crearcolor() {
+            let micolor = `rgb(${randomColor()},${randomColor()},${randomColor()})`;
+
+            document.querySelector('#referencia').innerHTML = micolor;
+            document.body.style.background = micolor;
+        }
+        setInterval(crearcolor, 1000);
+        crearcolor();
+    </script>
+
+</body>
+
+</html>

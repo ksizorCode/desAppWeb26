@@ -1,0 +1,34 @@
+.enemigo {
+    width: 30px;
+    animation: anim1 4s alternate infinite;
+}
+
+button{
+    display: none;
+}
+
+
+body{
+    background: black;
+
+    font-family: sans-serif;
+    color:yellow;
+}
+
+#batalla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100dvw;
+    height: 70dvh;
+}
+
+footer{
+    text-align: center;
+}
+
+@keyframes anim1{
+    0%{ scale:0.1; translate: -300px -200px;}
+    50%{ scale:2; translate:350px 300px;}
+    100%{ scale:4; translate:180px -35px;}
+}

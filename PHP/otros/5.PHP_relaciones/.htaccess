@@ -1,0 +1,14 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Establecer página de inicio por defecto
+DirectoryIndex index.php
+
+# Redirigir estudiante/[slug] a estudiante.php?slug=[slug]
+RewriteRule ^estudiante/([^/]+)/?$ estudiante.php?slug=$1 [L,QSA]
+
+# Redirigir curso/[slug] a curso.php?slug=[slug]
+RewriteRule ^curso/([^/]+)/?$ curso.php?slug=$1 [L,QSA]
+
+# Prevenir listado de directorios
+Options -Indexes

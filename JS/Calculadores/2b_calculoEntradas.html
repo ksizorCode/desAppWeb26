@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 320px;
+            margin: 10px auto;
+        }
+
+        button {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Compra Entradas Festivales Música</h1>
+    <input type="number" id="entradas" placeholder="2"> entradas
+
+    <select name="festival" id="festival">
+        <option value="CF">Cream Fields (120€)</option>
+        <option value="LEV">LEV Festival (85€)</option>
+        <option value="Tsu">Tsunami</option>
+        <option value="Resu">Ressurektion</option>
+        <option value="BBK">BBK</option>
+    </select>
+
+    <button onclick="calcular()">Calcular precio</button>
+
+    <p id="resultado">48,55€</p>
+
+    <script>
+
+        function calcular() {
+            let festival = document.querySelector('#festival').value;
+            let nEntradas = document.querySelector('#entradas').value;
+
+
+            let textoFesti;
+            let precioFesti;
+
+            switch (festival) {
+                case 'CF':
+                    textoFesti = "Festival Cream Field (Argentina)";
+                    precioFesti = 120;
+                    break
+
+                case 'LEV':
+                textoFesti = "LEV Festival de música electrónica (Laboral, Gijón)";
+                precioFesti = 85;
+                    break
+                case 'Tsu':
+                textoFesti = "Tsunami, Parque Inglés Gijón";
+                precioFesti = 120;
+                    break
+                case 'Resu':
+                textoFesti = "Resssurrection Fest, Viveiro";
+                precioFesti = 150;
+                    break
+                case 'BBK':
+                textoFesti = "BBK Fest - Bilbao";
+                precioFesti = 80;
+                    break
+
+
+                default:
+                textoFesti = "No se ha encontrado";
+                precioFesti=0;
+            }
+
+
+            let miHTML = "El precio para "+nEntradas+" entradas para el: <strong>"+textoFesti+"</strong> es de"+(precioFesti*nEntradas)+"€";
+            document.querySelector('#resultado').innerHTML = miHTML;
+
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

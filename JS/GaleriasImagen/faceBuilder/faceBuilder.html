@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            gap: 80px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #cara {
+            background: yellow;
+            width: 200px;
+            height: 180px;
+            position: relative;
+            border-radius: 60px;
+            ;
+
+        }
+
+
+        #ojos {
+            width: 180px;
+            height: 90px;
+            background: url(img/ojo001.png) center center no-repeat;
+            position: absolute;
+            top: 20px;
+
+        }
+
+        #bocas {
+            width: 80px;
+            height: 20px;
+            background: url(img/boca001.png) center center no-repeat;
+            position: absolute;
+            bottom: 20px;
+            left: 20%;
+        }
+
+        #ojos,
+        #bocas {
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="cara">
+        <div id="ojos"></div>
+        <div id="bocas"></div>
+    </div>
+
+    <div class="btns">
+        <button onclick="cambiar('ojos')">ojos</button>
+        <button onclick="cambiar('boca')">boca</button>
+
+    </div>
+
+    <script>
+
+        let elementos = {
+            'ojos': ['ojo001', 'ojo002', 'ojo003'],
+            'bocas': ['boca001', 'boca002', 'boca003']
+        }
+
+        let misojos = 0;
+        let misbocas = 0;
+
+
+
+        function cambiar(cosa) {
+            switch (cosa) {
+                case 'ojos':
+                if (misojos < elementos['bocas'].length-1) {
+                    misojos++;
+                    }
+                    else {
+                        misojos = 0;
+                    }
+                    document.querySelector('#ojos').style.backgroundImage = "url('img/" + elementos['ojos'][misojos] + ".png')"
+                    break
+                case 'boca':
+                    if (misbocas < elementos['bocas'].length-1) {
+                        misbocas++;
+                    }
+                    else {
+                        misbocas = 0;
+                    }
+                    console.log(misbocas);
+                    console.log("valor bocas: "+elementos['bocas'].length);
+                    document.querySelector('#bocas').style.backgroundImage = "url('img/" + elementos['bocas'][misbocas] + ".png')"
+                    break
+            }
+
+        }
+
+
+        document.querySelector('#ojos').style.backgroundImage = "url('img/ojo003.png')"
+        document.querySelector('#bocas').style.backgroundImage = "url('img/boca003.png')"
+
+
+    </script>
+
+
+</body>
+
+</html>

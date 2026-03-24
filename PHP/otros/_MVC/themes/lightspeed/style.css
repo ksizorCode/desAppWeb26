@@ -1,0 +1,39 @@
+:root {
+    --c1:  rgb(140, 170, 210);
+    --c2: rgb(42, 142, 165);
+    --cl: white;
+    --cd: black;
+    --ff: monospace;
+    --maxw: 1460px;
+}
+
+
+body {
+    font-family: var(--ff);
+    padding: 20px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 10px;
+    color: var(--c1);
+}
+
+
+a {
+    background-color: var(--c1);
+    color:var(--cl);
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--c2);
+
+}

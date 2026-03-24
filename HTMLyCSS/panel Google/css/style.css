@@ -1,0 +1,65 @@
+body{
+    font-family: sans-serif;
+    max-width:650px;
+    margin:0 auto;
+    padding: 20px;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr) ) ;
+
+    gap:20px;
+    list-style:none;
+    padding-left:0;
+}
+
+ul li{
+    display:flex;
+    justify-content:center;
+}
+
+ul li a{
+    width:100%;
+    max-width:60px;min-width:50px;
+    display:block;
+    text-align:center;
+    padding-top:90px;
+    background:url('../img/iconos.jpg');
+    background-position: -18px 0px
+}
+
+ul:hover li a{
+    background:url('../img/iconos-verde.jpg');
+    
+}
+
+ul li a:hover{
+    background:url('../img/iconos.jpg');
+    
+}
+
+ul li a:hover{
+    border:#EEE 2px solid;
+    border-radius:20px;
+    
+}
+ul li:nth-child(1) a{ background-position: -20px 0px}
+ul li:nth-child(2) a{ background-position: -102px 0px}
+ul li:nth-child(3) a{ background-position: -190px 0px}
+ul li:nth-child(4) a{ background-position: -102px 90px}
+ul li:nth-child(5) a{ background-position: -190px 90px}
+ul li:nth-child(6) a{ background-position: -102px 90px}
+ul li:nth-child(7) a{ background-position: -102px 180px}
+ul li:nth-child(8) a{ background-position: -190px 180px}
+ul li:nth-child(9) a{ background-position: -102px 180px}
+ul li:nth-child(10) a{ background-position: -102px 270px}
+ul li:nth-child(11) a{ background-position: -190px 270px}
+
+
+a{
+    text-decoration:none;
+    font-weight:bold;
+    color:black;
+}
+

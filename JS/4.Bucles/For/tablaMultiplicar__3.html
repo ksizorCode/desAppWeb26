@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 10px;;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Generador de tablas de multiplicar</h1>
+
+<label>Tabla del:
+<input type="number" id="tablaDel" value="5">
+</label>
+
+<label>Empieza en el nº:
+<input type="number" id="nComienzo" value="0">
+</label>
+
+<label>Termina en el nº:
+    <input type="number" id="nFinal" value="10">
+    </label>
+
+    <button onclick="dibujarTabla()">Generar Tabla</button>
+    
+<ul>
+    <li>1 x 5 = 5</li>
+</ul>
+
+<script>   
+    
+    function dibujarTabla(){
+
+
+
+        // captura los valores de los inputs y los almacena en una variable
+        let tablaDel = document.querySelector('#tablaDel').value;
+        let nComienzo = document.querySelector('#nComienzo').value;
+        let nFinal = document.querySelector('#nFinal').value;
+  
+
+
+    let libreta="";
+    for(i=nComienzo; i<=nFinal; i++){
+        libreta += "<li>"+i+" x "+tablaDel+" = "+i*tablaDel+"</li>";
+    }
+    document.querySelector('ul').innerHTML=libreta;
+
+    }
+    
+    dibujarTabla();
+
+    </script>
+
+</body>
+</html>

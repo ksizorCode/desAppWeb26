@@ -1,0 +1,32 @@
+body{
+	max-width:560px;
+	margin:0 auto;
+	font-family: sans-serif;
+	background:yellowgreen;
+}
+
+details{
+	border-radius:10px;
+	border: solid 1px black;
+	padding: 8px;
+	margin: 20px;
+	background:white;
+}
+
+details[open]{
+	box-shadow:3px 3px 8px black;
+}
+
+details .info{
+	display: flex;
+	gap:10px;
+	flex-wrap:wrap;
+}
+details .info *{
+	flex: 1 1 120px;
+}
+
+details img{
+	max-width:100%;
+	aspect-ratio:1/1;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            max-width: 320px;
+            margin: 0 auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90dvh;
+        }
+
+        #cara {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            background: url(imagenes/cabeza/cara1.png) center center no-repeat;
+            background-size: contain;
+            padding: 20px;
+
+            animation: anim0 1s, anim1 5s infinite alternate;
+            transform-origin: 50% 70%;
+
+        }
+
+        #cara *{
+            animation: anim0 1s;
+        }
+
+        #ojosFraggle {
+            scale: 0.8;
+            translate: 0 30px;
+        }
+
+        #bocaFraggle {
+            scale: 0.6;
+            translate: 0 -20px;
+        }
+
+
+
+        * {
+            outline: solid 1px red;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .controles {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            background: tan;
+            border: solid tan 1px;
+            color: white;
+            border-radius: 20px;
+        }
+        button:hover{
+            background: orangered;
+        }
+
+        *{
+            transition: .3s;
+        }
+
+
+
+
+        @keyframes anim1 {
+            0% {
+                rotate: -10deg;
+            }
+
+            100% {
+                rotate: 10deg;
+            }
+        }
+
+
+        @keyframes anim0{
+            from{ scale:0;}
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="avatarFraggle">
+
+        <div id="cara">
+            <img id="ojosFraggle" src="imagenes/ojos/ojo0.png" alt="">
+            <img id="bocaFraggle" src="imagenes/bocas/boca0.png" alt="">
+        </div>
+
+
+        <div class="controles">
+            <button onclick="cargarOjos()">ojos</button>
+            <button onclick="cargarBocas()">bocas</button>
+            <button onclick="cargarCabezas()">cabeza</button>
+            <br>
+            <button onclick="sorpresa()">aleatorio</button>
+
+        </div>
+
+
+
+        </div>
+
+
+    </section>
+
+
+    <script>
+
+        const listaOjos = [
+            'ojo0.png',
+            'ojo1.png',
+            'ojo2.png',
+            'ojo3.png',
+            'ojo4.png',
+            'ojo5.png'
+        ];
+
+        const listaBocas = [
+            'boca0.png',
+            'boca1.png',
+            'boca2.png',
+            'boca3.png'
+        ];
+
+
+        const listaCabezas = [
+            'cara1.png',
+            'cara2.png',
+            'cara3.png',
+            'cara4.png',
+            'cara5.png'
+        ];
+
+        let numOjos = 0;
+        let numBoca = 0
+        let numCabeza = 0;
+
+
+        function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+
+
+        function cargarOjos() {
+            numOjos++;
+            if (numOjos >= listaOjos.length) {
+                numOjos = 0;
+            }
+            document.querySelector('#ojosFraggle').src = 'imagenes/ojos/' + listaOjos[numOjos];
+        }
+
+        function cargarBocas() {
+            numBoca++;
+            if (numBoca >= listaBocas.length) {
+                numBoca = 0;
+            }
+            document.querySelector('#bocaFraggle').src = 'imagenes/bocas/' + listaBocas[numBoca];
+        }
+
+
+
+        function cargarCabezas() {
+            numCabeza++;
+            if (numCabeza >= listaCabezas.length) {
+                numCabeza = 0;
+            }
+            document.querySelector('#cara').style.backgroundImage = "url('imagenes/cabeza/" + listaCabezas[numCabeza] + "')";
+        }
+
+
+        function sorpresa() {
+
+        //Asignamos un aleatorio a las variables que indexan el número numero de cada parte del cuerpo
+        numOjos = aleatorio(0,listaOjos.length);
+        numBoca = aleatorio(0,listaBocas.length);
+        numCabeza = aleatorio(0,listaCabezas.length);
+
+//cargamos las funciones
+            cargarOjos();
+            cargarBocas();
+            cargarCabezas();
+
+
+        }
+
+
+
+//lanzamos la función al cargar la web
+        sorpresa();
+
+    </script>
+
+</body>
+
+</html>

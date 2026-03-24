@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul.galeria {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul.galeria li a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 20px;
+    flex: 1 1 100px;
+    transition: .3s ease-in-out;
+    outline: solid 2px white;
+    outline-offset:-4px;
+}
+
+ul.galeria li a:hover {
+    outline: solid 2px black;
+    outline-offset:0px;
+}
+
+/* Colores según el tipo */
+.archivo { 
+    background: lightgreen; 
+}
+
+.carpeta { 
+    background-color: orange; 
+}
+
+.destacar { 
+    background-color: red; 
+}

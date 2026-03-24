@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            gap:20px;
+        }
+        li{
+            border:grey 1px solid;
+            padding: 20px;
+            border-radius:20px;
+        }
+    </style>
+</head>
+<body>
+<h1>La tienda de Iker</h1>
+    <h2>Catálogo</h2>
+    <ul class="catalogo">
+        <li>
+            <h3>Zapatillas</h3>
+            <p>120€</p>
+            <button onclick="agregar(120)">Comprar</button>
+        </li>
+
+        <li>
+            <h3>Camiseta</h3>
+            <p>30€</p>
+            <button onclick="agregar(30)">Comprar</button>
+        </li>
+
+        <li>
+            <h3>Pantalones</h3>
+            <p>40</p>
+            <button onclick="agregar(40)">Comprar</button>
+        </li>
+    </ul>
+
+
+    <h2>Total</h2>
+
+    <p>Precio total a pagar <span id="total">0</span>€</p>
+    <button onclick="vaciar()">Vaciar Cesta</button>
+
+
+    <script>
+        let total=0;
+        //Comprobamos si hay valores guardados
+        if(localStorage.getItem('miTotal')){
+            total = parseInt(localStorage.getItem('miTotal'));
+            mostrar();
+        }
+        function agregar(precio){
+            total=total+precio;
+            localStorage.setItem('miTotal',total);
+            mostrar();
+        }
+        function vaciar(){
+            total=0;
+            localStorage.removeItem('miTotal');
+            mostrar();
+        }
+        function mostrar(){
+            document.querySelector('#total').innerHTML=total+",00";
+        }
+
+
+    </script>
+
+    
+</body>
+</html>

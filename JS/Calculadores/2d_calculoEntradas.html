@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+
+    <style>
+        :root {
+            --c1: tan;
+            --ff: sans-serif;
+            --bdrs: 20px;
+        }
+
+        body {
+            font-family: sans-serif;
+            max-width: 320px;
+            margin: 10px auto;
+
+            min-height: 90dvh;
+            padding: 20px;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 20px;
+            background: none;
+            border: var(--c1) solid 1px;
+            color: var(--c1);
+            margin: 8px 0;
+
+        }
+
+        table {
+            font-size: 13px;
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            /* Hace que las celdas compartan los bordes */
+        }
+
+        th,
+        td {
+            border: 1px solid rgb(220, 220, 220);
+            /* Añadir bordes a las celdas */
+            padding: 8px;
+            text-align: left;
+        }
+
+        td:last-child {
+            text-align: right;
+        }
+
+
+        tfoot {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        thead {
+            text-align-last: left;
+            background: #EEE;
+        }
+
+        .peque{
+            font-size: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Compra Entradas Festivales Música</h1>
+    <input oninput="calcular()" type="number" id="entradas" placeholder="2" value="0"> entradas
+
+    <select oninput="calcular()" name="festival" id="festival">
+    </select>
+
+
+
+    <!--
+    <table>
+        <thead>
+            <th>concepto</th>
+            <th>precio/uni</th>
+            <th>cantidad</th>
+            <th>subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lev Festival</td>
+                <td>120€/entrada</td>
+                <td>2</td>
+                <td>240€</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Subtotal</td>
+                <td>240€</td>
+            </tr>
+            <tr class="peque">
+                <td></td>
+                <td></td>
+                <td>gestion +5€</td>
+                <td>245€</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>iva (21%)</td>
+                <td>42€</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>TOTAL</td>
+                <td>283€</td>
+            </tr>
+        </tfoot>
+
+
+    </table>-->
+
+
+
+    <table id="ticket"></table>
+
+
+    <script>
+        //DATOS
+        const datos = [
+            ['Cream Field', 120],
+            ['LEV Festival', 85],
+            ['Ressurektion', 150],
+            ['BBK', 80],
+            ['Rolling Stones', 111],
+            ['Sonar', 200],
+            ['Fiesta de prau', 20],
+            ['Tsunami', 120]
+        ];
+        let gestion = 5;
+        const iva = 21;
+
+        //PINTAR FORMULARIO
+        //Bucle que se repite tantas veces como elementos haya en el formulario recorriéndolo
+        let listadoSelect = '';
+        for (i = 0; i < datos.length; i++) {
+            listadoSelect += `<option value="${datos[i][0]}">${datos[i][0]} - ${datos[i][1]}€/entrada</option>`;
+        }
+        //añadimos al select el contenido creado en el bucle
+        document.querySelector('#festival').innerHTML = listadoSelect;
+
+
+
+        //FUNCTION
+        function calcular() {
+         
+            let nEntradas = document.querySelector('#entradas').value; // Devuelve al nº de entradas a comprar
+            let festival = document.querySelector('#festival').value; // Devuevle el valor del campo seleccionado
+
+
+            let nSeleccionado = document.querySelector('#festival').selectedIndex; // devuelve la posición numérica del elementos seleccionado
+
+
+            if(nEntradas<=0){
+                gestion=0;
+            }
+
+
+            let textoFesti = datos[nSeleccionado][0]; // guarda en la variable el título del fesital
+            let precioEntrada = datos[nSeleccionado][1]; // guarda en la variable el precio del festival
+
+            let precioFinal = nEntradas * precioEntrada;
+            let precioFinalGestion = precioFinal + gestion;
+
+            let IVAsolo = precioFinalGestion * iva / 100;
+            
+            let precioFinalGestionIVA = precioFinalGestion +IVAsolo;
+
+          
+
+            //Construimos el texto a mostrar
+
+
+
+
+
+            let miHTML = "El precio para " + nEntradas + " entradas para el: <strong>" + textoFesti + "</strong> es de " + precioFinalGestion + "€. Precio con IVA: " + precioFinalGestionIVA + "€";
+            //Colocamos el texto en el elemento con la id resultado
+
+
+
+            miHTML=`<thead>
+            <th>concepto</th>
+            <th>precio/uni</th>
+            <th>cantidad</th>
+            <th>subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>${textoFesti}</td>
+                <td>${precioEntrada}€/entrada</td>
+                <td>${nEntradas}</td>
+                <td>${precioFinal}€</td>
+            </tr>
+            <tr class="peque">
+                <td></td>
+                <td></td>
+                <td>Subtotal</td>
+                <td>${precioFinal}€</td>
+            </tr>
+            <tr class="peque">
+                <td></td>
+                <td></td>
+                <td>gestion +5€</td>
+                <td>${precioFinalGestion}</td>
+            </tr>
+            <tr class="peque">
+                <td></td>
+                <td></td>
+                <td>iva (21%)</td>
+                <td>${IVAsolo}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>TOTAL</td>
+                <td>${precioFinalGestionIVA}€</td>
+            </tr>
+        </tfoot>`;
+     
+
+        document.querySelector('#ticket').innerHTML = miHTML;
+    }
+
+  
+
+
+    </script>
+</body>
+
+</html>

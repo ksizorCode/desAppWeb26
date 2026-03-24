@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80dvh;
+    }
+
+    img{
+        max-width: 100%;
+        display: block;
+    }
+
+    .perrito{
+       rotate: 35deg;
+       
+        transform-origin: 100% 100%;
+        border-radius: 10px;
+    }
+    footer{
+        text-align: center;
+    }
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+<main>
+    <img id="perru" class="perrito" src="https://picsum.photos/id/237/200/200" alt="">
+</main>
+<footer>
+    <input type="range" id="barrita" oninput="girar()" min="-180" max="360">
+    <span id="cantidad">Grados</span>
+</footer>
+
+
+<script>
+
+function girar(){
+    let grados = document.querySelector('#barrita').value;
+    document.querySelector('#perru').style.transform = "rotate("+grados+"deg)";
+    document.querySelector('#cantidad').textContent=grados+'°';
+}
+
+</script>
+   
+</body>
+</html>

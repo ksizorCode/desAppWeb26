@@ -1,0 +1,110 @@
+{
+    "carta": [
+        {
+            "nombre": "Fabada Asturiana",
+            "ingredientes": "Fabes asturianes, chorizo, morciella, lacón, azafrán, aceite de oliva, cebolla",
+            "precio": "18",
+            "tipo": "Primer Plato",
+            "visible": 1
+        },
+        {
+            "nombre": "Gazpacho Andaluz",
+            "ingredientes": "Tomate, pepino, pimiento, cebolla, ajo, aceite de oliva, vinagre, pan",
+            "precio": "10",
+            "tipo": "Entrante",
+            "visible": 1
+        },
+        {
+            "nombre": "Croquetas de Jamón",
+            "ingredientes": "Jamón serrano, leche, harina, mantequilla, pan rallado, huevo, aceite para freír",
+            "precio": "8",
+            "tipo": "Entrante",
+            "visible": 1
+        },
+        {
+            "nombre": "Pastel de Cabracho",
+            "ingredientes": "Cabracho, nata, huevos, tomate, pimiento, cebolla, pan rallado",
+            "precio": "12",
+            "tipo": "Entrante",
+            "visible": 1
+        },
+        {
+            "nombre": "Ensalada de Queso de Cabra",
+            "ingredientes": "Lechuga variada, queso de cabra, frutos secos, vinagreta de miel",
+            "precio": "11",
+            "tipo": "Entrante",
+            "visible": 1
+        },
+        {
+            "nombre": "Picadillo con Huevo y Patates",
+            "ingredientes": "Picadillo de cerdo, patatas fritas, aceite, huevos de la aldea",
+            "precio": "14",
+            "tipo": "Primer Plato",
+            "visible": 1
+        },
+        {
+            "nombre": "Lacón con Pulpo",
+            "ingredientes": "Pulpo, lacón, aceite de oliva, pimentón",
+            "precio": "15",
+            "tipo": "Entrante",
+            "visible": 1
+        },
+        {
+            "nombre": "Cachopo Asturiano",
+            "ingredientes": "Ternera, jamón serrano, queso, pan rallado, huevo, aceite",
+            "precio": "22",
+            "tipo": "Segundo Plato",
+            "visible": 1
+        },
+        {
+            "nombre": "Merluza a la Sidra",
+            "ingredientes": "Merluza, sidra asturiana, cebolla, ajo, almejas",
+            "precio": "20",
+            "tipo": "Segundo Plato",
+            "visible": 1
+        },
+        {
+            "nombre": "Arroz Caldoso con Bogavante",
+            "ingredientes": "Arroz, bogavante, caldo de pescado, pimiento, ajo",
+            "precio": "28",
+            "tipo": "Segundo Plato",
+            "visible": 1
+        },
+        {
+            "nombre": "Carrilleras al Vino Tinto",
+            "ingredientes": "Carrilleras de cerdo, vino tinto, cebolla, zanahoria, ajo",
+            "precio": "19",
+            "tipo": "Segundo Plato",
+            "visible": 1
+        },
+        {
+            "nombre": "Tarta de Queso al Horno",
+            "ingredientes": "Queso crema, nata, huevos, azúcar, galleta",
+            "precio": "7",
+            "tipo": "Postre",
+            "visible": 1
+        },
+        {
+            "nombre": "Pannacota",
+            "ingredientes": "Nata, azúcar, gelatina, vainilla, frutos rojos",
+            "precio": "7",
+            "tipo": "Postre",
+            "visible": 1
+        },
+        {
+            "nombre": "Arroz con Leche",
+            "ingredientes": "Arroz, leche, azúcar, canela, limón",
+            "precio": "6",
+            "tipo": "Postre",
+            "visible": 1
+        },
+        {
+            "nombre": "Coulant de Chocolate",
+            "ingredientes": "Chocolate negro, mantequilla, huevos, harina, azúcar",
+            "precio": "8",
+            "tipo": "Postre",
+            "visible": 1
+        }
+    ]
+}
+    

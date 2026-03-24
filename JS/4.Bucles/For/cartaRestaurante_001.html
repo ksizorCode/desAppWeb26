@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const menu =[
+            {
+                id:1520,
+                nombre: 'Hummus de Tomate',
+                descripcion: 'acompañado de almendras tosadas, pesto genovese, olio al peperonciono y  zumaque.',
+                precio: 9,
+                activo: true,
+                alergenos:['amendra', 'frutos secos']
+            },
+            {
+                id:1525,
+                nombre: 'Patata asadas',
+                descripcion: 'Con fiambre de Porchetta, acompañado de mayopesto y crema de pimientos asados.',
+                precio: 11,
+                activo: false,
+                alergenos:[]
+
+            }
+        ];
+        let libreta='<ul>';
+        
+        for(i=0;i<menu.length; i++){
+            if(menu[i].activo){
+                //repetimos esta estructura en cada iteración
+                libreta+='<li>';
+                    libreta+='<strong>'+menu[i].nombre+'</strong>';
+                    libreta+='<p>'+menu[i].descripcion+'</p>';
+                    libreta+='<span>'+menu[i].precio+',00 €</span>';
+                libreta+='</li>';
+
+                // Lo mismo pero con comillas graves:
+                // libreta+=`
+                //     <li>
+                //         <strong>${menu[i].nombre}</strong>
+                //         <p>${menu[i].descripcion}</p>
+                //         <span>${menu[i].precio},00 €</span>
+                //     </li>`;
+
+            } // ciera if
+        } // cierra for
+
+        libreta+='</ul>';
+
+        document.body.innerHTML=libreta;
+
+
+
+
+
+    </script>
+</body>
+</html>

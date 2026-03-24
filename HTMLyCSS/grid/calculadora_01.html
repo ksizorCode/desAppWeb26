@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+
+*{    cursor: pointer;}
+
+body{
+    background-color: lightskyblue;
+    font-family: sans-serif;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90dvh;
+
+
+}
+
+.calculadora{
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
+
+.calculadora .pantalla{
+    background: #000;
+    padding: 10px 20px;
+    margin-bottom: 8px;
+    color:white;
+    text-align: right;
+    font-size: 33px;
+    border-radius: 10px;
+}
+
+.botonera{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;  
+}
+
+button{
+    border-radius: 10px;
+    aspect-ratio: 1.5/1;
+    border:solid grey 1px;
+    cursor: url('http://127.0.0.1:3000/HTML%20y%20CSS/img/cartoon-hand.png'), auto;
+   
+}
+button:hover{
+    background-color: #989898;
+    color:white;
+
+    /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
+    cursor: url("https://upload.wikimedia.org/wikipedia/commons/0/05/Mario_Series_Logo.svg"), auto;
+  
+}
+
+button:active{
+    background-color: #989898;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    color:white;
+    scale: 0.95;
+}
+
+/*
+*{ outline: solid 1px red}
+**/
+    </style>
+</head>
+<body>
+    
+
+    <div class="calculadora">
+        <div class="pantalla">-185,345555</div>
+        <div class="botonera">
+            <button>C</button>
+            <button>+/-</button>
+            <button>%</button>
+            <button>/</button>
+
+            <button>7</button>
+            <button>6</button>
+            <button>5</button>
+            <button>x</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>+</button>
+
+            <button>0</button>
+            <button>,</button>
+            <button>=</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://picsum.photos/id/980/500/200" alt="" usemap="#alpes">
+
+    <map name="alpes">
+        <area onmouseover="mostrar('Humano')" shape="rect" coords="50,70,130,170" href="humano.html" alt="fulanito">
+        <area onmouseover="mostrar('Alpes')" shape="circle" coords="347,56,50" href="humano.html" alt="fulanito">
+
+    </map>
+
+    <div id="info">
+        <h1>Titulo de la info</h1>
+        <p>Texto de la info</p>
+    </div>
+
+<script>
+
+    
+
+    function mostrar(texto){
+        let libreta='';
+
+        switch(texto){
+            case 'Alpes':
+                libreta=`<h1>Los Alpes suizos</h1>`;
+                libreta+=`<p>Texto de la info</p>`;
+                break;
+            case 'Humano':
+                libreta=`<h1>La hisoria de Pedro tras Heidi</h1>`;
+                libreta+=`<p>Esto es un </p>`;
+                break;
+            default:
+                libreta=`<h1>Titulo de la info</h1>`;
+                libreta+=`<p>Texto de la info</p>`;
+        }
+
+
+
+
+
+        
+        document.getElementById('info').innerHTML=libreta;
+    }
+
+
+</script>
+
+</body>
+</html>

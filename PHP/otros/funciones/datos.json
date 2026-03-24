@@ -1,0 +1,52 @@
+{
+    "herramientas": [
+        {
+            "id": 1,
+            "nombre": "Llave inglesa",
+            "categoria": "Herramientas de mano",
+            "marca": "Stanley",
+            "precio": 12.99,
+            "stock": 15
+        },
+        {
+            "id": 2,
+            "nombre": "Destornillador Philips",
+            "categoria": "Herramientas de mano",
+            "marca": "Bosch",
+            "precio": 8.50,
+            "stock": 30
+        },
+        {
+            "id": 33,
+            "nombre": "Taladro percutor",
+            "categoria": "Herramientas eléctricas",
+            "marca": "Makita",
+            "precio": 89.99,
+            "stock": 10
+        },
+        {
+            "id": 14,
+            "nombre": "Llave de impacto",
+            "categoria": "Herramientas neumáticas",
+            "marca": "DeWalt",
+            "precio": 129.99,
+            "stock": 5
+        },
+        {
+            "id": 550,
+            "nombre": "Compresor de aire",
+            "categoria": "Equipos de taller",
+            "marca": "Michelin",
+            "precio": 249.99,
+            "stock": 3
+        },
+        {
+            "id": 436,
+            "nombre": "Soldador Inverter",
+            "categoria": "Equipos de soldadura",
+            "marca": "Lincoln Electric",
+            "precio": 199.99,
+            "stock": 7
+        }
+    ]
+}

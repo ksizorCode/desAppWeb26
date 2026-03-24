@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            background: tan;
+            font-family: sans-serif;
+            padding: 10px;
+        }
+
+        body {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        body * {
+            outline: grey solid 1px;
+            margin: 2px;
+            padding: 2px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li{
+            text-align: center;
+            font-weight: bold;
+        }
+
+        li:nth-child(1),
+        li:nth-child(2),
+        li:nth-child(3),
+        li:nth-child(4),
+        li:nth-child(5),
+        li:nth-child(6),
+        li:nth-child(7),
+        li:nth-child(n):nth-child(-n+7){
+            background-color: grey;
+            color:white;
+        }
+
+        li:nth-child(7n),
+        li:nth-child(7n-1){
+            color:red}
+
+       
+
+        /* Apilar elemento en los 2000*/
+        .contendor {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calendario 2025</h1>
+    <ul class="contendor">
+        <li>L</li>
+        <li>M</li>
+        <li>X</li>
+        <li>J</li>
+        <li>V</li>
+        <li>S</li>
+        <li>D</li>
+
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+        <li>31</li>
+    </ul>
+
+</body>
+
+</html>

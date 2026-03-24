@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela de Baile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ejemplo de estilo para la clase .current */
+        .current {
+            font-weight: bold;
+            color: #f39c12;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="mostrar('inicio', this)">Inicio</a></li>
+                <li><a href="javascript:void(0)" onclick="mostrar('cursos', this)">Cursos</a></li>
+                <li><a href="javascript:void(0)" onclick="mostrar('escuela', this)">Escuela</a></li>
+                <li><a href="javascript:void(0)" onclick="mostrar('contacto', this)">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="seccion">
+            <h1>Bienvenidos a la mejor escuela de baile de Asturias y Gijón</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus vitae dignissimos quidem. Quisquam magni in, animi nihil beatae impedit, illum magnam reprehenderit, molestias quibusdam aut dolorem labore non eligendi. Blanditiis.</p>
+        </section>
+
+        <section id="cursos" class="seccion">
+            <h1>Cursos de Baile: Salsa, Bachata, Street Dance</h1>
+            <ul>
+                <li>Salsa</li>
+                <li>Salsa 2</li>
+                <li>Bachata</li>
+                <li>Bachata 2</li>
+                <li>Street Dance</li>
+            </ul>
+            <h2>Horarios de nuestras clases de baile</h2>
+        </section>
+
+        <section id="escuela" class="seccion">
+            <h1>Nuestra Escuela</h1>
+            <p>Desde los comienzos, tanto Fulanito como Menganito, fundadores de la escuela, nos han gustado bailar.</p>
+        </section>
+
+        <section id="contacto" class="seccion">
+            <h1>Ven a conocernos</h1>
+            <h2>Contacta con nosotros</h2>
+            <address>
+                c/Moros 22, Gijón, Asturias
+            </address>
+            <a href="tel:+34999888777">999 888 777</a>
+            <a href="https://wa.me/3499988777">Escríbenos por Whatsapp</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Academia de Baile</p>
+        <p>&copy; Copyright 2025 - Academia de Baile</p>
+        <p><a href="#">Aviso Legal</a><a href="#">Política de Cookies</a></p>
+     </footer>   
+    
+
+    <script>
+        // Lista de apartados
+        const apartados = ['inicio', 'cursos', 'escuela', 'contacto'];
+
+        // Función para ocultar todas las secciones
+        function ocultar() {
+            apartados.forEach(id => {
+                document.querySelector(`#${id}`).style.display = 'none';
+            });
+        }
+
+        // Función para mostrar una sección específica y agregar la clase .current al enlace
+        function mostrar(apt, enlace) {
+            ocultar();
+            document.querySelector(`#${apt}`).style.display = 'block';
+
+            // Eliminar la clase .current de todos los enlaces
+            document.querySelectorAll('nav a').forEach(a => {
+                a.classList.remove('current');
+            });
+
+            // Añadir la clase .current al enlace actual
+            enlace.classList.add('current');
+
+            // Mantener la estructura de la URL de la página en relación con la carpeta base
+            const basePath = window.location.pathname.split('/')[1] || ''; // Obtiene la carpeta base del proyecto
+            history.pushState(null, '', `/${basePath}/${apt}`);
+        }
+
+        // Manejo de la navegación cuando se recarga la página o se accede a una URL con una ruta
+        window.addEventListener('load', () => {
+            const path = window.location.pathname.split('/')[2]; // Extrae la ruta sin la carpeta base
+            if (apartados.includes(path)) {
+                mostrar(path, document.querySelector(`a[href="/${path}"]`));
+            } else {
+                mostrar('inicio', document.querySelector('nav a'));
+            }
+        });
+
+        // Inicializar mostrando la primera sección
+        if (window.location.pathname === '/') {
+            mostrar('inicio', document.querySelector('nav a'));
+        }
+    </script>
+</body>
+
+</html>

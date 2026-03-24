@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle FOR</title>
+</head>
+
+<body>
+    <h1>Bucle For</h1>
+    <p>push añade elementos y pop los elimina</p>
+
+    <ul></ul>
+    <button id="btn1">Eliminar último elemento</button>
+
+    <script>
+        // DATOS
+        // Array con lista de Frutas
+        let frutas = ['manzana', 'pera', 'uva'];
+
+        // Añadir un elemento al final del array
+        frutas.push('naranja');
+        frutas.push('sandia');
+        frutas.push('melon');
+        frutas.push('platano');
+        frutas.push('kiwi');
+        frutas.push('fresa');
+
+        // - - - - - - - - - - - - - - - - - - 
+
+
+        // INTERACTIVIDAD DE BOTÓN
+        // al hacer click en el botón #btn1 se ejecuta la función eliminar
+        document.querySelector('#btn1').addEventListener('click', eliminar);
+
+        // Función que define la acción del botón
+        function eliminar() {
+            // Eliminar el último elemento del array
+            frutas.pop();
+            // Tras haberlo eliminado tenemos que mostrar el pantalla como se ve ahora el array
+            pintar();
+
+        } // cierre de la función eliminar
+
+
+        // - - - - - - - - - - - - - - - - - - 
+
+        //PINTAR EN PANTALLA mi lista de frutas:
+        function pintar() {
+            // Variable que contendra el HTML que vamos a pintar
+            let miHTML = "";
+
+            // Bucle for para recorrer todos los elementos del array
+            // y vamos añadiendo cada elemento a la variable miHTML
+            for (let i = 0; i < frutas.length; i++) {
+                miHTML += "<li class='cosa"+i+"'>Objeto " + i + ":" + frutas[i] + "</li>";
+            }
+
+            // Pintamos en el HTML dentro del ul
+            document.querySelector('ul').innerHTML = miHTML;
+        }
+
+
+        // Al cargar la página, pintamos la lista de frutas
+        pintar();
+
+
+    </script>
+</body>
+
+</html>

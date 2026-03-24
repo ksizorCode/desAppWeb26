@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Universe</title>
+</head>
+<body>
+  <h1>Star Wars Universe</h1>
+
+  <section>
+    <h2>Pelis</h2>
+    <ul id="movie-list"></ul>
+  </section>
+
+  <section>
+    <h2>Series Animadas</h2>
+    <ul id="animated-series-list"></ul>
+  </section>
+
+  <section>
+    <h2>Series Live Action</h2>
+    <ul id="live-action-series-list"></ul>
+  </section>
+
+  <script>
+    // Leer el archivo JSON y desplegar las secciones
+    fetch('datos.json')
+      .then(response => response.json())
+      .then(data => {
+        // Variables que contienen las listas
+        const movieList = document.querySelector('#movie-list');
+        const animatedSeriesList = document.querySelector('#animated-series-list');
+        const liveActionSeriesList = document.querySelector('#live-action-series-list');
+
+        // Función para generar elementos <li>
+        const generateListHTML = items => 
+          items.map(item => `<li>${item.title} (${item.year})</li>`).join('');
+
+        // Insertar contenido en cada lista
+        movieList.innerHTML = generateListHTML(data.movies);
+        animatedSeriesList.innerHTML = generateListHTML(data.animated_series);
+        liveActionSeriesList.innerHTML = generateListHTML(data.live_action_series);
+      })
+      .catch(error => console.error('Error al cargar el JSON:', error));
+  </script>
+</body>
+</html>

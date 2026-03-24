@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+<h1>If / Else</h1>
+    <select name="" id="miDesplegable" onclick="mostrarLibro()">
+        <option value="alpes">Los Alpes</option>
+        <option value="humanos">Historia Evolución Humana</option>
+        <option value="teocole">Teo va al colegio</option>
+        <option value="asdf">asfdasf</option>
+    </select>
+
+    <div id="info">Seleccione un libro, aquí aparecerá la información</div>
+
+
+    <script>
+
+
+
+        function mostrarLibro() {
+
+            // haz una comprobación múltiple con if/else
+            let texto = document.querySelector('#miDesplegable').value;
+            let miHTML = '';
+
+            //alert(texto);
+
+            if (texto === 'alpes') {
+                miHTML += `<h1>Los Alpes suizos</h1>`;
+                miHTML += `<p>Texto de la info</p>`;
+            }
+            // aquí registramos dos casos
+            else if (texto === 'humano' || texto === 'persona') {
+                miHTML += `<h1>La Historia de la Evolución Humana</h1>`;
+                miHTML += `<p>Lorem ipsum dolor </p>`;
+            } else if (texto === 'teocole') {
+                miHTML += `<h1>Teo va al colegio</h1>`;
+                miHTML += `<p>Libro infantil sobre la vida de TEO </p>`;
+            } else {
+                miHTML += `<h1>No se ha encontrado el libro</h1>`;
+                miHTML += `<p>Texto de la info del libro</p>`;
+            }
+
+            document.querySelector('#info').innerHTML = miHTML;
+        }
+
+    </script>
+
+</body>
+
+</html>

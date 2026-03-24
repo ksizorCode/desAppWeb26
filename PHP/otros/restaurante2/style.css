@@ -1,0 +1,161 @@
+:root {
+    --c1:  tan;
+    --c2: brown;
+    --cl: white;
+    --cd: black;
+    --ff: sans-serif;
+    --maxw: 960px;
+}
+
+
+body {
+    font-family: var(--ff);
+    padding: 20px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 10px;
+    color: var(--c1);
+}
+
+
+
+a {
+    text-decoration: none;
+    color: var(--c1);
+}
+
+a:hover {
+    color: var(--c2);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+header,
+main,
+footer {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+nav ul,
+ul.galeria,
+.flex {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+}
+
+nav ul li,
+ul.galeria li,
+.flex>* {
+    flex: 0 1 154px;
+}
+
+ul.galeria li{
+    border:solid #EEE 1px;
+    padding:8px;
+    background-color:white;
+    border-radius:8px;
+    box-shadow:2px 3px 8px #EEE;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+ul.galeria li:hover{
+        box-shadow:2px 3px 8px var(--c1);
+
+}
+
+ul.galeria li h2{
+line-height:24px;
+margin:0}
+ul.galeria li p{
+font-size:12px;
+margin:10px 0;
+}
+ul.galeria li span{
+    font-size:10px;
+    padding:2px 8px;
+    min-width:20px;
+    text-align:center;
+    display:inline-block;
+    border-radius:10px;
+    background-color:var(--c1);
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+img {
+    max-width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+button,
+input[type=submit] {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background-color: var(--c1);
+    cursor: pointer;
+}
+
+
+
+
+button:hover,
+input[type=submit]:hover {
+    background-color: var(--c2);
+    color: --cl;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus {
+    border-color: #888;
+    outline: none;
+}
+
+.btn{
+    background-color: var(--c1);
+    color: var(--cl);
+    padding: 10px;
+    border:solid 1px var(--c3);
+    border-radius: 4px;
+}
+.btn:hover{
+    background-color: var(--c2);
+    color:white;
+}

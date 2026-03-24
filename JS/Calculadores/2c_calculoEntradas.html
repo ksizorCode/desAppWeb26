@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 320px;
+            margin: 10px auto;
+        }
+
+        button {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Compra Entradas Festivales Música</h1>
+    <input type="number" id="entradas" placeholder="2"> entradas
+
+    <select name="festival" id="festival">
+    </select>
+
+    <button onclick="calcular()">Calcular precio</button>
+
+    <p id="resultado">48,55€</p>
+
+
+
+    <script>
+//DATOS
+        const datos=[
+            ['Cream Field', 120],
+            ['LEV Festival', 85],
+            ['Ressurektion', 150],
+            ['BBK', 80],
+            ['Rolling Stones', 111],
+            ['Sonar', 200],
+            ['AC-DC', 90],
+            ['Metalica', 80],
+            ['Tsunami', 120]
+        ];
+        const gestion=5;
+        const iva= 1.21;
+        
+//PINTAR FORMULARIO
+//Bucle que se repite tantas veces como elementos haya en el formulario recorriéndolo
+let listadoSelect='';
+for(i=0;i<datos.length;i++){
+    listadoSelect+=`<option value="${datos[i][0]}">${datos[i][0]} - ${datos[i][1]}€/entrada</option>`;
+}
+//añadimos al select el contenido creado en el bucle
+document.querySelector('#festival').innerHTML=listadoSelect;
+
+
+
+//FUNCTION
+        function calcular() {
+            let nEntradas = document.querySelector('#entradas').value; // Devuelve al nº de entradas a comprar
+            let festival = document.querySelector('#festival').value; // Devuevle el valor del campo seleccionado
+
+      
+            let nSeleccionado = document.querySelector('#festival').selectedIndex; // devuelve la posición numérica del elementos seleccionado
+
+            let textoFesti=datos[nSeleccionado][0]; // guarda en la variable el título del fesital
+            let precioEntrada =datos[nSeleccionado][1]; // guarda en la variable el precio del festival
+
+            let precioFinal=nEntradas*precioEntrada;
+            let precioFinalGestion=precioFinal+gestion;
+            let precioFinalGestionIVA=precioFinalGestion*iva;
+
+            //Construimos el texto a mostrar
+            let miHTML = "El precio para "+nEntradas+" entradas para el: <strong>"+textoFesti+"</strong> es de "+precioFinalGestion+"€. Precio con IVA: "+precioFinalGestionIVA+"€";
+            //Colocamos el texto en el elemento con la id resultado
+            document.querySelector('#resultado').innerHTML = miHTML;
+
+        }
+
+
+    </script>
+</body>
+
+</html>

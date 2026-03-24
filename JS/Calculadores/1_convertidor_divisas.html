@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor</title>
+
+    <style>
+
+        body{
+            font-family: sans-serif;
+            max-width: 320px;
+            margin: 10px auto;
+        }
+
+        button{width: 100%;}
+    </style>
+</head>
+<body>
+    <h1>Convertidor € - $</h1>
+    <p>    <input type="number" placeholder="100" id="intDivisa">€</p><p>
+    <button onclick="cambiar()">Cambiar</button>
+
+    <p id="resultado">48,55$</p>
+
+    <script>
+        //DATOS
+        const cambioEuro = 1.0311;
+        //FUNCIONES
+        function cambiar(){
+            
+            let valor =0;
+            let miHTML='';
+
+            valor=document.querySelector('#intDivisa').value;
+            valor=valor*cambioEuro;
+
+            valor = valor.toFixed(2);
+            miHTML=valor+' $';
+
+            document.querySelector('#resultado').innerHTML=miHTML;
+            
+
+
+    /* Mismo código más sintetizado
+            let valor=document.querySelector('#intDivisa').value*cambioEuro;
+            document.querySelector('#resultado').innerHTML=valor.toFixed(2)+' $';
+    */
+
+    /* Sintetizado exageradamente
+                document.querySelector('#resultado').innerHTML=document.querySelector('#intDivisa').value*cambioEuro.toFixed(2)+' $';
+
+    */
+            }
+
+
+
+    </script>
+</body>
+</html>

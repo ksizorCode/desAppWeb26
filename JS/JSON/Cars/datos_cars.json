@@ -1,0 +1,34 @@
+{
+    "cars": [
+        {
+            "name": "Rayo McQueen",
+            "model": "Race Car",
+            "number": 95,
+            "color": "Red"
+        },
+        {
+            "name": "Mater",
+            "model": "Tow Truck",
+            "number": null,
+            "color": "Brown"
+        },
+        {
+            "name": "Sally Carrera",
+            "model": "Porsche 911 Carrera",
+            "number": null,
+            "color": "Blue"
+        },
+        {
+            "name": "Doc Hudson",
+            "model": "Hudson Hornet",
+            "number": 51,
+            "color": "Dark Blue"
+        },
+        {
+            "name": "Ramone",
+            "model": "Chevrolet Impala",
+            "number": null,
+            "color": "Purple"
+        }
+    ]
+}

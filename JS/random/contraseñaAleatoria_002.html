@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Color Aleatorio</title>
+    <style>
+        :root {
+            --c1: tan;
+            --c2: brown;
+            --cl: white;
+            --cd: black;
+            --ff: sans-serif;
+            --maxw: 960px;
+        }
+
+
+        body {
+            font-family: var(--ff);
+            padding: 20px;
+            max-width: var(--maxw);
+            margin: 0 auto;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 10px;
+            color: var(--c1);
+        }
+
+
+
+        a {
+            text-decoration: none;
+            color: var(--c1);
+        }
+
+        a:hover {
+            color: var(--c2);
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        header,
+        main,
+        footer {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        nav ul,
+        .flex {
+            list-style: none;
+            padding: 0;
+
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul li,
+        .flex>* {
+            flex: 1 1 100px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        button,
+        input[type=submit] {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: var(--c1);
+            cursor: pointer;
+        }
+
+
+
+
+        button:hover,
+        input[type=submit]:hover {
+            background-color: var(--c2);
+            color: --cl;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus,
+        textarea:focus {
+            border-color: #888;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <h1>Generador de Contraseñas</h1>
+        <pre>
+            <code id="referencia">Aqui la contraseña</code>
+        </pre>
+        <br>
+        <button onclick="generar()">Generar</button>
+    </main>
+
+    <script>
+        //array con letras minúsculas
+          const caracteres = [
+            ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'], // minusculas
+            ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'], // mayusculas
+            ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], // numeros
+            ['!', '@', '#', '$', '%', '&', '/', '(', ')', '¿', '¡', '*', '+', '-', '_', '[', ']', '{', '}', '<', '>'] // simbolos
+        ];
+
+        function aleatorio(parametro) {
+            return Math.floor(Math.random() * parametro);
+        }
+
+
+        function generar() {
+
+            let contrasena = '';
+
+            contrasena += caracteres[0][aleatorio(caracteres[0].length - 1)];
+            contrasena += caracteres[1][aleatorio(caracteres[1].length - 1)];
+            contrasena += caracteres[2][aleatorio(caracteres[2].length - 1)];
+            contrasena += caracteres[3][aleatorio(caracteres[3].length - 1)];
+
+
+            for(i=0; i<4; i++){
+                let tipocaracter = aleatorio(caracteres.length);
+                let nTipoCaracter = aleatorio(caracteres[tipocaracter].length);
+                contrasena += caracteres[tipocaracter][nTipoCaracter];
+            }
+
+            document.querySelector('#referencia').innerHTML = contrasena;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

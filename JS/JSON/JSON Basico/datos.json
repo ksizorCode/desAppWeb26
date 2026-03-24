@@ -1,0 +1,27 @@
+{
+    "movies": [
+      { "title": "Star Wars: Episode IV - A New Hope", "year": 1977 },
+      { "title": "Star Wars: Episode V - The Empire Strikes Back", "year": 1980 },
+      { "title": "Star Wars: Episode VI - Return of the Jedi", "year": 1983 },
+      { "title": "Star Wars: Episode I - The Phantom Menace", "year": 1999 },
+      { "title": "Star Wars: Episode II - Attack of the Clones", "year": 2002 },
+      { "title": "Star Wars: Episode III - Revenge of the Sith", "year": 2005 },
+      { "title": "Star Wars: Episode VII - The Force Awakens", "year": 2015 },
+      { "title": "Star Wars: Episode VIII - The Last Jedi", "year": 2017 },
+      { "title": "Star Wars: Episode IX - The Rise of Skywalker", "year": 2019 }
+    ],
+    "animated_series": [
+      { "title": "Star Wars: The Clone Wars", "year": 2008 },
+      { "title": "Star Wars Rebels", "year": 2014 },
+      { "title": "Star Wars: The Bad Batch", "year": 2021 },
+      { "title": "Star Wars: Tales of the Jedi", "year": 2022 }
+    ],
+    "live_action_series": [
+      { "title": "The Mandalorian", "year": 2019 },
+      { "title": "The Book of Boba Fett", "year": 2021 },
+      { "title": "Obi-Wan Kenobi", "year": 2022 },
+      { "title": "Andor", "year": 2022 },
+      { "title": "Ahsoka", "year": 2023 }
+    ]
+  }
+  

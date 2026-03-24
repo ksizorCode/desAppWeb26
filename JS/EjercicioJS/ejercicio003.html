@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        div {
+            width: 30px;
+            aspect-ratio: 1/1;
+            background-color: red;
+            margin: 5px;
+            text-align: center;
+            border-radius: 50%;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: sans-serif;
+            color: white;
+            text-shadow: 0 0 4px black;
+            outline: grey solid 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+
+        let miHTML = '';
+        for (i = 0; i < 256; i++) {
+            miHTML += `<div style="background:rgb(${i},${i},${i})">${i}</div>`;
+        }
+        document.body.innerHTML = miHTML;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: tan;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        li {
+            flex: 1 1 320px;
+            padding: 20px;
+            border-radius: 20px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <ul id="cars-list"></ul>
+
+    <div class="form-group">
+        <label for="nombre">Nombre: <input type="text" id="nombre"></label>
+        <label for="modelo">Modelo: <input type="text" id="modelo"></label>
+        <label for="numero">Número: <input type="text" id="numero"></label>
+        <label for="color">Color: <input type="text" id="color"></label>
+        <button id="guardar">Guardar Nuevo Coche</button>
+    </div>
+
+    <script>
+        fetch('datos_cars.json')
+            .then(response => response.json())
+            .then(data => {
+                const carsList = document.getElementById('cars-list');
+                for (let i = 0; i < data.cars.length; i++) {
+                    const car = data.cars[i];
+                    const li = document.createElement('li');
+                    li.textContent = `Name: ${car.name}, Model: ${car.model}, Number: ${car.number}, Color: ${car.color}`;
+                    carsList.appendChild(li);
+                }
+
+                document.getElementById('guardar').addEventListener('click', () => {
+                    const nombre = document.getElementById('nombre').value;
+                    const modelo = document.getElementById('modelo').value;
+                    const numero = document.getElementById('numero').value;
+                    const color = document.getElementById('color').value;
+
+                    const nuevoCoche = {
+                        name: nombre,
+                        model: modelo,
+                        number: numero,
+                        color: color
+                    };
+
+                    fetch('guardar_coche', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(nuevoCoche)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const li = document.createElement('li');
+                        li.textContent = `Name: ${data.name}, Model: ${data.model}, Number: ${data.number}, Color: ${data.color}`;
+                        carsList.appendChild(li);
+                    })
+                    .catch(error => console.error('Error:', error));
+                });
+            })
+            .catch(error => console.error('Error fetching the JSON:', error));
+    </script>
+</body>
+</html>

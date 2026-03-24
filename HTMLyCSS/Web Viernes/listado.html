@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listado</title>
+
+<style>
+ body{
+     background: yellow;
+     font-family: sans-serif;
+     max-width: 750px;
+     margin: 0 auto;;
+    }
+ 
+ li{
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    margin: 2px;    
+
+    background: red;
+    color: white;
+
+    list-style: none;
+    text-align: center;
+    float: left;
+
+    border: solid chartreuse 5px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px black;
+
+}
+
+.coco{ border: solid blue 10px; border-radius: 50%;}
+.cosu{ background:lime; color: yellow; font-size: 33px;}
+.cosin{ font-size: 6px; letter-spacing: 10px;}
+.cosona{ border-radius: 0; background: white; color: grey; font-family: serif;} 
+
+li{ transition: 1s;}
+
+.grandon:hover{ transform: scale(1.5);}
+.rotar:hover{transform:rotate(45deg);}
+.redondear:active{border-radius: 50%;}
+
+</style>
+
+</head>
+<body>
+
+    <h1>Lista de Alumnos</h1>
+
+    <ul>
+        <li class="coco cosin cosona grandon">Raquel</li>
+        <li class="cosona rotar">Yesmina</li>
+        <li class="cosin redondear">Verónica</li>
+        <li class="grandon redondear">Mykyta</li>
+        <li>Noelia</li>
+        <li class="cosin">María</li>
+        <li class="cosin cosona">Marta</li>
+        <li>Marián</li>
+        <li class="coco cosona"></li>>Jesús</li>
+        <li>Daniel</li>
+        <li class="cosona">Edward</li>
+        <li>Manuel</li>
+        <li>Astrid</li>
+        <li class="cosona">Yaiza</li>
+        <li>Sonia</li>
+        <li class="cosona">Miguel</li>
+    </ul>
+    
+</body>
+</html>

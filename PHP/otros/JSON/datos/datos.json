@@ -1,0 +1,119 @@
+{
+    "peliculas": [
+      {
+        "titulo": "El Viaje del Héroe",
+        "director": "Carlos Sánchez",
+        "anio": 2023,
+        "imagen":"https://picsum.photos/id/1/200/300"
+      },
+      {
+        "titulo": "La Sombra del Viento",
+        "director": "Ana Rodríguez",
+        "anio": 2022,
+        "imagen":"https://picsum.photos/id/4/200/300"
+      },
+      {
+        "titulo": "Noche Oscura",
+        "director": "Luis Pérez",
+        "anio": 2021,
+        "imagen":"https://picsum.photos/id/6/200/300"
+      },
+      {
+        "titulo": "El Último Suspiro",
+        "director": "María Gómez",
+        "anio": 2020,
+        "imagen":"https://picsum.photos/id/9/200/300"
+      },
+      {
+        "titulo": "El Guardián del Bosque",
+        "director": "Javier Torres",
+        "anio": 2019
+      },
+      {
+        "titulo": "Destinos Cruzados",
+        "director": "Raúl Fernández",
+        "anio": 2018
+      },
+      {
+        "titulo": "Voces del Pasado",
+        "director": "Isabel Jiménez",
+        "anio": 2017
+      },
+      {
+        "titulo": "Reflejos en el Agua",
+        "director": "Fernando Álvarez",
+        "anio": 2016
+      },
+      {
+        "titulo": "La Última Frontera",
+        "director": "Ricardo García",
+        "anio": 2015
+      },
+      {
+        "titulo": "El Eco del Silencio",
+        "director": "Susana Martínez",
+        "anio": 2014
+      },
+      {
+        "titulo": "El Círculo Prohibido",
+        "director": "Marcelo Díaz",
+        "anio": 2013
+      },
+      {
+        "titulo": "Sombras de Neón",
+        "director": "Carla Méndez",
+        "anio": 2012
+      },
+      {
+        "titulo": "Entre las Estrellas",
+        "director": "Oscar Ruiz",
+        "anio": 2011
+      },
+      {
+        "titulo": "Lágrimas en el Desierto",
+        "director": "Valeria López",
+        "anio": 2010
+      },
+      {
+        "titulo": "El Último Viaje",
+        "director": "Jorge Martínez",
+        "anio": 2009
+      },
+      {
+        "titulo": "El Último Tren",
+        "director": "Ricardo Sánchez",
+        "anio": 2008
+      },
+      {
+        "titulo": "Bajo la Lluvia",
+        "director": "Patricia Morales",
+        "anio": 2007
+      },
+      {
+        "titulo": "La Torre de Cristal",
+        "director": "Luis Alberto Pérez",
+        "anio": 2006
+      },
+      {
+        "titulo": "La Cueva Secreta",
+        "director": "Miguel Ángel Díaz",
+        "anio": 2005
+      },
+      {
+        "titulo": "Misterios del Pasado",
+        "director": "Sofía Hernández",
+        "anio": 2004
+      },
+      {
+        "titulo": "Refugio Nocturno",
+        "director": "Eduardo Ramírez",
+        "anio": 2003
+      },
+      {
+        "titulo": "El Regreso del Olvido",
+        "director": "Ramón González",
+        "anio": 2002
+      }
+    ]
+  }
+  

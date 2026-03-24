@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+
+*{  box-sizing: border-box;
+      cursor: pointer;}
+
+body{
+    background-color: lightskyblue;
+    font-family: sans-serif;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90dvh;
+
+
+}
+
+.calculadora{
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
+
+.calculadora .pantalla{
+    background: #000;
+    padding: 10px 20px;
+    margin-bottom: 8px;
+    color:white;
+    text-align: right;
+    font-size: 33px;
+    border-radius: 10px;
+}
+
+
+button{
+    display: block;
+    border-radius: 10px;
+    padding: 5px;
+
+    border:solid grey 1px;
+    cursor: url('http://127.0.0.1:3000/HTML%20y%20CSS/img/cartoon-hand.png'), auto;
+   width: 100%;
+}
+button:hover{
+    background-color: #989898;
+    color:white;
+
+    /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
+    cursor: url("https://upload.wikimedia.org/wikipedia/commons/0/05/Mario_Series_Logo.svg"), auto;
+  
+}
+
+button:active{
+    background-color: #989898;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    color:white;
+    scale: 0.95;
+}
+
+.bc{grid-area:bc;}
+.bk{grid-area:bk;}
+
+.bp{grid-area:bp;}
+.bd{grid-area:bd;}
+
+.b7{grid-area:b7;}
+.b6{grid-area:b6;}
+.b5{grid-area:b5;}
+
+.bx{grid-area:bx;}
+.b4{grid-area:b4;}
+
+.b9{grid-area:b9;}
+.b8{grid-area:b8;}
+
+.b6{grid-area:b6;}
+.br{grid-area:br;}
+.b1{grid-area:b1;}
+.b2{grid-area:b2;}
+.b3{grid-area:b3;}
+
+
+
+.botonera{
+    display: grid;
+    gap:5px;
+    grid-template-areas:
+    "bc bk bp bd"
+    "b7 b8 b9 bx"
+    "b5 b6 b4 bx"
+    "b1 b2 b3 br"
+    "b0 bi bi ba"
+   ;
+
+}
+
+
+
+
+/*
+*{ outline: solid 1px red}
+**/
+    </style>
+</head>
+<body>
+    
+
+    <div class="calculadora">
+        <div class="pantalla">-185,345555</div>
+        <div class="botonera">
+            <button class="bc">C</button>
+            <button class="bk">+/-</button>
+            <button class="bp">%</button>
+            <button class="bd">/</button>
+           
+          
+            <button class="b7">7</button>
+            <button class="b8">8</button>
+            <button class="b9">9</button>
+            <button class="b6">6</button>
+            <button class="b5">5</button>
+            <button class="bx">x</button>
+            <button class="b4">4</button>
+            <button class="b5">5</button>
+            <button class="b6">6</button>
+            <button class="br">-</button>
+            <button class="b1">1</button>
+            <button class="b2">2</button>
+            <button class="b3">3</button>
+
+            <button class="b0">0</button>
+            <button class="bi">=</button>
+            <button class="ba">,</button>
+            
+         
+        </div>
+
+    </div>
+
+</body>
+</html>
