@@ -1,34 +1,25 @@
 # 🗄️ Apuntes de Bases de Datos Relacionales
-
 Guía completa sobre **relaciones** y **claves** en bases de datos, con ejemplos prácticos usando un sistema de tienda online.
-
 ---
 
 # 🔗 Parte 1: Tipos de Relaciones
-
 Las relaciones describen cómo dos tablas están conectadas entre sí. Existen tres tipos principales.
-
 ---
 
 ## 1️⃣ Uno a Uno (1:1)
-
 Cada registro de la tabla A corresponde a **exactamente un** registro en la tabla B, y viceversa.
-
 Se usa principalmente para separar datos sensibles o poco accedidos de la tabla principal.
 
 ### 📌 Ejemplo: Persona y Pasaporte
-
 Una persona tiene un único pasaporte, y ese pasaporte pertenece a una única persona.
 
 **Tabla `persona`**
-
 | id (PK) | nombre        | fecha_nac  |
 |---------|---------------|------------|
 | 1       | Ana García    | 1990-04-12 |
 | 2       | Luis Martínez | 1985-09-03 |
 
 **Tabla `pasaporte`**
-
 | id (PK) | numero    | expiracion | persona_id (FK) |
 |---------|-----------|------------|-----------------|
 | 101     | AAA123456 | 2030-01-01 | 1               |
@@ -51,26 +42,21 @@ CREATE TABLE pasaporte (
 ```
 
 ---
-
 ## 🔢 Uno a Muchos (1:N)
-
 Un registro de la tabla A puede estar relacionado con **múltiples** registros en la tabla B, pero cada registro de B pertenece a **un único** registro de A.
 
 Es la relación **más habitual**. La clave foránea siempre vive en el lado "muchos".
 
 ### 📌 Ejemplo: Cliente y Pedidos
-
 Un cliente puede realizar varios pedidos, pero cada pedido pertenece a un solo cliente.
 
 **Tabla `cliente`**
-
 | id (PK) | nombre       | email            |
 |---------|--------------|------------------|
 | 1       | María López  | maria@email.com  |
 | 2       | Carlos Ruiz  | carlos@email.com |
 
 **Tabla `pedido`**
-
 | id (PK) | fecha      | total  | cliente_id (FK) |
 |---------|------------|--------|-----------------|
 | 10      | 2024-01-15 | 59.99  | 1               |
@@ -78,7 +64,6 @@ Un cliente puede realizar varios pedidos, pero cada pedido pertenece a un solo c
 | 12      | 2024-02-10 | 34.50  | 2               |
 
 María López tiene dos pedidos (10 y 11). Carlos Ruiz tiene uno (12).
-
 ```sql
 CREATE TABLE cliente (
     id      INT PRIMARY KEY,
@@ -95,7 +80,6 @@ CREATE TABLE pedido (
 ```
 
 ---
-
 ## 🔀 Muchos a Muchos (N:M)
 
 Varios registros de A pueden relacionarse con varios registros de B, y viceversa.
