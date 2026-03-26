@@ -116,7 +116,7 @@ JOIN disciplinas d
 ## 05. Combinación de ambas consultas basadas en una única obra o ID:
 
 Para info.php vamos a capturar el id de la obra, por lo que tendremos que hacer una consulta en la que solo nos devuelva el valor basado en el ID de la misma.
-Vastará con añadir al final del todo `WHERE id=2`para que esto funcione.
+Vastará con añadir al final del todo `WHERE id = 2` (2 por ejemplo) para que esto funcione.
 
 ```sql
 SELECT 
