@@ -87,7 +87,7 @@ JOIN disciplinas d
 
 ```sql
 SELECT 
-    o.titulo AD 'Titulo Obra',
+    o.titulo AS 'Titulo Obra',
     c.nombre AS 'Nombre Autor',
     d.nombre AS 'Disciplina Artística'
 FROM obras o
