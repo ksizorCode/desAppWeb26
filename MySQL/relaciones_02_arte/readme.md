@@ -25,11 +25,15 @@
 ---
 # Resolviendo el ejercicio:
 
-##01. Testeo para ver si funciona:
+## 01. Testeo para ver si funciona:
 
 ```sql
-#Testeo básico
+#Testeos básico
 SELECT * FROM obras
+
+SELECT * FROM creadores
+
+SELECT * FROM disciplinas
 ```
 
 ## 02. Relación entre Obras y Creadores
