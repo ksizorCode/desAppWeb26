@@ -46,14 +46,13 @@ La consulta anterior nos devuelve un montón de datos innecesarios como IDs y ot
 
 Realación con los datos limpios (con alias)
 ```sql
-# Relacion Obra-Creador:
 SELECT
     o.titulo,
-    c.nombre AS creador 
+    c.nombre AS creadores 
 FROM obras o
 JOIN obras_creadores oc
     ON oc.obra_id = o.id
-JOIN creadores 
+JOIN creadores c
     ON oc.creador_id = c.id;
 ```
 
