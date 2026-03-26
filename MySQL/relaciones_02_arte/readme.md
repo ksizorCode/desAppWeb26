@@ -234,8 +234,6 @@ WHERE o.id='$id'";
     </div>    
 
     </div>
-
-
 <?getfooter();?>
 ```
 
