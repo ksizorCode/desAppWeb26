@@ -28,5 +28,15 @@
 01. Testeo:
 
 ```sql
+#Testeo básico
 SELECT * FROM obras
-``
+
+# Relacion:
+SELECT * 
+FROM obras
+JOIN obras_creadores 
+    ON obras_creadores.obra_id = obras.id
+JOIN creadores 
+    ON obras_creadores.creador_id = creadores.id;
+
+``` 
