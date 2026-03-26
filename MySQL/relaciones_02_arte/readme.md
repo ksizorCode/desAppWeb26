@@ -115,17 +115,32 @@ JOIN disciplinas d
 
 ## 05. Combinación de ambas consultas basadas en una única obra o ID:
 
-Para info.php vamos a capturar el id de la obra, por lo que tendremos que hacer una consulta en la que solo nos devuelva el valor basado en el ID de la misma.
+Para info.php vamos a capturar el id de la obra, por lo que tendremos que hacer una consulta en la que sólo nos devuelva el valor basado en el ID de la misma.
 Vastará con añadir al final del todo `WHERE id = 2` (2 por ejemplo) para que esto funcione.
+
+Por otro lado también también tenemos que preparar los datos en el SELECT que necesitamos que nos devuelva la consulta:
+- id de la obra     → `id`
+- titulo de la obra → `titulo`
+- imagen de la obra → `imagen`
+- año de la obra → `año`
+- descripción de la obra → `descripcion`
+- nombre del creador → `creador`
+- nombre de la disciplina → `disciplina`
+- id del creador  → `id_creador`
+- id de la disciplina  → `id_disciplina`
 
 
 ```sql
 SELECT 
+    o.id,
     o.titulo,
     o.imagen,
+    o.año,
     o.descripcion,
     c.nombre AS 'creador',
-    d.nombre AS 'disciplina'
+    d.nombre AS 'disciplina',
+    c.id AS id_creador,
+    d.id AS id_disciplina
 FROM obras o
 
 -- Relación con creadores
@@ -144,7 +159,7 @@ WHERE o.id = 2;
 
 ```
 
-También hemos preparado los datos que info.php va a necesitar aquí como titulo, imagen, descripcion, creador y disciplina:
+
 
 ```sql
 SELECT 
