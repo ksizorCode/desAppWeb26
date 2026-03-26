@@ -20,3 +20,13 @@
 ## Implementa un sustema de usuario y contraseña 
 - Para que no puedan entrar roles indevidos en el CRUD o el reseteo
 
+
+
+---
+# Resolviendo el ejercicio:
+
+01. Testeo:
+
+```sql
+SELECT * FROM obras
+``
