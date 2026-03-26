@@ -42,6 +42,8 @@ JOIN obras_creadores
 JOIN creadores 
     ON obras_creadores.creador_id = creadores.id;
 ```
+La consulta anterior nos devuelve un montón de datos innecesarios como IDs y otros valores que no nos interesan.
+
 Realación con los datos limpios (con alias)
 ```sql
 # Relacion Obra-Creador:
