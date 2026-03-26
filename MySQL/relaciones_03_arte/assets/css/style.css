@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --c1: var(--color-main);
+  --cl: var(--color-light);
+  --cd: var(--color-dark);
+
+  /* colores */
+  --color-main: tan;
+  --color-secundary: coral;
+
+  --color-light: white;
+  --color-dark: black;
+
+  /* font*/
+  --ff: sans-serif;
+  --ff2: monospace;
+
+  /* size*/
+  --mxw: 1160px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  padding: 20px;
+  background: linear-gradient(var(--c1), var(--cl));
+  min-height: 100dvh;
+}
+
+body {
+  max-width: var(--mxw);
+  margin: 0 auto;
+  background: var(--cl);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+a {
+  color: var(--c1);
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+footer {
+  margin-top: 30px;
+}
+
+
+.ficha,
+.ficha-autor{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+
+
+
+
+
+
+/* DEBUG */
+.debug span {
+  content: "DEBUG MODE ON";
+  display: block;
+  background: var(--c1);
+  position: absolute;
+  padding: 4px 8px;
+  top: -20px;
+  left:0px;
+  border-radius: 8px 8px 0 0;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.debug {
+  font-family: monospace;
+  font-size: 10px;
+
+  color: var(--c2);
+  padding: 6px 6px 30px 30px;;
+  
+  outline: var(--c2) 1px solid;
+  border-radius: 0 0px 6px 6px;
+
+  border-top:var(--c1) solid 3px;
+  margin: 30px 0;
+
+  box-shadow: inset 2px 2px 8px #00000044;
+
+  position: relative;
+}
+
+.debug pre{
+    overflow: auto;
+}
+
+.galeria {
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 8px;
+}
+
+.galeria li {
+  flex: 1 1 0;
+  min-width: 190px;
+  outline: solid #eee 2px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.galeria li img{
+  aspect-ratio:1/1;
+  object-fit:cover;
+  margin:8px 0;
+  border-radius:4px;
+}
+
+.galeria li p{
+  color:grey;
+}
+
+.btn,
+input[type="submit"]{
+  background-color:var(--c1);
+  padding:6px 18px 6px 12px;
+  text-align:center;
+  display:inline-block;
+  font-size:0.86em;
+  color:white;
+  border-radius:20px;
+  margin:6px 0;
+  border:none;
+  cursor:pointer;
+  outline: solid 0px var(--c1);
+  transition: .4s;
+}
+
+.btn:hover,
+input[type="submit"]:hover{
+  color:var(--c1);
+  background:#000;
+  outline: solid 2px var(--c1);
+  outline-offset:3px;
+}
+
+
+
+
+
+
+
+
+/* pikadukes */
+
+
+ img {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards; 
+  animation-delay: 0.2s; 
+}
+
+
+
+
+
+/*
+*:not(a):not(input):not(button) {
+  user-select: none;
+  cursor: default;
+}
+  */
+
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Libre Baskerville", serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h1{
+  font-size: clamp(2rem, 5vw, 6rem);
+}
+
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+		scale:1.1;
+		letter-spacing:3px;
+  }
+  to {
+    opacity: 1;
+		scale:1;
+  }
+}
+
+
+h1, h2, h3, img, h1:nth-child(2n) {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 35%;
+}	
+
+
