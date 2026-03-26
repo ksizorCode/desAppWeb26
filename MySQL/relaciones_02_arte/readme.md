@@ -81,3 +81,27 @@ JOIN disciplinas d
     ON od.disciplina_id = d.id;
 ```
 
+
+## 04. Combinación de ambas consultas:
+
+
+```sql
+SELECT 
+    o.titulo AD 'Titulo Obra',
+    c.nombre AS 'Nombre Autor',
+    d.nombre AS 'Disciplina Artística'
+FROM obras o
+
+-- Relación con creadores
+JOIN obras_creadores oc 
+    ON oc.obra_id = o.id
+JOIN creadores c 
+    ON oc.creador_id = c.id
+
+-- Relación con disciplinas
+JOIN obras_disciplinas od 
+    ON od.obra_id = o.id
+JOIN disciplinas d 
+    ON od.disciplina_id = d.id;
+```
+
