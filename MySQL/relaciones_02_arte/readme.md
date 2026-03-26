@@ -15,3 +15,8 @@
 
 ## CRUD
 - Desarrolla un mini-CRUD
+
+
+## Implementa un sustema de usuario y contraseña 
+- Para que no puedan entrar roles indevidos en el CRUD o el reseteo
+
