@@ -170,3 +170,73 @@ SELECT
     d.nombre AS 'disciplina'
     ...
 ```
+
+
+---
+---
+
+## 06. el PHP: info.php
+
+El info.php quedaría así:
+
+
+```php
+<? require 'functions.php'?>
+<? getheader();?>
+
+<a href="index.php" class="btn">❮❮ Volver</a>
+
+<?php
+$id = $_GET["id"];
+$sql = "SELECT 
+    o.id,
+    o.titulo,
+    o.imagen,
+    o.año,
+    o.descripcion,
+    c.nombre AS 'creador',
+    d.nombre AS 'disciplina',
+    c.id AS id_creador,
+    d.id AS id_disciplina
+FROM obras o
+
+-- Relación con creadores
+JOIN obras_creadores oc 
+    ON oc.obra_id = o.id
+JOIN creadores c 
+    ON oc.creador_id = c.id
+
+-- Relación con disciplinas
+JOIN obras_disciplinas od 
+    ON od.obra_id = o.id
+JOIN disciplinas d 
+    ON od.disciplina_id = d.id
+
+WHERE o.id='$id'";
+
+    $obra = consulta($sql);
+
+    debug_print_r($obra, 'no indentado');
+    
+    $obra=$obra[0]; // abrir primera identación
+    
+    debug_print_r($obra,'tras abrir indentación');
+?>
+
+<div class="ficha">
+    <img src="<?=$obra['imagen']?>"/>
+    <div>
+    <h1><?=$obra['titulo']?></h1>
+    <a href="creador.php?id=<?=$obra['id_creador']?>"><?=$obra['creador']?></a>
+    <p><?=$obra['año']?></p>
+    <p><?=$obra['descripcion']?></p>
+    <a href="disciplina.php?id=<?=$obra['id_disciplina']?>"><?=$obra['disciplina']?></a>
+    </div>    
+
+    </div>
+
+
+<?getfooter();?>
+```
+
+
