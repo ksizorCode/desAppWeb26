@@ -28,12 +28,16 @@
 ## 01. Testeo para ver si funciona:
 
 ```sql
-#Testeos básico
+#Testeos básico (jugando con consultas SQL)
 SELECT * FROM obras
 
 SELECT * FROM creadores
 
 SELECT * FROM disciplinas
+
+SELECT titulo FROM obras LIMIT 3
+
+SELECT nombre, lugar FROM creadores ORDER BY lugar DESC
 ```
 
 ## 02. Relación entre Obras y Creadores
@@ -51,8 +55,8 @@ La consulta anterior nos devuelve un montón de datos innecesarios como IDs y ot
 Realación con los datos limpios (con alias)
 ```sql
 SELECT
-    o.titulo,
-    c.nombre AS creadores 
+    o.titulo AS "Título Obra",
+    c.nombre AS "Nombre Autor" 
 FROM obras o
 JOIN obras_creadores oc
     ON oc.obra_id = o.id
@@ -76,8 +80,8 @@ JOIN disciplinas
 Relación en la que nos devuelve los datos más limpios (con alias):
 ```sql
 SELECT 
-    o.titulo,
-    d.nombre AS disciplina
+    o.titulo AS "Título Obra"
+    d.nombre AS "Nombre Disciplina"
 FROM obras o
 JOIN obras_disciplinas od
     ON od.obra_id = o.id

@@ -8,6 +8,7 @@ Conceptos: riesgo, daño, prevención
 Salud laboral en oficina (fatiga visual, sedentarismo)
 Ley 31/1995 (resumen)
 Derechos y deberes	Pantalla tipo “guía básica”
+
 🎯 Interactivo en Genialy, Kahoot o Similar
 
 🦕 Conceptos que debe subrir este tema:
@@ -28,6 +29,7 @@ Riesgos comunes en oficina:
 Señalización
 Identificador de riesgos (checklist interactivo)
 Casos prácticos con imágenes?
+
 🎯 Interactivo en Genialy, Kahoot o Similar
 
 🦕 Conceptos que debe subrir este tema:
@@ -47,13 +49,14 @@ EPI en oficina (menos comunes pero reales):
 - Gafas protección luz azul
 - Reposamuñecas	Simulador de puesto de trabajo ideal
 Selector de EPI según problema
+
 🎯 Interactivo en Genialy, Kahoot o Similar
 
 🦕 Conceptos que debe subrir este tema:
-¿Qué riesgos pueden derivarse del uso continuo del teclado y el ratón?
-¿Qué medidas ayudan a prevenir problemas en muñecas y manos como el túnel carpiano?
-¿Qué acciones forman parte de una buena ergonomía en el puesto de trabajo?
-¿Qué elementos favorecen una postura correcta en el puesto de trabajo?
+- ¿Qué riesgos pueden derivarse del uso continuo del teclado y el ratón?
+- ¿Qué medidas ayudan a prevenir problemas en muñecas y manos como el túnel carpiano?
+- ¿Qué acciones forman parte de una buena ergonomía en el puesto de trabajo?
+- ¿Qué elementos favorecen una postura correcta en el puesto de trabajo?
 
 
 ## Grupo 4
