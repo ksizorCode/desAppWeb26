@@ -135,8 +135,8 @@ JOIN creadores c
 JOIN obras_disciplinas od 
     ON od.obra_id = o.id
 JOIN disciplinas d 
-    ON od.disciplina_id = d.id;
+    ON od.disciplina_id = d.id
 
-WHERE o.id=2
+WHERE o.id = 2;
 
 ```
