@@ -118,11 +118,14 @@ JOIN disciplinas d
 Para info.php vamos a capturar el id de la obra, por lo que tendremos que hacer una consulta en la que solo nos devuelva el valor basado en el ID de la misma.
 Vastará con añadir al final del todo `WHERE id = 2` (2 por ejemplo) para que esto funcione.
 
+
 ```sql
 SELECT 
-    o.titulo AS 'Titulo Obra',
-    c.nombre AS 'Nombre Autor',
-    d.nombre AS 'Disciplina Artística'
+    o.titulo,
+    o.imagen,
+    o.descripcion,
+    c.nombre AS 'creador',
+    d.nombre AS 'disciplina'
 FROM obras o
 
 -- Relación con creadores
@@ -139,4 +142,16 @@ JOIN disciplinas d
 
 WHERE o.id = 2;
 
+```
+
+También hemos preparado los datos que info.php va a necesitar aquí como titulo, imagen, descripcion, creador y disciplina:
+
+```sql
+SELECT 
+    o.titulo,
+    o.imagen,
+    o.descripcion,
+    c.nombre AS 'creador',
+    d.nombre AS 'disciplina'
+    ...
 ```
