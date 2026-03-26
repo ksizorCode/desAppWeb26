@@ -113,3 +113,30 @@ JOIN disciplinas d
     ON od.disciplina_id = d.id;
 ```
 
+## 05. Combinación de ambas consultas basadas en una única obra o ID:
+
+Para info.php vamos a capturar el id de la obra, por lo que tendremos que hacer una consulta en la que solo nos devuelva el valor basado en el ID de la misma.
+Vastará con añadir al final del todo `WHERE id=2`para que esto funcione.
+
+```sql
+SELECT 
+    o.titulo AS 'Titulo Obra',
+    c.nombre AS 'Nombre Autor',
+    d.nombre AS 'Disciplina Artística'
+FROM obras o
+
+-- Relación con creadores
+JOIN obras_creadores oc 
+    ON oc.obra_id = o.id
+JOIN creadores c 
+    ON oc.creador_id = c.id
+
+-- Relación con disciplinas
+JOIN obras_disciplinas od 
+    ON od.obra_id = o.id
+JOIN disciplinas d 
+    ON od.disciplina_id = d.id;
+
+WHERE o.id=2
+
+```
