@@ -94,3 +94,33 @@ Aunque se haga en **PHP**, podemos implementar algunos elementos básicos de una
 ---
 
 Suerte! 🚀
+
+
+
+
+
+---
+
+# Trukitos y cositas que siempre quedan bien:
+
+
+
+
+## Buscador:
+
+```sql
+SELECT * FROM obras WHERE nombre LIKE "%cena%"
+```
+
+
+## Paginación
+```sql
+SELECT *
+FROM obras
+ORDER BY fecha_creacion DESC
+LIMIT 5 OFFSET 5; -- página 2 con 5 registros por página
+```
+
+## Filtros dinámicos
+Una vez ya se ha mostrado los datos puedes utilizar filtros de JS. Ten en cuenta que esto no conlleva nuevas búsquedas en la base de datos. Solo jugará con los valores que ya tenemos desplegados en local.
+https://www.w3schools.com/HOWTO/howto_js_filter_lists.asp
