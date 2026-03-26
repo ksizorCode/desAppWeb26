@@ -240,3 +240,19 @@ WHERE o.id='$id'";
 ```
 
 
+
+
+
+
+## 07 Creamos la ficha de Creadores.php
+
+La consulta será la siguiente:
+```sql
+SELECT o.*, c.*
+FROM obras o
+JOIN obras_creadores oc
+    ON oc.obra_id = o.id
+JOIN creadores c
+    ON oc.obra_id = c.id
+WHERE oc.creador_id = 1;
+```
