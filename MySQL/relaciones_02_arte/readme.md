@@ -25,18 +25,58 @@
 ---
 # Resolviendo el ejercicio:
 
-01. Testeo:
+##01. Testeo para ver si funciona:
 
 ```sql
 #Testeo básico
 SELECT * FROM obras
+```
 
-# Relacion:
+## 02. Relación entre Obras y Creadores
+```sql
+# Relacion Obra-Creador:
 SELECT * 
 FROM obras
 JOIN obras_creadores 
     ON obras_creadores.obra_id = obras.id
 JOIN creadores 
     ON obras_creadores.creador_id = creadores.id;
+```
+Realación con los datos limpios (con alias)
+```sql
+# Relacion Obra-Creador:
+SELECT
+    o.titulo,
+    c.nombre AS creador 
+FROM obras o
+JOIN obras_creadores oc
+    ON oc.obra_id = o.id
+JOIN creadores 
+    ON oc.creador_id = c.id;
+```
 
-``` 
+
+## 03. Relación entre Obra y Disciplina
+
+Relación a lo bruto
+```sql
+# Relacion Obra-Disciplina:
+SELECT * 
+FROM obras
+JOIN obras_disciplinas
+    ON obras_disciplinas.obra_id = obras.id
+JOIN disciplinas 
+    ON obras_disciplinas.disciplina_id = disciplinas.id;
+```
+Relación en la que nos devuelve los datos más limpios (con alias):
+```sql
+SELECT 
+    o.titulo,
+    d.nombre AS disciplina
+FROM obras o
+JOIN obras_disciplinas od
+    ON od.obra_id = o.id
+JOIN disciplinas d
+    ON od.disciplina_id = d.id;
+```
+
