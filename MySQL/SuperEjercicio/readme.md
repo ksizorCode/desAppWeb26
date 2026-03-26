@@ -1,76 +1,40 @@
-# Ejercicio con bases de datos
-
-Crea una webApp que consulte datos en una base de datos de tal manera que se puedan listar o filtrar. Tienes como ejemplo el ejercicio de Arte hecho en clase.
-
-Condicionantes:
-
-(lo que figura con * es Opcional)
-
-- Layout y estructura
-    - Limpia y clara
-    - *Diseño Ui UX previo en Figma o similar
-    - CSS Responsive
-    - *Pase de diapositivas
-    - *Tipografías o fuentes externas
-
-- Progresive Web Aplication
-    Aunque la haremos en PHP vamos a insertar los elementos básicos de una PWA (sabiendo que siendo php no tendrá opción de ejecutarse en local sin conexión, pero que algunas opciones se muestran como PWA igualmente)
-    - manifest
-    - iconos, etc..
-
-
-- Programación en PHP
-    - Correcta estructura y orden
-    - Sistema Reset o Instalación para la base de datos
-    - Sumario con lista de elementos
-    - *paginación
-    - Ficha individual del producto o elemento
-    - *buscador
-
-- Base de Datos
-    - Tablas de datos
-    - Tablas de relación
-
-- Opcionalmente:
-    - URLs limpias con .htaccess
-    - CRUD
-    - Acceso a partes sensibles (como CRUD o Reset) con usuario y contraseña
-
-
-
-
-
----
-
 # 🗄️ Ejercicio con Bases de Datos – WebApp
 
 Crea una **WebApp** que consulte datos en una base de datos y permita **listar, filtrar y mostrar información detallada**. Como ejemplo puedes usar el ejercicio de Arte hecho en clase.
 
+
+(lo que figura con * es Opcional)
+
 ---
 
-## 🎨 Layout y Estructura
+## 🎨 Diseño (Colorinchis): Layout y Estructura
 
 - ✅ Limpia y clara
-- 🌈 *Diseño UI/UX previo en Figma o similar*
+- 🌈 *Diseño UI/UX previo en Figma o similar
 - 📱 CSS **responsive**
-- 🖼️ *Pase de diapositivas*
-- 🔤 *Tipografías o fuentes externas*
+- 🖼️ *Pase de diapositivas
+- 🔤 *Tipografías o fuentes externas (google fonts)
 
 💡 Ideas adicionales:  
-- Colores armoniosos y consistentes.  
+- Colores armoniosos y consistentes. 
 - Barra de navegación fija y menú hamburguesa en móvil.  
 - Feedback visual al interactuar con botones y filtros.  
-
+- Animaciones o aparición de elementos con scroll
 ---
 
-## ⚡ Progressive Web Application (PWA)
+
+
+
+
+## ⚡ JS y  Progressive Web Application (PWA)
 
 Aunque se haga en **PHP**, podemos implementar algunos elementos básicos de una PWA:
 
 - 📄 `manifest.json` con nombre, short_name y colores  
 - 🖼️ Iconos para diferentes tamaños  
-- 🌐 `service-worker.js` básico para cache de assets  
-- 💬 *Notificaciones push simuladas o en tiempo real*  
+- 🌐 `service-worker.js` básico para cache de ciertos assets  
+- 💬 *Notificaciones push simuladas o en tiempo real
+- 📡 *Localización + Acelerometro para mostrar lugar y distancia a la que se encuentra un objeto...
 
 💡 Extra: prueba a que la app se “añada a pantalla de inicio” en móvil.  
 
@@ -78,26 +42,28 @@ Aunque se haga en **PHP**, podemos implementar algunos elementos básicos de una
 
 ## 🖥️ Programación en PHP
 
-- 📂 Correcta estructura y orden de carpetas  
+- 📂 Correcta estructura y orden de carpetas
+- 🚚 Funciones y constantes reutilizables (funcionts.php y/o config.php)
 - ⚙️ Sistema de **Reset o instalación** para la base de datos  
 - 📋 Sumario o listado de elementos  
-- 🔢 *Paginación para listas largas*  
+- 🔢 *Paginación para listas largas  
 - 📄 Ficha individual del producto o elemento  
-- 🔍 *Buscador por nombre, categoría o disciplina*  
+- 🔍 *Buscador por nombre, categoría o disciplina  
 
 💡 Ideas extra:  
 - Validación de formularios en PHP y JS  
 - Código comentado para que sea didáctico  
-- Sistema de plantillas para no repetir HTML  
+- Sistema de plantillas para no repetir HTML
+- Readme.md explicativo  
 
 ---
 
 ## 🗃️ Base de Datos
 
-- 🏷️ Tablas de datos principales  
-- 🔗 Tablas de relación entre elementos  
+- 🏷️ Tablas de datos principales (solo datos limpios)
+- 🔗 Tablas de relación entre elementos 
 - 🔍 Posibilidad de consultas con **JOINs**  
-- 📊 *Campos opcionales: descripción, imágenes, fechas*  
+- 📊 *Campos tipo: descripción, categorias, tipos, imágenes, fechas, videos Youtube, coordenadas GPS para mapas, etc  
 
 💡 Extra:  
 - Llaves foráneas y ON DELETE CASCADE o SET NULL  
@@ -107,21 +73,24 @@ Aunque se haga en **PHP**, podemos implementar algunos elementos básicos de una
 
 ## 🛠️ Opcional
 
-- 🌐 URLs limpias con `.htaccess`  
-- ✏️ CRUD (Crear, Leer, Actualizar, Eliminar)  
-- 🔒 Acceso a partes sensibles con **usuario y contraseña**  
-- 📈 Gráficos o estadísticas simples de los datos  
+- 🌐 *URLs limpias con `.htaccess`  
+- ✏️ *CRUD (Crear, Leer, Actualizar, Eliminar)  
+- 🔒 *Acceso a partes sensibles con **usuario y contraseña**  
+- 📈 *Gráficos o estadísticas simples de los datos
+- 💼 *Exportación de datos o consultas en formato JSON para crear tu propia API
+- 🪂 *Consultas a datos o APIs externas  
 
 ---
 
 ## 💡 Ideas Extra para “brillo” 💡
 
-- 🎯 Filtros dinámicos con JS (por disciplina, autor, año, etc.)  
-- 🖼️ Miniaturas de imágenes con zoom o modal  
-- ⏱️ Carga de datos con animaciones o skeletons  
-- 🏆 Resaltar elementos destacados (por ejemplo, obras famosas)  
-- 📱 Prueba en varios dispositivos y resoluciones  
+- 🎯 *Filtros dinámicos con JS (por disciplina, autor, año, etc.)  
+- 🖼️ *Miniaturas de imágenes con zoom o ventana modal  
+- ⏱️ *Carga de datos con animaciones o skeletons  
+- 🏆 *Resaltar elementos destacados (por ejemplo, obras famosas)  
+- 📱 *Prueba en varios dispositivos y resoluciones
+- 🧰 A*lmacenamiento de datos en localStorage  
 
 ---
 
-¡Con esto tu ejercicio queda completo, visual y moderno! 🚀
+Suerte! 🚀
