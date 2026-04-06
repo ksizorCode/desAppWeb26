@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa de locales</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+// ===============================
+// 📍 DATOS
+// ===============================
+let locales = [
+    {
+        nombre: "Punto Caramelo",
+        direccion: "Calle Caridad, 9, Gijón",
+        coords: [43.5401, -5.6551],
+        icono: 'comida'
+    },
+    {
+        nombre: "Le Menhir",
+        direccion: "Marqués de Urquijo, 27, Gijón",
+        coords: [43.5393, -5.6464],
+        icono: 'comida'
+    },
+    {
+        nombre: "Centro Comercial Los Fresnos",
+        direccion: "Calle Río de Oro, 3, Gijón",
+        coords: [43.5327, -5.6620],
+        icono: 'ocio'
+    },
+    {
+        nombre: "La Casa Pompeyana",
+        direccion: "C. Nava, 5, Centro, 33207 Gijón, Asturias",
+        coords: [43.538315243235864, -5.671160203632922],
+        icono: 'comida'
+    },
+    {
+        nombre: "Librería la revoltosa",
+        direccion: "Calle Río de Oro, 3, Gijón",
+        coords: [43.540674, -5.656074],
+        icono: 'ocio'
+    }
+];
+
+// ===============================
+// 🗺️ MAPA
+// ===============================
+let map = L.map('map').setView([43.538, -5.66], 13);
+
+// Capa base OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// ===============================
+// 🎨 ICONOS PERSONALIZADOS
+// ===============================
+let iconos = {
+    comida: L.icon({
+        iconUrl: 'iconos/comida.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    }),
+    ocio: L.icon({
+        iconUrl: 'iconos/ocio.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    })
+};
+
+// ===============================
+// 📌 MARCADORES
+// ===============================
+locales.forEach(local => {
+
+    let iconoFinal = iconos[local.icono] || iconos['ocio'];
+
+    L.marker(local.coords, { icon: iconoFinal })
+        .addTo(map)
+        .bindPopup(`
+            <strong>${local.nombre}</strong><br>
+            ${local.direccion}
+        `);
+
+});
+</script>
+
+</body>
+</html>

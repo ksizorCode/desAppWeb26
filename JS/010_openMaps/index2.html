@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa de locales</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        #map {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    // Array de locales con coordenadas
+let locales = [
+    {
+        nombre: "Punto Caramelo",
+        direccion: "Calle Caridad, 9, Gijón",
+        coords: [43.5401, -5.6551],
+        icono:'comida'
+    },
+    {
+        nombre: "Le Menhir",
+        direccion: "Marqués de Urquijo, 27, Gijón",
+        coords: [43.5393, -5.6464],
+        icono:'comida'
+    },
+    {
+        nombre: "Centro Comercial Los Fresnos",
+        direccion: "Calle Río de Oro, 3, Gijón",
+        coords: [43.5327, -5.6620],
+        icono:'ocio'
+    },
+    {
+        nombre: "Librería la revoltosa",
+        direccion: "Calle Río de Oro, 3, Gijón",
+        coords: [43.540674, -5.656074],
+        icono:'ocio'
+    }
+];
+
+// Crear mapa centrado
+let map = L.map('map').setView([43.538, -5.66], 13);
+
+// Capa de OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Recorrer locales y añadir marcadores
+locales.forEach(local => {
+
+    L.marker(local.coords)
+        .addTo(map)
+        .bindPopup(`
+            <strong>${local.nombre}</strong><br>
+            ${local.direccion}
+        `);
+
+});
+</script>
+
+</body>
+</html>
