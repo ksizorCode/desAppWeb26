@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Notificaciones JS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        h1 { margin-bottom: 20px; }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        button:hover { background: #0056b3; }
+
+        /* Estilos para la lista de notificaciones */
+        #lista-pendientes {
+            margin-top: 30px;
+            width: 300px;
+        }
+
+        .item-notificacion {
+            background: #fff;
+            border-left: 5px solid #007BFF;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .timer {
+            font-weight: bold;
+            color: #d9534f;
+            background: #f9f2f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔔 Notificaciones</h1>
+
+    <div class="form-container">
+        <input type="text" id="titulo" placeholder="Título">
+        <input type="text" id="mensaje" placeholder="Mensaje">
+        <input type="number" id="delay" placeholder="Segundos de retraso">
+        <button id="btnNoti">Lanzar Notificación</button>
+    </div>
+
+    <div id="lista-pendientes"></div>
+
+    <script>
+        const listaUI = document.getElementById("lista-pendientes");
+
+        // Función para añadir visualmente la notificación a la lista con cuenta atrás
+        const agregarAListaUI = (titulo, tiempo) => {
+            const item = document.createElement("div");
+            item.className = "item-notificacion";
+            
+            // Creamos el contenido con el título y un span para el cronómetro
+            item.innerHTML = `
+                <span><strong>${titulo}</strong></span>
+                <span class="timer">Enviando en: ${tiempo}s</span>
+            `;
+            
+            listaUI.appendChild(item);
+
+            const timerElement = item.querySelector(".timer");
+            let restante = tiempo;
+
+            // Intervalo que actualiza el texto cada segundo
+            const cuentaAtras = setInterval(() => {
+                restante--;
+                if (restante > 0) {
+                    timerElement.innerText = `Enviando en: ${restante}s`;
+                } else {
+                    clearInterval(cuentaAtras);
+                    item.remove(); // Elimina el elemento de la lista cuando llega a 0
+                }
+            }, 1000);
+        };
+
+        document.getElementById("btnNoti").addEventListener("click", () => {
+            const titulo = document.getElementById("titulo").value || "Notificación";
+            const mensaje = document.getElementById("mensaje").value || "Mensaje por defecto";
+            const segundos = parseInt(document.getElementById("delay").value) || 0;
+
+            if (!("Notification" in window)) {
+                alert("Este navegador no soporta notificaciones");
+                return;
+            }
+            
+            const crearNotificacion = () => {
+                const noti = new Notification(titulo, {
+                    body: mensaje,
+                    icon: "https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+                });
+
+                noti.onclick = () => {
+                    window.focus();
+                    window.open("https://tuweb.com");
+                };
+            };
+
+            const lanzarConDelay = () => {
+                // Si hay delay, lo añadimos a nuestra lista visual
+                if (segundos > 0) {
+                    agregarAListaUI(titulo, segundos);
+                }
+
+                setTimeout(() => {
+                    crearNotificacion();
+                }, segundos * 1000);
+            };
+
+            if (Notification.permission === "granted") {
+                lanzarConDelay();
+            }
+            else if (Notification.permission !== "denied") {
+                Notification.requestPermission().then(permiso => {
+                    if (permiso === "granted") {
+                        lanzarConDelay();
+                    }
+                });
+            }
+            else {
+                alert("Tienes bloqueadas las notificaciones 😢");
+            }
+        });
+    </script>
+</body>
+</html>
