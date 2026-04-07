@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Notificaciones JS</title>
 
+    <!-- iconos y PWA -->
     <link rel="icon" type="image/png" href="icon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="icon/favicon.svg" />
     <link rel="shortcut icon" href="icon/favicon.ico" />
@@ -12,6 +13,7 @@
     <meta name="apple-mobile-web-app-title" content="notification" />
     <link rel="manifest" href="icon/site.webmanifest" />
 
+    <!-- CSS -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,45 +60,60 @@
     <button id="btnNoti">Lanzar Notificación</button>
 
     <script>
+        // Escucha el evento de click en el botón con ID "btnNoti" y ejecuta una arrow function
         document.getElementById("btnNoti").addEventListener("click", () => {
 
+            // Captura los valores de los inputs. Si están vacíos, asigna valores por defecto mediante el operador OR (||)
             const titulo = document.getElementById("titulo").value || "Notificación";
             const mensaje = document.getElementById("mensaje").value || "Mensaje por defecto";
+            // Convierte el valor del delay a número entero; si falla o está vacío, usa 0
             const segundos = parseInt(document.getElementById("delay").value) || 0;
 
+            // Validación de compatibilidad: verifica si el navegador soporta la API de Notificaciones
             if (!("Notification" in window)) {
                 alert("Este navegador no soporta notificaciones");
                 return;
             }
-
+            
+            // Función interna que se encarga de instanciar y mostrar la notificación
             const crearNotificacion = () => {
                 const noti = new Notification(titulo, {
                     body: mensaje,
                     icon: "https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
                 });
 
+                // Define qué sucede cuando el usuario hace click en la notificación
                 noti.onclick = () => {
-                    window.focus();
-                    window.open("https://tuweb.com");
+                    window.focus();// Trae la ventana actual al frente
+                    window.open("https://tuweb.com");// Abre la URL especificada
                 };
             };
 
+            // Función que gestiona la espera (delay) antes de ejecutar la creación de la notificación
             const lanzarConDelay = () => {
                 setTimeout(() => {
                     crearNotificacion();
-                }, segundos * 1000);
+                }, segundos * 1000); // Multiplica por 1000 porque setTimeout trabaja en milisegundos
             };
 
+
+            // --- Flujo de permisos ---
+
+            // 1. Si el permiso ya fue concedido previamente, se lanza directamente
             if (Notification.permission === "granted") {
                 lanzarConDelay();
-            } 
+            }
+
+            // 2. Si no ha sido denegado (está en 'default'), se solicita permiso al usuario
             else if (Notification.permission !== "denied") {
                 Notification.requestPermission().then(permiso => {
                     if (permiso === "granted") {
                         lanzarConDelay();
                     }
                 });
-            } 
+            }
+            
+            // 3. Si el permiso fue denegado explícitamente, se avisa al usuario 
             else {
                 alert("Tienes bloqueadas las notificaciones 😢");
             }
