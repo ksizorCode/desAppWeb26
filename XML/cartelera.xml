@@ -2,7 +2,7 @@
 <cartelera cine="Cine Multiplex" ciudad="Madrid">
 
   <pelicula id="T01">
-    <titulo>Titanic</titulo>
+    <titulo>Super Mario Galaxy</titulo>
     <director>James Cameron</director>
     <genero>Drama Romance</genero>
     <estreno>1997</estreno>
