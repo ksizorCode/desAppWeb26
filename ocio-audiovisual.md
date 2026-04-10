@@ -8,7 +8,7 @@
 | Steve Jobs                | 2015 | Biopic         | Visión intensa del genio de Apple  |
 | BlackBerry                | 2023 | Startups       | Auge y caída de BlackBerry         |
 | The Imitation Game        | 2014 | Criptografía   | Alan Turing y la II Guerra Mundial |
-|Tetris                     | 2023 |                |                                    |
+| Tetris                    | 2023 |                |                                    |
 
 
 ## 📺 Series
