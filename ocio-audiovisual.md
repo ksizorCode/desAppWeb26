@@ -28,7 +28,7 @@
 | Cyberbunker: The Criminal Underworld | Netflix    | Cibercrimen      | Infraestructura ilegal en la red |
 
 
-🤖 Otros (Ciencia ficción + tecnología)
+## 🤖 Otros (Ciencia ficción + tecnología)
 
 | Título                | Año  | Tema             | Por qué verla                     |
 | ----------------------| ---- | ---------------- | --------------------------------- |
@@ -43,4 +43,9 @@
 | Blackhat              | 1995 | Hakers           | Thriler                           |
 | El poder del dinero   |      |                  |                                   |
 | Upgrade               | 2018 |                  |                                   |
-| S1m0ne                | 2002 | IA / Hollywood   | Productor cine crea acriz IA      |
+| S1m0ne                | 2002 | IA / Hollywood   | Productor cine crea acriz con IA  |
+| El Círculo            | 2017 | Red Social       | Red social saca producto disruptor|
+| La chica artificial   | 2014 |                  |                                   |
+| Companion             | 2025 | IA               |                                   |
+| Archive               | 2020 |                  |                                   |
+
