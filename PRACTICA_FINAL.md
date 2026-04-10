@@ -1,18 +1,19 @@
-
-> [!CAUTION]
-> Este archivo es del anterior curso. no te asustes al verlo. Aún no implica nada hasta que lo hablemso en clase.
-
 # Practica Final
-Desarrolla una aplicación que resuelva unnproblema. utilzia para ello las herramientas vistas en clase.
+Desarrolla una aplicación web que resuelva un problema.
+Utiliza para ello las herramientas vistas en clase.
 
-- Define queva a hacer tu aplicación y que problema va a sersolver.
-- ¿Cuál es su pyblico objetivo?
+- Define qué va a hacer tu aplicación y qué problema va a resolver.
+- ¿Cuál es su público objetivo?
 
+Tecnología de Cliente (FrontEnd)
 - HTML como estructura de etiquetado
 - CSS para los estilos
 - JS para la interactividad
+
+Tecnología de Servidor (Backend)
 - PHP para la construcción de estructuras y funciones
 - MySQL como base de datos
+
 - JSON como sistema de consultas secundarias
 - Figma para prototipar la aplicación
 - Github para almacenar el proceso
@@ -31,43 +32,24 @@ Desarrolla una aplicación que resuelva unnproblema. utilzia para ello las herra
 
 
 -------
+> [!IMPORTANT]
+> Cosas Obligatorias
 
-## Apartados
-Como mínimo la App / Web deberá contar con los siguientes apartados y contenidos técnicos y funcionales:
-No tienen porqué llamarse así ( esto es el concepto de lo que debería aparecer en cada apartado)
-
-- Datos de uso habitual: como CONSTANTES.
-  **Ejemplo:** Titulo de la App, titulo corto, direccion de la empresa, telefono fijo, móvil, gps, etc..
-
-
-### Inicio
-
-### Apartado 1
-
-### Apartado 2
+## Cosas Obligatorias:
+- Guarda una copia del reposiorio en Github
+- Añade al menos un readme.md explicativo
+- El contenido ha de ser responsibe
 
 
-### Contacto
-Recoger datos principales en unico luger:
-direccion, telefono fijo, móvil, gps, etc (con constantes)
+## Opcional
+  ### Prototipado
+  - wireframe
+  - Layout
+  - Euristica
+  - Figma
+  - Diagrama de flujo
 
-- contacto: 
- - numero telefono con `href="tel:985XXXXXXXXXX"`
- - envio de WhatsApp
- - envio de Email con `href="mailto:direccion@correo.es"`
- - envio formulario de contacto via email `PHP mail()`
-  - iframe con google maps / Open Maps / Bing Maps
-
-### Aviso Legal (con constantes)
-
-
-### Prototupado
-- wireframe
-- Layout
-- Euristica
-- Figma
-- Diagrama de flujo
-
+  - Prototipado (en JPG, PDF o enlace público a archivo de Figma)
 
 #### HTML
 - [ ] Posicionamiento SEO básico y Accesibilidad:
@@ -126,8 +108,9 @@ direccion, telefono fijo, móvil, gps, etc (con constantes)
 
 #### PWA - Progresive Web Aplication
 - [ ] manifest.json
+- [ ] serviceworkers.js (cache)
 - [ ] OpenGraph y otras llamadas a las metaetiquetas
-- [ ] Favicones y iconos d ela app
+- [ ] Favicones y iconos de la app
 
 #### GITHUB
 Para el almacenamiento del proceso.
@@ -137,4 +120,7 @@ Para el almacenamiento del proceso.
 
 #### APIs
 finalmente, puedes lizar  APIs externas
+
+
+
 
