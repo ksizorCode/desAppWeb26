@@ -40,3 +40,4 @@
 | Johnny Mnemonic   | 1995 | Cyberpunk        | Datos implantados en humanos      |
 | eXistenZ          | 1999 | Realidad virtual | Juego vs realidad                 |
 | The Lawnmower Man | 1992 | VR / IA          | Experimentos mentales y virtuales |
+| Blackhat          | 1995 | Hakers           | Thriler                           |
