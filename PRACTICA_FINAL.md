@@ -1,10 +1,22 @@
 # Practica Final
-Desarrolla una aplicación web que resuelva un problema.
-Utiliza para ello las herramientas vistas en clase.
+Desarrolla una aplicación web que resuelva un problema o sirva para un propósito.
+Eso puede ser desde:
+- Una calculadora en JS que se ejecute como PWA en local
+- Un sistema que consulte via API a un JSON el tiempo de esta semana
+- Listado de Restaurantes ordenables y filtrables por categoría con mapa interactivo
+- Chat
+- Zapatería Online
+- Página web responsive para una empresa con un desglose de menú / carta diario
+- Web con la cartelera para un restaurante o teatro. 
+
+Utiliza para todo esto las herramientas vistas en clase.
 
 - Define qué va a hacer tu aplicación y qué problema va a resolver.
 - ¿Cuál es su público objetivo?
+- Documéntate a nive de interface como otras apps o webs similares.
 
+
+Durante el curso hemos visto cosas como:
 Tecnología de Cliente (FrontEnd)
 - HTML como estructura de etiquetado
 - CSS para los estilos
@@ -15,6 +27,9 @@ Tecnología de Servidor (Backend)
 - MySQL como base de datos
 
 - JSON como sistema de consultas secundarias
+- CSV
+- XML
+
 - Figma para prototipar la aplicación
 - Github para almacenar el proceso
 - .md para documentar la instalación y mantenimiento (de cara al usario como a otro posible técnico)
