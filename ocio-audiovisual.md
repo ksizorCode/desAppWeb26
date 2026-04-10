@@ -30,14 +30,17 @@
 
 🤖 Otros (Ciencia ficción + tecnología)
 
-| Título            | Año  | Tema             | Por qué verla                     |
-| ----------------- | ---- | ---------------- | --------------------------------- |
-| Her               | 2013 | IA / Relaciones  | Amor en tiempos de IA             |
-| Ex Machina        | 2014 | IA               | Conciencia artificial             |
-| Transcendence     | 2014 | IA               | Subir la mente a la máquina       |
-| WarGames          | 1983 | Hackers          | Guerra nuclear + hacking          |
-| Ready Player One  | 2018 | VR               | Mundo virtual inmersivo           |
-| Johnny Mnemonic   | 1995 | Cyberpunk        | Datos implantados en humanos      |
-| eXistenZ          | 1999 | Realidad virtual | Juego vs realidad                 |
-| The Lawnmower Man | 1992 | VR / IA          | Experimentos mentales y virtuales |
-| Blackhat          | 1995 | Hakers           | Thriler                           |
+| Título                | Año  | Tema             | Por qué verla                     |
+| ----------------------| ---- | ---------------- | --------------------------------- |
+| Her                   | 2013 | IA / Relaciones  | Amor en tiempos de IA             |
+| Ex Machina            | 2014 | IA               | Conciencia artificial             |
+| Transcendence         | 2014 | IA               | Subir la mente a la máquina       |
+| WarGames              | 1983 | Hackers          | Guerra nuclear + hacking          |
+| Ready Player One      | 2018 | VR               | Mundo virtual inmersivo           |
+| Johnny Mnemonic       | 1995 | Cyberpunk        | Datos implantados en humanos      |
+| eXistenZ              | 1999 | Realidad virtual | Juego vs realidad                 |
+| The Lawnmower Man     | 1992 | VR / IA          | Experimentos mentales y virtuales |
+| Blackhat              | 1995 | Hakers           | Thriler                           |
+| El poder del dinero   |      |                  |                                   |
+| Upgrade               | 2018 |                  |                                   |
+| S1m0ne                | 2002 | IA / Hollywood   | Productor cine crea acriz IA      |
