@@ -8,7 +8,7 @@ Para ser mostrados utilizando tecnologías como Google Maps, Open Maps, Bing Map
 
 Para crear una cita se utilizan básicamente dos sistemas:
 1. URL para herramientas online tipo Google Calendar, Ouglook Calendar, etc...
-2.  Archivos .cal que se procesan en Outlook, Apple iCal, otros gestores de agenda
+2.  Archivos .ics que se procesan en Outlook, Apple iCal, otros gestores de agenda
 
 
 La primera opción es muy sencilla de utilizar. Simplemente tenemos que generar una URL tipo:
