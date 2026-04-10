@@ -18,6 +18,7 @@
 | Mr. Robot                    | Prime      | Hackers         | Thriller psicológico + hacking           |
 | El código que valía millones | Netflix    | Patentes / tech | Caso real sobre Google Earth             |
 | Super Pumped                 | Prime      | Startups        | Historia de Uber                         |
+| It Crowd                     | ???        | Informaticos    | Departamento informática gran empresa  (Humor)|
 
 ## 🎥 Documentales
 
@@ -28,24 +29,29 @@
 | Cyberbunker: The Criminal Underworld | Netflix    | Cibercrimen      | Infraestructura ilegal en la red |
 
 
-## 🤖 Otros (Ciencia ficción + tecnología)
+## 🤖 Películas y Series sobre Tecnología (Ciencia ficción)
 
-| Título                | Año  | Tema             | Por qué verla                     |
-| ----------------------| ---- | ---------------- | --------------------------------- |
-| Her                   | 2013 | IA / Relaciones  | Amor en tiempos de IA             |
-| Ex Machina            | 2014 | IA               | Conciencia artificial             |
-| Transcendence         | 2014 | IA               | Subir la mente a la máquina       |
-| WarGames              | 1983 | Hackers          | Guerra nuclear + hacking          |
-| Ready Player One      | 2018 | VR               | Mundo virtual inmersivo           |
-| Johnny Mnemonic       | 1995 | Cyberpunk        | Datos implantados en humanos      |
-| eXistenZ              | 1999 | Realidad virtual | Juego vs realidad                 |
-| The Lawnmower Man     | 1992 | VR / IA          | Experimentos mentales y virtuales |
-| Blackhat              | 1995 | Hakers           | Thriler                           |
-| El poder del dinero   |      |                  |                                   |
-| Upgrade               | 2018 |                  |                                   |
-| S1m0ne                | 2002 | IA / Hollywood   | Productor cine crea acriz con IA  |
-| El Círculo            | 2017 | Red Social       | Red social saca producto disruptor|
-| La chica artificial   | 2014 |                  |                                   |
-| Companion             | 2025 | IA               |                                   |
-| Archive               | 2020 |                  |                                   |
-
+| Título                | Tipo   | Año  | Tema              | Por qué verla                         |
+|----------------------|--------|------|-------------------|---------------------------------------|
+| Her                  | Peli   | 2013 | IA / Relaciones   | Amor en tiempos de IA                 |
+| Ex Machina           | Peli   | 2014 | IA                | Conciencia artificial                 |
+| Transcendence        | Peli   | 2014 | IA                | Subir la mente a la máquina           |
+| WarGames             | Peli   | 1983 | Hackers           | Guerra nuclear + hacking              |
+| Ready Player One     | Peli   | 2018 | VR                | Mundo virtual inmersivo               |
+| Johnny Mnemonic      | Peli   | 1995 | Cyberpunk         | Datos implantados en humanos          |
+| eXistenZ             | Peli   | 1999 | Realidad virtual  | Juego vs realidad                     |
+| The Lawnmower Man    | Peli   | 1992 | VR / IA           | Experimentos mentales y virtuales     |
+| Blackhat             | Peli   | 2015 | Hackers           | Thriller tecnológico                  |
+| El poder del dinero  | Peli   | —    | —                 | —                                     |
+| Upgrade              | Peli   | 2018 | IA / Ciberimplantes | Venganza con mejora tecnológica     |
+| S1m0ne               | Peli   | 2002 | IA / Hollywood    | Productor crea actriz virtual         |
+| El Círculo           | Peli   | 2017 | Red Social        | Tecnología y control social           |
+| La chica artificial  | Peli   | 2014 | IA                | Relaciones con IA                     |
+| Companion            | Peli   | 2025 | IA                | —                                     |
+| Archive              | Peli   | 2020 | IA / Robots       | Crear conciencia artificial           |
+| El hombre perfecto   | Peli   | 2021 | Robótica          | Relaciones humano-robot               |
+| Arturo y el algoritmo| Peli   | 2022 | Oficina / IA      | Algoritmos en el trabajo              |
+| Finch                | Peli   | 2020 | Robots            | Tom Hanks crea un robot compañero     |
+| Severance            | Serie  | 2022 | Trabajo / Memoria | Separación mente laboral/personal     |
+| Mythic Quest         | Serie  | 2020 | Videojuegos       | Desarrollo de videojuegos             |
+| WeCrashed            | Serie  | 2022 | Startups          | Auge y caída de WeWork                |
