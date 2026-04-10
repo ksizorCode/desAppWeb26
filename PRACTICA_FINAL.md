@@ -34,11 +34,9 @@ Tecnología de Servidor (Backend)
 -------
 > [!IMPORTANT]
 > Cosas Obligatorias
-
-## Cosas Obligatorias:
-- Guarda una copia del reposiorio en Github
-- Añade al menos un readme.md explicativo
-- El contenido ha de ser responsibe
+> - Guarda una copia del reposiorio en Github
+> - Añade al menos un readme.md explicativo
+> - El contenido ha de ser responsibe
 
 
 ## Opcional
