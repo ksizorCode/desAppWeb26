@@ -2,7 +2,6 @@
 
 Crea una **WebApp** que consulte datos en una base de datos y permita **listar, filtrar y mostrar información detallada**. Como ejemplo puedes usar el ejercicio de Arte hecho en clase.
 
-
 (lo que figura con * es Opcional)
 
 ---
@@ -21,8 +20,6 @@ Crea una **WebApp** que consulte datos en una base de datos y permita **listar, 
 - Feedback visual al interactuar con botones y filtros.  
 - Animaciones o aparición de elementos con scroll
 ---
-
-
 
 
 
