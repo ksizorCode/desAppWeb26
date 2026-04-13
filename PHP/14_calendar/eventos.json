@@ -1,0 +1,34 @@
+{
+  "eventos": [
+    {
+      "titulo": "Concierto de Música Clásica",
+      "descripcion": "Gran concierto de la Orquesta Sinfónica del Principado",
+      "url_foto": "https://example.com/foto1.jpg",
+      "fecha_hora_inicio": "2025-12-15 20:00:00",
+      "fecha_hora_fin": "2025-12-15 22:30:00",
+      "lugar": "Teatro Jovellanos, Gijón",
+      "coordenadas_gps": "43.545, -5.662",
+      "url_info": "https://example.com/evento1"
+    },
+    {
+      "titulo": "Exposición de Arte Asturiano",
+      "descripcion": "Muestra de artistas contemporáneos asturianos",
+      "url_foto": "https://example.com/foto2.jpg",
+      "fecha_hora_inicio": "2025-12-20 11:00:00",
+      "fecha_hora_fin": "2025-12-20 20:00:00",
+      "lugar": "Centro de Cultura Antiguo Instituto, Gijón",
+      "coordenadas_gps": "43.539, -5.661",
+      "url_info": "https://example.com/evento2"
+    },
+    {
+      "titulo": "Festival de Cine de Gijón",
+      "descripcion": "Proyecciones especiales y encuentros con directores",
+      "url_foto": "https://example.com/foto3.jpg",
+      "fecha_hora_inicio": "2024-01-10 18:00:00",
+      "fecha_hora_fin": "2024-01-15 23:00:00",
+      "lugar": "Teatro de la Laboral, Gijón",
+      "coordenadas_gps": "43.527, -5.609",
+      "url_info": "https://example.com/evento3"
+    }
+  ]
+}
