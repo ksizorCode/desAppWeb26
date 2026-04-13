@@ -1,0 +1,46 @@
+   body {
+        max-width: 960px;
+        margin: 20px auto;
+        font-family: sans-serif;
+        padding: 20px;
+    }
+    code{
+        padding: 5px;
+        background:#DEDEDE;
+        border-radius: 3px;
+        font-weight: bold;
+        transition:.7   s;
+        display: inline-block;
+    }
+    code:hover{
+        scale:3;
+    }
+    .ori{ background-color: yellow;}
+    .enc{ background-color: violet;}
+    .des{ background-color: greenyellow;}
+
+/* Table */
+    td:nth-child(odd), th:nth-child(odd) {
+  background-color: #8c8c8c;}
+
+  td{
+    padding:10px
+  }
+
+
+  ul{
+    display: flex;
+    flex-direction: column;
+  gap:10px;
+  
+  list-style:none;
+    padding-left:0;
+  }
+
+
+li{
+  border: solid 1px grey;
+  padding:10px;
+  border-radius:10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

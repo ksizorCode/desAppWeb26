@@ -117,6 +117,8 @@ Lo mismo a partir de datos de un array: <a href="ics_basico.php">📅 Descargar 
     <button type="submit">📅 Descargar evento: (ics_form.php)</button>
 </form>
 
+<a href="events_json.php">Ver eventos a partir de un JSOn y descargar .ics para cada caso</a>
+
 
 
 
