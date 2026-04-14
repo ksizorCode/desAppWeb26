@@ -7,8 +7,8 @@
 -  
 - 
 
-system-prompt-generator
-
+- system-prompt-generator -> GTP que optimiza los prompts
+- https://stitch.withgoogle.com/docs/mcp/setup
 
 
 Atajos teclado:
