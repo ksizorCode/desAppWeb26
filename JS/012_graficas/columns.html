@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla + Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Tabla de Datos</h2>
+<table id="dataTable"></table>
+
+<h2>Gráfico</h2>
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script>
+const data = {
+  columns: ["Nombre", "Edad", "Ciudad", "Profesión"],
+  rows: [
+    { Nombre: "Ana", Edad: 28, Ciudad: "Madrid", Profesión: "Diseñadora" },
+    { Nombre: "Luis", Edad: 35, Ciudad: "Barcelona", Profesión: "Desarrollador" },
+    { Nombre: "María", Edad: 42, Ciudad: "Valencia", Profesión: "Arquitecta" }
+  ]
+};
+
+// Crear tabla
+const table = document.getElementById("dataTable");
+
+// Cabecera
+const thead = document.createElement("thead");
+const headerRow = document.createElement("tr");
+
+data.columns.forEach(col => {
+  const th = document.createElement("th");
+  th.textContent = col;
+  headerRow.appendChild(th);
+});
+
+thead.appendChild(headerRow);
+table.appendChild(thead);
+
+// Cuerpo
+const tbody = document.createElement("tbody");
+
+data.rows.forEach(row => {
+  const tr = document.createElement("tr");
+
+  data.columns.forEach(col => {
+    const td = document.createElement("td");
+    td.textContent = row[col];
+    tr.appendChild(td);
+  });
+
+  tbody.appendChild(tr);
+});
+
+table.appendChild(tbody);
+
+// Preparar datos para Chart.js
+const labels = data.rows.map(r => r.Nombre);
+const edades = data.rows.map(r => r.Edad);
+
+// Crear gráfico
+const ctx = document.getElementById('myChart').getContext('2d');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: labels,
+    datasets: [{
+      label: 'Edad',
+      data: edades,
+      backgroundColor: 'rgba(54, 162, 235, 0.5)'
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+</script>
+
+</body>
+</html>

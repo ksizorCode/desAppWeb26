@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Cinema Dashboard - Filtros Interactivos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+
+        input[type="checkbox"] {
+            accent-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+            <div>
+                <h1 class="text-4xl font-bold gradient-text">Fantasy Cinema Data</h1>
+                <p class="text-slate-400">Análisis interactivo de Wizarding World y la Tierra Media</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="glass-card px-6 py-3 text-center">
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">Recaudación Seleccionada</p>
+                    <p id="totalBoxOffice" class="text-2xl font-bold text-green-400">$0B</p>
+                </div>
+                <div class="glass-card px-6 py-3 text-center">
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">Películas Activas</p>
+                    <p id="activeCount" class="text-2xl font-bold text-blue-400">0</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            
+            <!-- Sidebar Filtros -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="glass-card p-6 sticky top-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold">Filtros</h2>
+                        <button onclick="toggleAll(true)" class="text-xs text-blue-400 hover:underline">Todos</button>
+                    </div>
+                    
+                    <div id="filterContainer" class="space-y-6 max-h-[70vh] overflow-y-auto pr-2 custom-scrollbar">
+                        <!-- Generado dinámicamente por Sagas -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="lg:col-span-3 space-y-6">
+                
+                <!-- Main Charts -->
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                    <div class="glass-card p-6 h-[400px]">
+                        <h2 class="text-lg font-semibold mb-4 text-slate-300">Ventas vs Presupuesto (M$)</h2>
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                    <div class="glass-card p-6 h-[400px]">
+                        <h2 class="text-lg font-semibold mb-4 text-slate-300">Presupuesto por Sagas Activas</h2>
+                        <canvas id="sagaChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="glass-card p-6">
+                    <h2 class="text-xl font-semibold mb-4">Detalle de Selección</h2>
+                    <div class="overflow-x-auto custom-scrollbar">
+                        <table class="w-full text-left text-sm">
+                            <thead>
+                                <tr class="border-b border-slate-700 text-slate-400">
+                                    <th class="pb-3 pr-4">Título</th>
+                                    <th class="pb-3 px-4">Año</th>
+                                    <th class="pb-3 px-4">País</th>
+                                    <th class="pb-3 px-4 text-right">Presupuesto</th>
+                                    <th class="pb-3 pl-4 text-right">Recaudación</th>
+                                </tr>
+                            </thead>
+                            <tbody id="movieTableBody" class="divide-y divide-slate-800">
+                                <!-- Filas dinámicas -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const movieData = [
+            { id: 1, title: "HP: La Piedra Filosofal", year: 2001, budget: 125, boxOffice: 1022, saga: "Harry Potter", country: "UK/USA" },
+            { id: 2, title: "HP: La Cámara Secreta", year: 2002, budget: 100, boxOffice: 879, saga: "Harry Potter", country: "UK/USA" },
+            { id: 3, title: "HP: El Prisionero de Azkaban", year: 2004, budget: 130, boxOffice: 797, saga: "Harry Potter", country: "UK/USA" },
+            { id: 4, title: "HP: El Cáliz de Fuego", year: 2005, budget: 150, boxOffice: 896, saga: "Harry Potter", country: "UK/USA" },
+            { id: 5, title: "HP: La Orden del Fénix", year: 2007, budget: 150, boxOffice: 942, saga: "Harry Potter", country: "UK/USA" },
+            { id: 6, title: "HP: El Misterio del Príncipe", year: 2009, budget: 250, boxOffice: 934, saga: "Harry Potter", country: "UK/USA" },
+            { id: 7, title: "HP: Las Reliquias Muerte P1", year: 2010, budget: 125, boxOffice: 977, saga: "Harry Potter", country: "UK/USA" },
+            { id: 8, title: "HP: Las Reliquias Muerte P2", year: 2011, budget: 125, boxOffice: 1342, saga: "Harry Potter", country: "UK/USA" },
+            { id: 9, title: "LOTR: La Comunidad del Anillo", year: 2001, budget: 93, boxOffice: 898, saga: "LOTR", country: "NZ/USA" },
+            { id: 10, title: "LOTR: Las Dos Torres", year: 2002, budget: 94, boxOffice: 947, saga: "LOTR", country: "NZ/USA" },
+            { id: 11, title: "LOTR: El Retorno del Rey", year: 2003, budget: 94, boxOffice: 1146, saga: "LOTR", country: "NZ/USA" },
+            { id: 12, title: "Hobbit: Un Viaje Inesperado", year: 2012, budget: 200, boxOffice: 1017, saga: "Hobbit", country: "NZ/USA" },
+            { id: 13, title: "Hobbit: La Desolación Smaug", year: 2013, budget: 225, boxOffice: 959, saga: "Hobbit", country: "NZ/USA" },
+            { id: 14, title: "Hobbit: La Batalla 5 Ejércitos", year: 2014, budget: 250, boxOffice: 962, saga: "Hobbit", country: "NZ/USA" },
+            { id: 15, title: "Animales Fantásticos 1", year: 2016, budget: 180, boxOffice: 814, saga: "Fantastic Beasts", country: "UK/USA" },
+            { id: 16, title: "Animales Fantásticos 2", year: 2018, budget: 200, boxOffice: 654, saga: "Fantastic Beasts", country: "UK/USA" },
+            { id: 17, title: "Animales Fantásticos 3", year: 2022, budget: 200, boxOffice: 407, saga: "Fantastic Beasts", country: "UK/USA" }
+        ];
+
+        let selectedIds = movieData.map(m => m.id);
+        let salesChart, sagaChart;
+
+        window.onload = function() {
+            renderFilters();
+            initCharts();
+            updateUI();
+        };
+
+        function renderFilters() {
+            const container = document.getElementById('filterContainer');
+            const sagas = [...new Set(movieData.map(m => m.saga))];
+            
+            sagas.forEach(saga => {
+                const sagaMovies = movieData.filter(m => m.saga === saga);
+                const sagaId = saga.replace(/\s+/g, '-').toLowerCase();
+                
+                let sagaHtml = `
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 border-b border-slate-700 pb-1 mb-2">
+                            <input type="checkbox" id="group-${sagaId}" checked onchange="toggleGroup('${saga}', this.checked)">
+                            <label for="group-${sagaId}" class="font-bold text-sm text-slate-300 uppercase tracking-tighter">${saga}</label>
+                        </div>
+                        <div class="space-y-1 pl-2">
+                `;
+                
+                sagaMovies.forEach(movie => {
+                    sagaHtml += `
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="movie-${movie.id}" class="movie-checkbox" 
+                                data-id="${movie.id}" data-saga="${saga}" checked onchange="handleCheckboxChange()">
+                            <label for="movie-${movie.id}" class="text-xs text-slate-400 hover:text-white cursor-pointer truncate">${movie.title}</label>
+                        </div>
+                    `;
+                });
+
+                sagaHtml += `</div></div>`;
+                container.innerHTML += sagaHtml;
+            });
+        }
+
+        function toggleGroup(saga, isChecked) {
+            const checkboxes = document.querySelectorAll(`.movie-checkbox[data-saga="${saga}"]`);
+            checkboxes.forEach(cb => cb.checked = isChecked);
+            handleCheckboxChange();
+        }
+
+        function toggleAll(isChecked) {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = isChecked);
+            handleCheckboxChange();
+        }
+
+        function handleCheckboxChange() {
+            const checkedCheckboxes = document.querySelectorAll('.movie-checkbox:checked');
+            selectedIds = Array.from(checkedCheckboxes).map(cb => parseInt(cb.getAttribute('data-id')));
+            updateUI();
+        }
+
+        function updateUI() {
+            const filteredData = movieData.filter(m => selectedIds.includes(m.id));
+            
+            // Stats
+            const totalRecaudado = filteredData.reduce((acc, m) => acc + m.boxOffice, 0);
+            document.getElementById('totalBoxOffice').innerText = `$${(totalRecaudado / 1000).toFixed(2)}B`;
+            document.getElementById('activeCount').innerText = filteredData.length;
+
+            // Table
+            const tbody = document.getElementById('movieTableBody');
+            tbody.innerHTML = filteredData.map(m => `
+                <tr class="hover:bg-slate-800/40 transition-colors">
+                    <td class="py-3 pr-4 font-medium text-slate-200">${m.title}</td>
+                    <td class="py-3 px-4 text-slate-400">${m.year}</td>
+                    <td class="py-3 px-4 text-slate-400">${m.country}</td>
+                    <td class="py-3 px-4 text-right text-slate-400">$${m.budget}M</td>
+                    <td class="py-3 pl-4 text-right text-green-400 font-semibold">$${m.boxOffice}M</td>
+                </tr>
+            `).join('');
+
+            // Charts Update
+            updateCharts(filteredData);
+        }
+
+        function initCharts() {
+            const ctxSales = document.getElementById('salesChart').getContext('2d');
+            salesChart = new Chart(ctxSales, {
+                type: 'bar',
+                data: { labels: [], datasets: [] },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } },
+                        x: { display: false }
+                    }
+                }
+            });
+
+            const ctxSaga = document.getElementById('sagaChart').getContext('2d');
+            sagaChart = new Chart(ctxSaga, {
+                type: 'polarArea',
+                data: { labels: [], datasets: [] },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', boxWidth: 10 } } },
+                    scales: {
+                        r: { grid: { color: 'rgba(255,255,255,0.05)' }, angleLines: { color: 'rgba(255,255,255,0.05)' }, ticks: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function updateCharts(data) {
+            // Bar Chart
+            salesChart.data.labels = data.map(m => m.title);
+            salesChart.data.datasets = [
+                {
+                    label: 'Recaudación (M$)',
+                    data: data.map(m => m.boxOffice),
+                    backgroundColor: '#60a5fa',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Presupuesto (M$)',
+                    data: data.map(m => m.budget),
+                    backgroundColor: '#f87171',
+                    borderRadius: 4
+                }
+            ];
+            salesChart.update();
+
+            // Polar Area Chart (Grouped by Saga)
+            const grouped = data.reduce((acc, curr) => {
+                acc[curr.saga] = (acc[curr.saga] || 0) + curr.budget;
+                return acc;
+            }, {});
+
+            sagaChart.data.labels = Object.keys(grouped);
+            sagaChart.data.datasets = [{
+                data: Object.values(grouped),
+                backgroundColor: [
+                    'rgba(59, 130, 246, 0.5)',
+                    'rgba(249, 115, 22, 0.5)',
+                    'rgba(234, 179, 8, 0.5)',
+                    'rgba(168, 85, 247, 0.5)'
+                ],
+                borderColor: '#1e293b',
+                borderWidth: 2
+            }];
+            sagaChart.update();
+        }
+    </script>
+</body>
+</html>

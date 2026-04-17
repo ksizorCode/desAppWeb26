@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Tebeos</title>
+
+  <!-- Librería Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f5f5;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    canvas {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">📊 Dashboard de Tebeos</h1>
+
+  <div class="grid">
+    <div>
+      <h2>Ventas por serie</h2>
+      <canvas id="ventasChart"></canvas>
+    </div>
+
+    <div>
+      <h2>Año de publicación</h2>
+      <canvas id="anioChart"></canvas>
+    </div>
+
+    <div>
+      <h2>Distribución por nacionalidad</h2>
+      <canvas id="paisChart"></canvas>
+    </div>
+  </div>
+
+<script>
+/* =========================
+   1. DATASET
+========================= */
+const comics = [
+  { nombre: "Natacha", ventas: 5000000, anio: 1970, nacionalidad: "Bélgica" },
+  { nombre: "Blake y Mortimer", ventas: 15000000, anio: 1946, nacionalidad: "Bélgica" },
+  { nombre: "Mortadelo y Filemón", ventas: 100000000, anio: 1958, nacionalidad: "España" },
+  { nombre: "Astérix", ventas: 380000000, anio: 1959, nacionalidad: "Francia" },
+  { nombre: "Tintín", ventas: 200000000, anio: 1929, nacionalidad: "Bélgica" },
+  { nombre: "Lucky Luke", ventas: 300000000, anio: 1946, nacionalidad: "Bélgica" },
+  { nombre: "Spirou", ventas: 25000000, anio: 1938, nacionalidad: "Bélgica" }
+];
+
+/* =========================
+   2. PREPARAR DATOS
+========================= */
+
+// Extraer arrays
+const nombres = comics.map(c => c.nombre);
+const ventas = comics.map(c => c.ventas);
+const anios = comics.map(c => c.anio);
+
+// Agrupar por nacionalidad
+const paises = {};
+comics.forEach(c => {
+  paises[c.nacionalidad] = (paises[c.nacionalidad] || 0) + 1;
+});
+
+const labelsPaises = Object.keys(paises);
+const valoresPaises = Object.values(paises);
+
+/* =========================
+   3. CHART: VENTAS (BAR)
+========================= */
+new Chart(document.getElementById("ventasChart"), {
+  type: "bar",
+  data: {
+    labels: nombres,
+    datasets: [{
+      label: "Ventas totales",
+      data: ventas
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return context.raw.toLocaleString() + " copias";
+          }
+        }
+      }
+    }
+  }
+});
+
+/* =========================
+   4. CHART: AÑOS (LINE)
+========================= */
+new Chart(document.getElementById("anioChart"), {
+  type: "line",
+  data: {
+    labels: nombres,
+    datasets: [{
+      label: "Año de publicación",
+      data: anios,
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+
+/* =========================
+   5. CHART: NACIONALIDAD (PIE)
+========================= */
+new Chart(document.getElementById("paisChart"), {
+  type: "pie",
+  data: {
+    labels: labelsPaises,
+    datasets: [{
+      data: valoresPaises
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+
+/* =========================
+   6. EXTRA (OPCIONAL)
+   Ordenar por ventas
+========================= */
+
+// Ejemplo didáctico:
+// const ordenados = [...comics].sort((a,b) => b.ventas - a.ventas);
+// console.log(ordenados);
+
+</script>
+
+</body>
+</html>

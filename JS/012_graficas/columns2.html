@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salario mínimo en Europa</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>Salario mínimo mensual en Europa (2025)</h2>
+<canvas id="myChart"></canvas>
+
+<script>
+// Datos (euros/mes)
+const data = {
+  labels: [
+    "Bulgaria", "Hungría", "Rumanía", "Portugal", "España",
+    "Francia", "Alemania", "Países Bajos", "Irlanda", "Luxemburgo"
+  ],
+  datasets: [{
+    label: "Salario mínimo (€ / mes)",
+    data: [
+      551, 707, 814, 1015, 1381,
+      1802, 2161, 2193, 2282, 2638
+    ],
+    backgroundColor: "rgba(75, 192, 192, 0.6)"
+  }]
+};
+
+// Configuración del gráfico
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: "Euros / mes"
+        }
+      }
+    }
+  }
+};
+
+// Renderizar
+new Chart(
+  document.getElementById('myChart'),
+  config
+);
+</script>
+
+</body>
+</html>

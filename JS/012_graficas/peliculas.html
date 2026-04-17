@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Cine Pop</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: #fff;
+      margin: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    canvas {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎬 Dashboard Cine Pop</h1>
+
+<div class="grid">
+  <div><h2>💰 Recaudación</h2><canvas id="boxOffice"></canvas></div>
+  <div><h2>📅 Año</h2><canvas id="years"></canvas></div>
+  <div><h2>⭐ Rating</h2><canvas id="ratings"></canvas></div>
+  <div><h2>🎞️ Películas por saga</h2><canvas id="sagas"></canvas></div>
+  <div><h2>📈 Evolución temporal</h2><canvas id="timeline"></canvas></div>
+  <div><h2>📊 Año vs Recaudación</h2><canvas id="scatter"></canvas></div>
+</div>
+
+<script>
+/* =========================
+   DATASET CINE
+========================= */
+const peliculas = [
+  { titulo: "Avengers: Endgame", saga: "Marvel", anio: 2019, recaudacion: 2797000000, rating: 8.4 },
+  { titulo: "Iron Man", saga: "Marvel", anio: 2008, recaudacion: 585000000, rating: 7.9 },
+  { titulo: "The Dark Knight", saga: "Nolan", anio: 2008, recaudacion: 1005000000, rating: 9.0 },
+  { titulo: "Inception", saga: "Nolan", anio: 2010, recaudacion: 836000000, rating: 8.8 },
+  { titulo: "Interstellar", saga: "Nolan", anio: 2014, recaudacion: 701000000, rating: 8.6 },
+  { titulo: "Star Wars: A New Hope", saga: "Star Wars", anio: 1977, recaudacion: 775000000, rating: 8.6 },
+  { titulo: "The Force Awakens", saga: "Star Wars", anio: 2015, recaudacion: 2068000000, rating: 7.8 },
+  { titulo: "Raiders of the Lost Ark", saga: "Indiana Jones", anio: 1981, recaudacion: 389000000, rating: 8.4 },
+  { titulo: "Kingdom of the Crystal Skull", saga: "Indiana Jones", anio: 2008, recaudacion: 790000000, rating: 6.1 },
+  { titulo: "Jurassic Park", saga: "Jurassic Park", anio: 1993, recaudacion: 1045000000, rating: 8.2 },
+  { titulo: "Jurassic World", saga: "Jurassic Park", anio: 2015, recaudacion: 1670000000, rating: 7.0 }
+];
+
+/* =========================
+   PREPARACIÓN
+========================= */
+const titulos = peliculas.map(p => p.titulo);
+const recaudacion = peliculas.map(p => p.recaudacion);
+const anios = peliculas.map(p => p.anio);
+const ratings = peliculas.map(p => p.rating);
+
+// Agrupar por saga
+const sagasCount = {};
+peliculas.forEach(p => {
+  sagasCount[p.saga] = (sagasCount[p.saga] || 0) + 1;
+});
+
+/* =========================
+   1. BAR: RECAUDACIÓN
+========================= */
+new Chart(document.getElementById("boxOffice"), {
+  type: "bar",
+  data: {
+    labels: titulos,
+    datasets: [{
+      label: "Box Office ($)",
+      data: recaudacion
+    }]
+  }
+});
+
+/* =========================
+   2. LINE: AÑOS
+========================= */
+new Chart(document.getElementById("years"), {
+  type: "line",
+  data: {
+    labels: titulos,
+    datasets: [{
+      label: "Año",
+      data: anios
+    }]
+  }
+});
+
+/* =========================
+   3. BAR: RATINGS
+========================= */
+new Chart(document.getElementById("ratings"), {
+  type: "bar",
+  data: {
+    labels: titulos,
+    datasets: [{
+      label: "IMDb Rating",
+      data: ratings
+    }]
+  }
+});
+
+/* =========================
+   4. PIE: SAGAS
+========================= */
+new Chart(document.getElementById("sagas"), {
+  type: "pie",
+  data: {
+    labels: Object.keys(sagasCount),
+    datasets: [{
+      data: Object.values(sagasCount)
+    }]
+  }
+});
+
+/* =========================
+   5. LINE: EVOLUCIÓN TEMPORAL
+========================= */
+const ordenadas = [...peliculas].sort((a,b) => a.anio - b.anio);
+
+new Chart(document.getElementById("timeline"), {
+  type: "line",
+  data: {
+    labels: ordenadas.map(p => p.anio),
+    datasets: [{
+      label: "Recaudación en el tiempo",
+      data: ordenadas.map(p => p.recaudacion)
+    }]
+  }
+});
+
+/* =========================
+   6. SCATTER: AÑO vs RECAUDACIÓN
+========================= */
+new Chart(document.getElementById("scatter"), {
+  type: "scatter",
+  data: {
+    datasets: [{
+      label: "Relación Año-Recaudación",
+      data: peliculas.map(p => ({ x: p.anio, y: p.recaudacion }))
+    }]
+  }
+});
+</script>
+
+</body>
+</html>

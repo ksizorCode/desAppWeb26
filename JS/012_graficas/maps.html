@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa salario mínimo Europa</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Plugin GEO -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo@4"></script>
+
+  <!-- TopoJSON -->
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+</head>
+<body>
+
+<h2>Salario mínimo en Europa (Mapa)</h2>
+<canvas id="mapChart"></canvas>
+
+<script>
+// Datos (ISO3 + salario en €)
+const salaryData = {
+  "BGR": 551,
+  "HUN": 707,
+  "ROU": 814,
+  "PRT": 1015,
+  "ESP": 1381,
+  "FRA": 1802,
+  "DEU": 2161,
+  "NLD": 2193,
+  "IRL": 2282,
+  "LUX": 2638
+};
+
+// Cargar mapa Europa
+fetch("https://unpkg.com/world-atlas/countries-50m.json")
+  .then(res => res.json())
+  .then(topology => {
+
+    const countries = ChartGeo.topojson.feature(
+      topology,
+      topology.objects.countries
+    ).features;
+
+    // Filtrar solo Europa (aprox por IDs conocidos)
+    const europeCountries = countries.filter(c =>
+      Object.keys(salaryData).includes(c.id)
+    );
+
+    const data = {
+      labels: europeCountries.map(d => d.properties.name),
+      datasets: [{
+        label: 'Salario mínimo (€)',
+        data: europeCountries.map(d => ({
+          feature: d,
+          value: salaryData[d.id] || 0
+        }))
+      }]
+    };
+
+    const config = {
+      type: 'choropleth',
+      data: data,
+      options: {
+        scales: {
+          projection: {
+            axis: 'x',
+            projection: 'equalEarth'
+          },
+          color: {
+            axis: 'x',
+            quantize: 5,
+            legend: {
+              position: 'bottom-right'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    };
+
+    new Chart(
+      document.getElementById("mapChart"),
+      config
+    );
+  });
+</script>
+
+</body>
+</html>
